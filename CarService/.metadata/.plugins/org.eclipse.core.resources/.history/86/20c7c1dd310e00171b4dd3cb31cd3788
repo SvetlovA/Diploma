@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Delete car</title>
+</head>
+<body>
+<h3>Are you sure to delete car ${carmark} ${carmodel}</h3>
+<form action="carservicecontroller" method="post">
+	<input type="hidden" name="action" value="deletecar"/>
+	<input type="hidden" name="carid" value="${carid}"/>
+	<input type="hidden" name="carguid" value="${carguid}"/>
+	<input type="hidden" name="carnumber" value="${carnumber}"/>
+	<input type="hidden" name="carmark" value="${carmark}"/>
+	<input type="hidden" name="carmodel" value="${carmodel}"/>
+	<label>Car id: ${carid}</label><br/>
+	<label>Car guid: ${carguid}</label><br/>
+	<label>State number: ${carnumber}</label><br/>
+	<label>Car mark: ${carmark}</label><br/>
+	<label>Car model: ${carmodel}</label><br/>
+	<hr/>
+	<input type="submit" value="Submit"/>
+	<a href="cars?action=getclientcarspage&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Cancel</a>
+</form>
+</body>
+</html>

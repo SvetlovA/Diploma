@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="6922B754-5FB1-31C6-D7D2-2D0A99617259" directorySegmentName="seg_0" name="Passwords">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-15 20:28:50 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pkName>Passwords_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="PasswordHash" id="E306C024-1F69-E9F8-67AE-C58B4DAA4B13">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-15 20:29:19 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="A56BEE7A-6524-8BD5-22EF-B0FD75125F7A" name="Passwords_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-15 20:29:19 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="E306C024-1F69-E9F8-67AE-C58B4DAA4B13"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

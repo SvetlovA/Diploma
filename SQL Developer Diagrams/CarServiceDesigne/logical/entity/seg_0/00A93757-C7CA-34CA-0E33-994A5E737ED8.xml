@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="00A93757-C7CA-34CA-0E33-994A5E737ED8" directorySegmentName="seg_0" name="OrdersWorks">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>523CDD8F-F4E5-D483-33D8-A92906435591</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<pkName>OrdersWorks_PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="OrderId" id="8AB4B3A2-C8E5-D1A7-CF20-CD9AE50C6D14">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>D383EB93-23BD-288D-D068-ACFAEB7F36F6</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<referedAttribute>24279EBC-642A-2663-4043-BE9DD1A04749</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="WorkId" id="607B1EAA-6245-25B4-0239-C0D35AA230C8">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>5A4351FC-EB51-9ACE-4B24-D4340995E2A2</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<referedAttribute>D0E2EFB0-269C-84C3-7AD0-059E2BE9DDA0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="845685DE-B468-FAD5-F72B-942748EADA53" name="OrdersWorks_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>C84230D1-34A7-F500-4A03-7E802E80B62B</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8AB4B3A2-C8E5-D1A7-CF20-CD9AE50C6D14</attributeRef>
+<attributeRef>607B1EAA-6245-25B4-0239-C0D35AA230C8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

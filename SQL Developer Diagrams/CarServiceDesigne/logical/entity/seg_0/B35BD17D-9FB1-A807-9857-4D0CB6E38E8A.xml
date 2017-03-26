@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="B35BD17D-9FB1-A807-9857-4D0CB6E38E8A" directorySegmentName="seg_0" name="ShareParts">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>8DF2D1AE-BB99-905E-8297-C44D47A4F0EC</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<pkName>ShareParts_PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="SharePartId" id="DAB30AB9-AF00-D2A7-8D47-07897D329D74">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>D2D1BF05-6DB5-AC8C-F91D-D094D0489270</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Name" id="31EFDDCA-0099-8155-4C8B-95298D82CDF3">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>62032B66-2505-2F73-E3D9-9D8EEB1D1436</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Price" id="FED01375-1E6A-53A8-4EF6-E4FEB1C54FC0">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>43F1F065-32F1-B20D-A274-9006B50FC6DA</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT022</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Description" id="12852853-6B11-3F82-122D-88CA83D29079">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>662BC48B-C5A1-8CFC-452C-A8CFCB422E74</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Count" id="65C046AD-630D-9B7B-E8EB-73ACE669F4D2">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 11:29:48 UTC</createdTime>
+<generatorID>5F621D3F-577E-94F5-D22D-64813779EB9F</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<defaultValue>0</defaultValue>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<usesDefaultValue>true</usesDefaultValue>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="SharePartGuid" id="8D197ED2-9747-707A-FD53-E8683DD3C75C">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:52:41 UTC</createdTime>
+<generatorID>B33B848B-C8C5-CBCA-2983-3AA1E2FE7461</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E30F0998-8266-45CA-7E59-070160FA4622" name="ShareParts_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:56:26 UTC</createdTime>
+<generatorID>A0F46663-D498-C77A-6D5D-CA50CAFE2A8F</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DAB30AB9-AF00-D2A7-8D47-07897D329D74</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

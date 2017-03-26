@@ -1,0 +1,15 @@
+1488099179615	Rename local variable 'order'
+1488099226475	Rename local variable 'order'
+1488099255672	Rename local variable 'order'
+1488129080560	Rename local variable 'worker'
+1488129110200	Rename local variable 'readWorker'
+1488129161913	Rename local variable 'worker'
+1488129201014	Rename local variable 'readWorker'
+1488129411034	Extract Class...
+1488299154488	Rename package 'ru.rsreu.carservice.bll'
+1488299167605	Rename package 'ru.rsreu.carservice.entities'
+1488299181277	Rename package 'ru.rsreu.carservice.dal.tests'
+1488299195803	Rename package 'ru.rsreu.carservice.dal'
+1488299208465	Rename package 'ru.rsreu.carservice.bll.tests'
+1488299222610	Copy packages
+1488299240933	Copy folder

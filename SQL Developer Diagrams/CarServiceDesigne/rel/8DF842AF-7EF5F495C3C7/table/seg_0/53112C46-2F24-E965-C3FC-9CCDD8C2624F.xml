@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="53112C46-2F24-E965-C3FC-9CCDD8C2624F" directorySegmentName="seg_0" name="Cars">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:13:06 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pkName>Cars_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CarId" id="43A7B897-F8E7-C6D5-2E10-927451C7CE6F">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:15:17 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CarGuid" id="F10DB7AA-2D6E-1179-8ED6-66F54FD065C2">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:49:47 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="ClientId" id="7AAE3FC1-A228-F16E-5CB0-30A299FEDE97">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:15:35 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>A1A33273-53F6-01B1-D73B-6521B34E7DC1</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F44A3A32-4C5B-B8F9-41AD-301648248C72" referredColumn="A1A33273-53F6-01B1-D73B-6521B34E7DC1"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="StateNumber" id="1C8853E7-A0B1-FDD5-4F71-45EDA399D1BC">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:16:57 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Mark" id="B4994338-4B6F-7A05-CA49-EB40517DD9E2">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:17:14 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Model" id="9B01967E-4CC2-ABCC-6F50-EC34D6D59132">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:17:44 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="20ECFEE3-BD23-C3F8-C7CA-1D5254E48695" name="Cars_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:15:17 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="43A7B897-F8E7-C6D5-2E10-927451C7CE6F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="8DD03752-A1B5-BA84-7921-4694208F9D27" name="Cars_Number_UN">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:18:43 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="1C8853E7-A0B1-FDD5-4F71-45EDA399D1BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="7F8AA6C7-D05D-0C63-3A90-A2D35E985AF5" name="Cars_CarGuid_UN">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:49:47 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<indexState>Unique Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="F10DB7AA-2D6E-1179-8ED6-66F54FD065C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="DA046B1F-BDD0-A8E9-D3FE-A9ED587DF9D5" name="Cars_Clients_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:19:42 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="7AAE3FC1-A228-F16E-5CB0-30A299FEDE97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

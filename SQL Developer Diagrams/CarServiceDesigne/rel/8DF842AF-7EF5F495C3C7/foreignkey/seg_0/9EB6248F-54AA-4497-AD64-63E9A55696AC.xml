@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="9EB6248F-54AA-4497-AD64-63E9A55696AC" directorySegmentName="seg_0" name="OrdersShareParts_ShareParts_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:41:53 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<containerWithKeyObject>6BAE8B22-1471-6567-AA18-F0E7FBA6F3F2</containerWithKeyObject>
+<deleteRule>CASCADE</deleteRule>
+<localFKIndex>8CBDEE7C-678D-6BA9-0BB3-B0F5B0E57041</localFKIndex>
+<keyObject>A0F46663-D498-C77A-6D5D-CA50CAFE2A8F</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

@@ -1,0 +1,19 @@
+package ru.rsreu.carservice.controller.actions.workers;
+
+import resources.Resourcer;
+
+public enum DeleteEditWorkerType {
+	DELETE {
+		@Override
+		public String getPage() {
+			return Resourcer.getString("path.page.worker.delete");
+		}
+	},
+	EDIT {
+		@Override
+		public String getPage() {
+			return Resourcer.getString("path.page.worker.edit");
+		}
+	};
+	public abstract String getPage();
+}

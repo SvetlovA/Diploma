@@ -1,0 +1,24 @@
+package ru.rsreu.carservice.controller.actions.orders;
+
+import java.sql.SQLException;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+
+import resources.Resourcer;
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.actions.utils.WorkUtils;
+import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.entities.Work;
+
+public class GetSelectWorksPageAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, CarServiceBl carServiceBl)
+			throws SQLException, Exception {
+		Set<Work> works = carServiceBl.getAllWorks();
+		WorkUtils.setWorks(request, works);
+		return Resourcer.getString("path.page.orders.works");
+	}
+
+}

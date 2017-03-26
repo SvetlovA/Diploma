@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Workers_Users_FK" id="1316814D-6409-7CA5-2AC3-6E362C5EE69C" directorySegmentName="seg_0">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-15 20:44:34 UTC</createdTime>
+<generatorID>16460C34-1DF4-6D0D-483B-D1ED8806BF92</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<dominantRole>F7021840-A94E-0C0D-03D4-6CAB192FFBB9</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F7021840-A94E-0C0D-03D4-6CAB192FFBB9</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>9F53D8AB-AA2D-FCD3-F13E-7DC186D3A6D6</targetEntity>
+<transferable>true</transferable>
+</Relation>

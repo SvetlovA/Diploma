@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="8DF2D1AE-BB99-905E-8297-C44D47A4F0EC" directorySegmentName="seg_0" name="ShareParts">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:35:15 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pkName>ShareParts_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="SharePartId" id="D2D1BF05-6DB5-AC8C-F91D-D094D0489270">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:35:41 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="SharePartGuid" id="B33B848B-C8C5-CBCA-2983-3AA1E2FE7461">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:51:14 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Name" id="62032B66-2505-2F73-E3D9-9D8EEB1D1436">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:36:02 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Price" id="43F1F065-32F1-B20D-A274-9006B50FC6DA">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:36:21 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT022</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Count" id="5F621D3F-577E-94F5-D22D-64813779EB9F">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-18 08:34:04 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<defaultValue>0</defaultValue>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<usesDefaultValue>true</usesDefaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Description" id="662BC48B-C5A1-8CFC-452C-A8CFCB422E74">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:36:43 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="A0F46663-D498-C77A-6D5D-CA50CAFE2A8F" name="ShareParts_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:37:01 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="D2D1BF05-6DB5-AC8C-F91D-D094D0489270"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="7E5E0B0D-71D3-A632-C27D-75DEBA6CBB18" name="ShareParts_SharePartGuid_UN">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:51:45 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<indexState>Unique Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="B33B848B-C8C5-CBCA-2983-3AA1E2FE7461"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

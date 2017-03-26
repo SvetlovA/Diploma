@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="523CDD8F-F4E5-D483-33D8-A92906435591" directorySegmentName="seg_0" name="OrdersWorks">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:53:45 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pkName>OrdersWorks_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="OrderId" id="29474196-16F7-D165-D242-15149CA7FC0D">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:54:46 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>1A42BEF7-7701-6C65-1724-F36529159D5E</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CF28730-29A5-EAA9-7B4F-D91755C936CD" referredColumn="1A42BEF7-7701-6C65-1724-F36529159D5E"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="WorkId" id="D013F4E0-643F-3EEA-BEE1-A2C99BCADDA5">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:54:46 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>76623540-0A90-C6BE-2ECA-57550ABF4EC7</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="587B063B-79D6-965C-140B-7A05B3573085" referredColumn="76623540-0A90-C6BE-2ECA-57550ABF4EC7"/>
+</associations>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="C84230D1-34A7-F500-4A03-7E802E80B62B" name="OrdersWorks_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:54:46 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="29474196-16F7-D165-D242-15149CA7FC0D"/>
+<colUsage columnID="D013F4E0-643F-3EEA-BEE1-A2C99BCADDA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="F71444F9-844B-72B2-C3A6-36EDE1AC9323" name="OrdersWorks_Orders_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:54:46 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="29474196-16F7-D165-D242-15149CA7FC0D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="473FD3D1-4C9D-4A11-ED5F-8DAA1C28D42E" name="OrdersWorks_Works_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:55:10 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="D013F4E0-643F-3EEA-BEE1-A2C99BCADDA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

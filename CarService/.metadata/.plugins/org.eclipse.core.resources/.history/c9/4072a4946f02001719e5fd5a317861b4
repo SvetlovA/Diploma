@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Workers</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Worker ID</th>
+			<th>worker Guid</th>
+			<th>Login</th>
+			<th>Surname</th>
+			<th>Name</th>
+			<th>Patronymic</th>
+			<th>Experience</th>
+			<th>Orders</th>
+		</tr>
+		<c:forEach items="${carServiceBl.getAllWorkers()}" var="worker">
+			<tr>
+				<td>${worker.getUserId()}</td>
+				<td>${worker.getUserGuid()}</td>
+				<td>${worker.getLogin()}</td>
+				<td>${worker.getSurname()}</td>
+				<td>${worker.getName()}</td>
+				<td>${worker.getPatronymic()}</td>
+				<td>${worker.getExperience()}</td>
+				<td>${worker.getOrders()}</td>
+				<td>
+					<a href="carservicecontroller?action=getworkerdeleteeditpage&userId=${worker.getUserId()}&userGuid=${worker.getUserGuid()}&workerLogin=${worker.getLogin()}&surname=${worker.getSurname()}&name=${worker.getName()}&patronymic=${worker.getPatronymic()}&experience=${worker.getExperience()}">Delete</a>
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<form action="carservicecontroller" method="post">
+		<input type="hidden" name="action" value="getworkeraddpage"/>
+		<input type="submit" value="Add">
+	</form><br/>
+	<a href="carservicecontroller?action=getadminmenu">Back menu</a>
+</body>
+</html>

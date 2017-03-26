@@ -1,0 +1,10 @@
+127.0.0.1 - - [24/Mar/2017:01:30:00 +0400] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [24/Mar/2017:01:30:00 +0400] "GET /CarService/ HTTP/1.1" 200 606
+127.0.0.1 - - [24/Mar/2017:01:30:00 +0400] "GET /CarService/ HTTP/1.1" 200 606
+0:0:0:0:0:0:0:1 - - [24/Mar/2017:01:30:01 +0400] "GET /CarService/ HTTP/1.1" 200 606
+127.0.0.1 - - [24/Mar/2017:01:30:07 +0400] "POST /CarService/menu HTTP/1.1" 200 669
+127.0.0.1 - - [24/Mar/2017:01:30:08 +0400] "GET /CarService/admin_orders?action=getallorders HTTP/1.1" 200 2088
+127.0.0.1 - - [24/Mar/2017:01:30:12 +0400] "GET /CarService/admin_freeworkers?action=getfreeworkerspage&orderid=100&orderguid=bde3f292-7302-4482-a8f9-ce43f8bdf0e8&ordertotalcost=100.0&orderworkstatus=NotStarted HTTP/1.1" 200 1310
+127.0.0.1 - - [24/Mar/2017:01:30:42 +0400] "POST /CarService/admin_orders HTTP/1.1" 200 2113
+127.0.0.1 - - [24/Mar/2017:01:30:47 +0400] "GET /CarService/admin_orderworkers?action=getorderworkerspage&orderid=100&orderguid=bde3f292-7302-4482-a8f9-ce43f8bdf0e8&ordertotalcost=100.0&orderworkstatus=NotStarted HTTP/1.1" 200 1328
+127.0.0.1 - - [24/Mar/2017:01:30:50 +0400] "POST /CarService/admin_orders HTTP/1.1" 200 2088

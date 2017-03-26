@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="53112C46-2F24-E965-C3FC-9CCDD8C2624F" name="Cars" seqName="seg_0"/>
+   <object objectType="Table" objectID="A7A394DC-0D4B-0587-67D3-AD7D7970505B" name="Clients" seqName="seg_0"/>
+   <object objectType="Table" objectID="AEE22634-F150-9DF7-5396-27FC020AAEAF" name="Orders" seqName="seg_0"/>
+   <object objectType="Table" objectID="6BAE8B22-1471-6567-AA18-F0E7FBA6F3F2" name="OrdersShareParts" seqName="seg_0"/>
+   <object objectType="Table" objectID="D938B939-0749-2BAF-ABB5-A1CEEF508684" name="OrdersWorkers" seqName="seg_0"/>
+   <object objectType="Table" objectID="523CDD8F-F4E5-D483-33D8-A92906435591" name="OrdersWorks" seqName="seg_0"/>
+   <object objectType="Table" objectID="6922B754-5FB1-31C6-D7D2-2D0A99617259" name="Passwords" seqName="seg_0"/>
+   <object objectType="Table" objectID="8DF2D1AE-BB99-905E-8297-C44D47A4F0EC" name="ShareParts" seqName="seg_0"/>
+   <object objectType="Table" objectID="2A1FD626-CF0C-E05C-31F6-87B80CB84FEB" name="Users" seqName="seg_0"/>
+   <object objectType="Table" objectID="530A2BD7-9F6E-11AC-111D-50885555A0F4" name="Workers" seqName="seg_0"/>
+   <object objectType="Table" objectID="8EE14862-A98E-9D25-96F6-30E4D2390ECF" name="Works" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="F44A3A32-4C5B-B8F9-41AD-301648248C72" name="Cars_Clients_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="71F50B1D-50A3-6130-5924-552958EE9C47" name="Clients_Users_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="B3573492-F0E4-5890-EFAA-33990101585A" name="OrdersShareParts_Orders_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9EB6248F-54AA-4497-AD64-63E9A55696AC" name="OrdersShareParts_ShareParts_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="E0D9F26C-A460-BEFC-85F4-35FFE53AFFDD" name="OrdersWorkers_Orders_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="69C3567D-EE32-D1B3-80B2-0AACC0F41807" name="OrdersWorkers_Workers_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="1CF28730-29A5-EAA9-7B4F-D91755C936CD" name="OrdersWorks_Orders_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="587B063B-79D6-965C-140B-7A05B3573085" name="OrdersWorks_Works_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="61E5A86D-E2DA-916A-3363-9A24E39B0AD5" name="Orders_Cars_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="16460C34-1DF4-6D0D-483B-D1ED8806BF92" name="Workers_Users_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

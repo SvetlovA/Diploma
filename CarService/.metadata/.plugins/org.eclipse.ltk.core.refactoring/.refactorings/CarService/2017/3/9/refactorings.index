@@ -1,0 +1,17 @@
+1488480731216	Delete element
+1488483876497	Delete element
+1488487394683	Rename type 'GetAllWorkers'
+1488487420497	Rename type 'GetAllShareParts'
+1488487762568	Rename type 'BackManuAction'
+1488487779871	Rename enum constant 'BACKMENU'
+1488626407850	Rename type 'GetWorkerAdd'
+1488626420338	Rename type 'GetAdminMenu'
+1488627852019	Extract constant 'LOGIN_PARMETER_NAME'
+1488627911966	Extract constant 'PASSWORD_PARAMETER_NAME'
+1488627983316	Extract constant 'SURNAME_PARAMETER_NAME'
+1488628018699	Extract constant 'NAME_PAREMETER_NAME'
+1488628073786	Extract constant 'PATRONYMIC_PARAMETER_NAME'
+1488628081379	Rename field 'NAME_PAREMETER_NAME'
+1488630190213	Extract constant 'EXPERIENCE_PARAMETER_NAME'
+1488633073137	Rename type 'GetWorkerAddAction'
+1488633096698	Rename type 'GetWorkerDeletePage'

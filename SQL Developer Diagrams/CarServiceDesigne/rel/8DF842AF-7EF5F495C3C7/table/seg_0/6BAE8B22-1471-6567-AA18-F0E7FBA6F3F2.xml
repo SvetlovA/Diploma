@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="6BAE8B22-1471-6567-AA18-F0E7FBA6F3F2" directorySegmentName="seg_0" name="OrdersShareParts">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:37:58 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pkName>OrdersShareParts_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="OrderId" id="B358BB4A-D7CF-CE55-8B04-9447D7889DAA">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:38:44 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>1A42BEF7-7701-6C65-1724-F36529159D5E</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3573492-F0E4-5890-EFAA-33990101585A" referredColumn="1A42BEF7-7701-6C65-1724-F36529159D5E"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="SharePartId" id="23909E35-E1CF-BC7A-BE27-1649F4C59727">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:38:44 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>D2D1BF05-6DB5-AC8C-F91D-D094D0489270</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9EB6248F-54AA-4497-AD64-63E9A55696AC" referredColumn="D2D1BF05-6DB5-AC8C-F91D-D094D0489270"/>
+</associations>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="C8809CBE-40CD-D5A0-6EEC-86F5369F143B" name="OrdersShareParts_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:38:44 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="23909E35-E1CF-BC7A-BE27-1649F4C59727"/>
+<colUsage columnID="B358BB4A-D7CF-CE55-8B04-9447D7889DAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="8CBDEE7C-678D-6BA9-0BB3-B0F5B0E57041" name="OrdersShareParts_ShareParts_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:41:53 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="23909E35-E1CF-BC7A-BE27-1649F4C59727"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="E149A763-E993-1956-A1AB-FF4B0D388147" name="OrdersShareParts_Orders_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:49:25 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="B358BB4A-D7CF-CE55-8B04-9447D7889DAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

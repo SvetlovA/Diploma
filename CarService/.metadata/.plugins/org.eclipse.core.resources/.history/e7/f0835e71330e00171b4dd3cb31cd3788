@@ -1,0 +1,26 @@
+package ru.rsreu.carservice.controller.actions.orders;
+
+import java.sql.SQLException;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import resources.Resourcer;
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.entities.Order;
+import ru.rsreu.carservice.model.entities.Worker;
+
+public class GetOrderWorkersPageAction implements Action {
+
+	private static final String ORDERWORKERS_ATTRIBUTE_NAME = "orderworkers";
+
+	@Override
+	public String execute(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+		Order order = OrderUtils.parseOrder(request);
+		OrderUtils.setOrder(request, order);
+		Set<Worker> orderWorkers = carServiceBl.getOrderWorkers(order);
+		request.setAttribute(ORDERWORKERS_ATTRIBUTE_NAME, orderWorkers);
+		return Resourcer.getString("path.page.order.workers");
+	}
+
+}

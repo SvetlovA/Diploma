@@ -1,0 +1,76 @@
+package ru.rsreu.carservice.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import resources.Resourcer;
+import ru.rsreu.carservice.controller.actions.Permission;
+import ru.rsreu.carservice.model.bll.CarServiceBl;
+
+public class AutentificationFilter implements Filter {
+	
+	private static final String PERMISSION_ATTRIBUTE_NAME = "permission";
+	private static final String PASSWORD_ATTRIBUTE_NAME = "password";
+	private static final String LOGIN_ATTRIBUTE_NAME = "login";
+	private CarServiceBl carServiceBl;
+	
+	@Override
+	public void destroy() {
+		this.carServiceBl = null;
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain filterChain) throws IOException, ServletException {
+		String path = ((HttpServletRequest) request).getRequestURI();
+		System.out.println(path);
+		HttpSession session = ((HttpServletRequest) request).getSession();
+		RequestDispatcher dispatcher = request.getRequestDispatcher(Resourcer.getString("path.page.index"));
+		Object login = session.getAttribute(LOGIN_ATTRIBUTE_NAME);
+		if (login == null) {
+			dispatcher.forward(request, response);
+			return;
+		}
+		Object password = session.getAttribute(PASSWORD_ATTRIBUTE_NAME);
+		if (password == null) {
+			dispatcher.forward(request, response);
+			return;
+		}
+		Permission permission = (Permission) session.getAttribute(PERMISSION_ATTRIBUTE_NAME);
+		if (permission == null) {
+			dispatcher.forward(request, response);
+			return;
+		}
+		try {
+			if (!this.carServiceBl.checkAutentification(login.toString(), password.toString())) {
+				dispatcher.forward(request, response);
+				return;
+			}
+			
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
+		System.out.println("Filter works correctly!");
+		filterChain.doFilter(request, response);
+	}
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		try {
+			this.carServiceBl = new CarServiceBl();
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
+	}
+
+}

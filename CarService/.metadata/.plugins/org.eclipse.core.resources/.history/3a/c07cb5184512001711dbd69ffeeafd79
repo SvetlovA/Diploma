@@ -1,0 +1,23 @@
+package ru.rsreu.carservice.controller.actions;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import resources.Resourcer;
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.model.bll.CarServiceBl;
+
+public class GetLoginPageAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, CarServiceBl carServiceBl)
+			throws SQLException, Exception {
+		HttpSession session = request.getSession();
+		String login = session.getAttribute(Resourcer.getString("parameter.user.login")).toString();
+		String password = session.getAttribute(Resourcer.getString("parameter.user.password")).toString();
+		String permission = session.getAttribute(Resourcer.getString("parameter.user.permisssion")).toString();
+		return Resourcer.getString("path.page.login");
+	}
+}

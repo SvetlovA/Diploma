@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="AEE22634-F150-9DF7-5396-27FC020AAEAF" directorySegmentName="seg_0" name="Orders">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:42:31 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pkName>Orders_PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="OrderId" id="1A42BEF7-7701-6C65-1724-F36529159D5E">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:42:48 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="OrderGuid" id="20898A1A-E904-691F-F851-ADD83DC8C924">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:50:15 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="CarId" id="EB4B5AE7-5EE1-4F70-FA50-70BBBC85A540">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:43:12 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>43A7B897-F8E7-C6D5-2E10-927451C7CE6F</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="61E5A86D-E2DA-916A-3363-9A24E39B0AD5" referredColumn="43A7B897-F8E7-C6D5-2E10-927451C7CE6F"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="TotalCost" id="4B2CD594-7687-6168-D334-2DE76A823498">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-14 15:16:42 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<constraintName>Default_TotalCost</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<defaultValue>0</defaultValue>
+<use>1</use>
+<logicalDatatype>LOGDT022</logicalDatatype>
+<usesDefaultValue>true</usesDefaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>Default_TotalCost</notNullConstraintName>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="Status" id="90B214A8-3214-36C8-2DE2-F87BDD9DE2E9">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-14 15:16:42 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<constraintName>Default_Status</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<defaultValue>NotStarted</defaultValue>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<usesDefaultValue>true</usesDefaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>Default_Status</notNullConstraintName>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="E744F642-4FC5-4C06-8DD6-CED63421D357" name="Orders_PK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:42:48 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="1A42BEF7-7701-6C65-1724-F36529159D5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="07F43707-0AC1-8C57-45F1-68C1C43D1C7F" name="Orders_OrderGuid_UN">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-20 20:50:37 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<indexState>Unique Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="20898A1A-E904-691F-F851-ADD83DC8C924"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="6E69CA72-FA50-A7DD-6760-C82248D5CA4B" name="Orders_Cars_FK">
+<createdBy>21art</createdBy>
+<createdTime>2017-02-13 19:52:57 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="EB4B5AE7-5EE1-4F70-FA50-70BBBC85A540"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

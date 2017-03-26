@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="7FFFB8D5-01B8-3266-6334-66935D12DB79" name="Cars" seqName="seg_0"/>
+   <object objectType="Entity" objectID="2F1A0383-BC3D-8C13-E916-37040B0DFB32" name="Clients" seqName="seg_0"/>
+   <object objectType="Entity" objectID="5004B690-C3AB-B6C7-1DA9-EF5289571445" name="Orders" seqName="seg_0"/>
+   <object objectType="Entity" objectID="436A2B48-2D63-A3D2-7B12-117C3AB8320C" name="OrdersShareParts" seqName="seg_0"/>
+   <object objectType="Entity" objectID="F713BD7F-0A1C-7C63-4F22-79F86CEB7DFC" name="OrdersWorkers" seqName="seg_0"/>
+   <object objectType="Entity" objectID="00A93757-C7CA-34CA-0E33-994A5E737ED8" name="OrdersWorks" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B9808263-3DD2-8FAE-3D24-AE46426C6D26" name="Passwords" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B35BD17D-9FB1-A807-9857-4D0CB6E38E8A" name="ShareParts" seqName="seg_0"/>
+   <object objectType="Entity" objectID="F7021840-A94E-0C0D-03D4-6CAB192FFBB9" name="Users" seqName="seg_0"/>
+   <object objectType="Entity" objectID="9F53D8AB-AA2D-FCD3-F13E-7DC186D3A6D6" name="Workers" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B3746F90-0B22-A507-8950-D294CCDFE526" name="Works" seqName="seg_0"/>
+   <object objectType="Relation" objectID="645E7FD4-4156-47FD-7C8B-22A7C613F3A0" name="Cars_Clients_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="EE20E96D-468E-D1AE-71E6-A6621FE65318" name="Clients_Users_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="FAB7260E-424A-1E15-F7F7-C757161ADA3D" name="OrdersShareParts_Orders_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="B2AB2801-30A8-310A-C234-68E1003F3135" name="OrdersShareParts_ShareParts_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="448E95F6-B11F-AB25-4E52-5F632E374EE0" name="OrdersWorkers_Orders_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BD846CC9-6CDC-E537-62C3-5D0A7A7A20BB" name="OrdersWorkers_Workers_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D383EB93-23BD-288D-D068-ACFAEB7F36F6" name="OrdersWorks_Orders_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="5A4351FC-EB51-9ACE-4B24-D4340995E2A2" name="OrdersWorks_Works_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="8A8B2A7A-0590-4FFD-7DA2-0D45CED42BA6" name="Orders_Cars_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="1316814D-6409-7CA5-2AC3-6E362C5EE69C" name="Workers_Users_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>
