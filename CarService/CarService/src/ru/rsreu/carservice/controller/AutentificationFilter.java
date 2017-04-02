@@ -37,11 +37,13 @@ public class AutentificationFilter implements Filter {
 		Object password = session.getAttribute(Resourcer.getString("parameter.user.password"));
 		Permission permission = (Permission) session.getAttribute(Resourcer.getString("parameter.user.permission"));
 		if (login == null || password == null || permission == null) {
+			System.out.println("Login or password or permission are null...");
 			dispatcher.forward(request, response);
 			return;
 		}
 		try {
 			if (!this.carServiceBl.checkAutentification(login.toString(), password.toString())) {
+				System.out.println("Autentification failed...");
 				dispatcher.forward(request, response);
 				return;
 			}
@@ -49,8 +51,10 @@ public class AutentificationFilter implements Filter {
 			throw new ServletException(e);
 		}
 		if (!url.contains(permission.toString().toLowerCase())) {
+			System.out.println("No permission");
 			dispatcher.forward(request, response);
 		}
+		System.out.println("Filter work correct...");
 		filterChain.doFilter(request, response);
 	}
 

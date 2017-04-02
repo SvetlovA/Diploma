@@ -119,6 +119,18 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
 </Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="OrderDate" id="6DAFF2ED-645A-76B9-2D46-BD962B4678A1">
+<createdBy>21art</createdBy>
+<createdTime>2017-04-02 20:35:25 UTC</createdTime>
+<generatorID>27AB3292-9ED1-A367-398B-80C8299CB9D1</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
 </attributes>
 <identifiers>
 <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="939FE633-B326-1F2C-04B4-6828A910644E" name="Orders_PK">

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.GetDeleteOrderPageAction"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.DeleteOrderAction"/>
-<fullyQualifiedTypeName name="org.apache.catalina.valves.CrawlerSessionManagerValve"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.ActionFactory"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.ConnectionFactory"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
@@ -29,7 +24,6 @@
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.GetSelectWorksPageAction"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.CarUtils"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Order"/>
 <fullyQualifiedTypeName name="java.util.UUID"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Car"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -37,11 +31,8 @@
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.AddOrderAction"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.GETSTATIC"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Client"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.OrderUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.SharePartUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarServiceBl"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Worker"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Work"/>
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
@@ -49,15 +40,24 @@
 <fullyQualifiedTypeName name="com.sun.media.sound.HsbParser"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.DataExtracter"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.SharePart"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.orbutil.fsm.Action"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Action"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.GetLoginPageAction"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.LoginUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.Permission"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.GetWorkerMenuPageAction"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.GetWorkerOrdersPageAction"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.StartProgressAction"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.ResolveAction"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.WorkStatus"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="resources.Resourcer"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Worker"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Order"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.OrderUtils"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

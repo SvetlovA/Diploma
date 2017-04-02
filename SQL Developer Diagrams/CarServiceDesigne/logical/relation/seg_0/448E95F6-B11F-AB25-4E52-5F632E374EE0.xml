@@ -8,7 +8,7 @@
 <item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
 </engineerTo>
 <identifying>true</identifying>
-<optionalSource>true</optionalSource>
+<optionalSource>false</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>5004B690-C3AB-B6C7-1DA9-EF5289571445</sourceEntity>

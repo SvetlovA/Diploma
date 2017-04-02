@@ -61,6 +61,15 @@
 <dataTypeSize>40</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="OrderDate" id="27AB3292-9ED1-A367-398B-80C8299CB9D1">
+<createdBy>21art</createdBy>
+<createdTime>2017-04-02 20:30:37 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CarId" id="EB4B5AE7-5EE1-4F70-FA50-70BBBC85A540">
 <createdBy>21art</createdBy>
 <createdTime>2017-02-13 19:43:12 UTC</createdTime>

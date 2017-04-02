@@ -3,6 +3,7 @@ package ru.rsreu.carservice.controller;
 import ru.rsreu.carservice.controller.actions.GetAdminMenuPageAction;
 import ru.rsreu.carservice.controller.actions.GetClientMenuPageAction;
 import ru.rsreu.carservice.controller.actions.GetLoginPageAction;
+import ru.rsreu.carservice.controller.actions.GetWorkerMenuPageAction;
 import ru.rsreu.carservice.controller.actions.LogOutAction;
 import ru.rsreu.carservice.controller.actions.LoginAction;
 import ru.rsreu.carservice.controller.actions.clients.AddClientAction;
@@ -27,6 +28,9 @@ import ru.rsreu.carservice.controller.actions.orders.GetDeleteOrderPageAction;
 import ru.rsreu.carservice.controller.actions.orders.GetFreeWorkersPageAction;
 import ru.rsreu.carservice.controller.actions.orders.GetOrderWorkersPageAction;
 import ru.rsreu.carservice.controller.actions.orders.GetAddOrderPageAction;
+import ru.rsreu.carservice.controller.actions.orders.GetWorkerOrdersPageAction;
+import ru.rsreu.carservice.controller.actions.orders.ResolveAction;
+import ru.rsreu.carservice.controller.actions.orders.StartProgressAction;
 import ru.rsreu.carservice.controller.actions.shareparts.AddSharePartAction;
 import ru.rsreu.carservice.controller.actions.shareparts.DeleteSharePartAction;
 import ru.rsreu.carservice.controller.actions.shareparts.EditSharePartAction;
@@ -336,6 +340,30 @@ public enum ActionType {
 		@Override
 		public Action getAction() {
 			return new GetLoginPageAction();
+		}
+	},
+	GETWORKERMENU {
+		@Override
+		public Action getAction() {
+			return new GetWorkerMenuPageAction();
+		}
+	},
+	GETWORKERORDERS {
+		@Override
+		public Action getAction() {
+			return new GetWorkerOrdersPageAction();
+		}
+	},
+	STARTPROGRESS {
+		@Override
+		public Action getAction() {
+			return new StartProgressAction();
+		}
+	},
+	RESOLVE {
+		@Override
+		public Action getAction() {
+			return new ResolveAction();
 		}
 	};
 	public abstract Action getAction();

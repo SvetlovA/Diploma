@@ -14,6 +14,8 @@ public class LoginUtils {
 			return Resourcer.getString("path.page.menu.admin");
 		case CLIENT:
 			return Resourcer.getString("path.page.menu.client");
+		case WORKER:
+			return Resourcer.getString("path.page.menu.worker");
 		default:
 			throw new Exception("Page doesn't exists.");
 		}

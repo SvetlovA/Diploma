@@ -63,6 +63,10 @@ public class CarServiceBl {
 		if (client != null) {
 			return Permission.CLIENT;
 		}
+		Worker worker = this.carServiceDao.readWorker(login);
+		if (worker != null) {
+			return Permission.WORKER;
+		}
 		return Permission.ADMIN;
 	}
 	
@@ -178,6 +182,10 @@ public class CarServiceBl {
 		return this.carServiceDao.readClientOrders(client);
 	}
 	
+	public Set<Order> getWorkerOrders(Worker worker) throws SQLException {
+		return this.carServiceDao.readWorkerOrders(worker);
+	}
+	
 	public void updateWorker(Worker worker) throws SQLException {
 		this.carServiceDao.updateWorker(worker);
 	}
@@ -194,6 +202,9 @@ public class CarServiceBl {
 		this.carServiceDao.updateClient(client);
 	}
 	
+	public void updateOrder(Order order) throws SQLException {
+		this.carServiceDao.updateOrder(order);
+	}
 	
 	public void deleteAccount(User user) throws SQLException {
 		this.carServiceDao.deleteUser(user);
