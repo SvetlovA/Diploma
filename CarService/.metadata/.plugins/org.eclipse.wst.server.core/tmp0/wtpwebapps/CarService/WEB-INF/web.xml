@@ -82,5 +82,8 @@
     <url-pattern>/admin_cars</url-pattern>
     <url-pattern>/admin_addcar</url-pattern>
     <url-pattern>/admin_deletecar</url-pattern>
+    
+    <url-pattern>/client_orders</url-pattern>
+    <url-pattern>/client_addorder</url-pattern>
   </filter-mapping>
 </web-app>

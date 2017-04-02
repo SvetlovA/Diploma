@@ -51,13 +51,13 @@
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.DataExtracter"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.SharePart"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.orbutil.fsm.Action"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Action"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.GetLoginPageAction"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="resources.Resourcer"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.LoginUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.Permission"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="resources.Resourcer"/>
 </qualifiedTypeNameHistroy>

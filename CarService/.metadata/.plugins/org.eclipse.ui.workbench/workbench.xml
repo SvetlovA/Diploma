@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="53" version="2.0">
+<workbench progressCount="73" version="2.0">
 <workbenchAdvisor/>
 <window height="912" maximized="true" width="974" x="-7" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -17,16 +17,16 @@
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.browser.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -35,10 +35,164 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+<part id="23"/>
+<part id="24"/>
+<part id="25"/>
+<part id="26"/>
+<part id="27"/>
+<part id="28"/>
+<part id="29"/>
+<part id="30"/>
+<part id="31"/>
+<part id="32"/>
+<part id="33"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="adminmenu.jsp" partName="adminmenu.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/adminmenu.jsp" title="adminmenu.jsp" tooltip="CarService/WebContent/jsp/adminmenu.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/adminmenu.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="117" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AutentificationFilter.java" partName="AutentificationFilter.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/controller/AutentificationFilter.java" title="AutentificationFilter.java" tooltip="CarService/src/ru/rsreu/carservice/controller/AutentificationFilter.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/controller/AutentificationFilter.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1269" selectionTopPixel="239"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginAction.java" partName="LoginAction.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/controller/actions/LoginAction.java" title="LoginAction.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/LoginAction.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/controller/actions/LoginAction.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="998" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="web.xml" partName="web.xml" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/WEB-INF/web.xml" title="web.xml" tooltip="CarService/WebContent/WEB-INF/web.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/WEB-INF/web.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="text.properties" partName="text.properties" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/resources/text.properties" title="text.properties" tooltip="CarService/src/resources/text.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/resources/text.properties"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9443" selectionTopPixel="1469"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="login.jsp" partName="login.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/login.jsp" title="login.jsp" tooltip="CarService/WebContent/jsp/login.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/login.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="442" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="HttpServlet.class" partName="HttpServlet.class" title="HttpServlet.class" tooltip="javax.servlet.http.HttpServlet" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=CarService/C:\/Users\/21art\/Desktop\/Учеба\/Java\/apache-tomcat-7.0.75\/lib\/servlet-api.jar&lt;javax.servlet.http(HttpServlet.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addclient.jsp" partName="addclient.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/addclient.jsp" title="addclient.jsp" tooltip="CarService/WebContent/jsp/clients/addclient.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/addclient.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1115" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addcar.jsp" partName="addcar.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/cars/addcar.jsp" title="addcar.jsp" tooltip="CarService/WebContent/jsp/clients/cars/addcar.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/cars/addcar.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="772" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="cars.jsp" partName="cars.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/cars/cars.jsp" title="cars.jsp" tooltip="CarService/WebContent/jsp/clients/cars/cars.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/cars/cars.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="deletecar.jsp" partName="deletecar.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/cars/deletecar.jsp" title="deletecar.jsp" tooltip="CarService/WebContent/jsp/clients/cars/deletecar.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/cars/deletecar.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="117" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="clients.jsp" partName="clients.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/clients.jsp" title="clients.jsp" tooltip="CarService/WebContent/jsp/clients/clients.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/clients.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="deleteclient.jsp" partName="deleteclient.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/deleteclient.jsp" title="deleteclient.jsp" tooltip="CarService/WebContent/jsp/clients/deleteclient.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/deleteclient.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="117" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="editclient.jsp" partName="editclient.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/editclient.jsp" title="editclient.jsp" tooltip="CarService/WebContent/jsp/clients/editclient.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/editclient.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1188" selectionTopPixel="7"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="error.jsp" partName="error.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/error/error.jsp" title="error.jsp" tooltip="CarService/WebContent/jsp/error/error.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/error/error.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addorder.jsp" partName="addorder.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/addorder.jsp" title="addorder.jsp" tooltip="CarService/WebContent/jsp/orders/addorder.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/addorder.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="635" selectionTopPixel="150"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="clientorders.jsp" partName="clientorders.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/clientorders.jsp" title="clientorders.jsp" tooltip="CarService/WebContent/jsp/orders/clientorders.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/clientorders.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="deleteorder.jsp" partName="deleteorder.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/deleteorder.jsp" title="deleteorder.jsp" tooltip="CarService/WebContent/jsp/orders/deleteorder.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/deleteorder.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="117" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="freeworkers.jsp" partName="freeworkers.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/freeworkers.jsp" title="freeworkers.jsp" tooltip="CarService/WebContent/jsp/orders/freeworkers.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/freeworkers.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="240"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="orders.jsp" partName="orders.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/orders.jsp" title="orders.jsp" tooltip="CarService/WebContent/jsp/orders/orders.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/orders.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="orderworkers.jsp" partName="orderworkers.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/orderworkers.jsp" title="orderworkers.jsp" tooltip="CarService/WebContent/jsp/orders/orderworkers.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/orderworkers.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addsharepart.jsp" partName="addsharepart.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/shareparts/addsharepart.jsp" title="addsharepart.jsp" tooltip="CarService/WebContent/jsp/shareparts/addsharepart.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/shareparts/addsharepart.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="649" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="deletesharepart.jsp" partName="deletesharepart.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/shareparts/deletesharepart.jsp" title="deletesharepart.jsp" tooltip="CarService/WebContent/jsp/shareparts/deletesharepart.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/shareparts/deletesharepart.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="117" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="editsharepart.jsp" partName="editsharepart.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/shareparts/editsharepart.jsp" title="editsharepart.jsp" tooltip="CarService/WebContent/jsp/shareparts/editsharepart.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/shareparts/editsharepart.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1089" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="shareparts.jsp" partName="shareparts.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/shareparts/shareparts.jsp" title="shareparts.jsp" tooltip="CarService/WebContent/jsp/shareparts/shareparts.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/shareparts/shareparts.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addworker.jsp" partName="addworker.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/workers/addworker.jsp" title="addworker.jsp" tooltip="CarService/WebContent/jsp/workers/addworker.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/workers/addworker.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1148" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="deleteworker.jsp" partName="deleteworker.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/workers/deleteworker.jsp" title="deleteworker.jsp" tooltip="CarService/WebContent/jsp/workers/deleteworker.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/workers/deleteworker.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="editworker.jsp" partName="editworker.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/workers/editworker.jsp" title="editworker.jsp" tooltip="CarService/WebContent/jsp/workers/editworker.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/workers/editworker.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1265" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="workers.jsp" partName="workers.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/workers/workers.jsp" title="workers.jsp" tooltip="CarService/WebContent/jsp/workers/workers.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/workers/workers.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="182" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="clientmenu.jsp" partName="clientmenu.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clientmenu.jsp" title="clientmenu.jsp" tooltip="CarService/WebContent/jsp/clientmenu.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clientmenu.jsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="117" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
@@ -94,7 +248,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
+<perspectives activePart="org.eclipse.ui.browser.editor" activePerspective="org.eclipse.jst.j2ee.J2EEPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -191,7 +345,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.15733166" ratioLeft="250" ratioRight="1339" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottomRight" ratio="0.7310253" ratioLeft="549" ratioRight="202" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.wst.server.ui.ServersView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.AllMarkersView" label="Markers"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
@@ -277,31 +431,22 @@
 <view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.wst.server.ui.ServersView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.wst.server.ui.ServersView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1194" ratioRight="398" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1194" ratioRight="398" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7493369" ratioLeft="565" ratioRight="189" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7493369" ratioLeft="565" ratioRight="189" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
@@ -310,31 +455,24 @@
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
 <page content="org.eclipse.wst.xsl.jaxp.debug.ui.view1" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.4495575" ratioLeft="254" ratioRight="311" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1194" ratioRight="398" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1194" ratioRight="398" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="796" ratioRight="796" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="796" ratioRight="796" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -362,14 +500,47 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginUtils.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/utils/LoginUtils.java">
-<persistable path="/CarService/src/ru/rsreu/carservice/controller/actions/utils/LoginUtils.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="clientmenu.jsp" tooltip="CarService/WebContent/jsp/clientmenu.jsp">
+<persistable path="/CarService/WebContent/jsp/clientmenu.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GetLoginPageAction.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/GetLoginPageAction.java">
-<persistable path="/CarService/src/ru/rsreu/carservice/controller/actions/GetLoginPageAction.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="workers.jsp" tooltip="CarService/WebContent/jsp/workers/workers.jsp">
+<persistable path="/CarService/WebContent/jsp/workers/workers.jsp"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ApplicationDispatcher.class" tooltip="org.apache.catalina.core.ApplicationDispatcher">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=CarService/C:\/Users\/21art\/Desktop\/Учеба\/Java\/apache-tomcat-7.0.75\/lib\/catalina.jar&lt;org.apache.catalina.core(ApplicationDispatcher.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="editworker.jsp" tooltip="CarService/WebContent/jsp/workers/editworker.jsp">
+<persistable path="/CarService/WebContent/jsp/workers/editworker.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="deleteworker.jsp" tooltip="CarService/WebContent/jsp/workers/deleteworker.jsp">
+<persistable path="/CarService/WebContent/jsp/workers/deleteworker.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="addworker.jsp" tooltip="CarService/WebContent/jsp/workers/addworker.jsp">
+<persistable path="/CarService/WebContent/jsp/workers/addworker.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="shareparts.jsp" tooltip="CarService/WebContent/jsp/shareparts/shareparts.jsp">
+<persistable path="/CarService/WebContent/jsp/shareparts/shareparts.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="editsharepart.jsp" tooltip="CarService/WebContent/jsp/shareparts/editsharepart.jsp">
+<persistable path="/CarService/WebContent/jsp/shareparts/editsharepart.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="deletesharepart.jsp" tooltip="CarService/WebContent/jsp/shareparts/deletesharepart.jsp">
+<persistable path="/CarService/WebContent/jsp/shareparts/deletesharepart.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="addsharepart.jsp" tooltip="CarService/WebContent/jsp/shareparts/addsharepart.jsp">
+<persistable path="/CarService/WebContent/jsp/shareparts/addsharepart.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="orderworkers.jsp" tooltip="CarService/WebContent/jsp/orders/orderworkers.jsp">
+<persistable path="/CarService/WebContent/jsp/orders/orderworkers.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="orders.jsp" tooltip="CarService/WebContent/jsp/orders/orders.jsp">
+<persistable path="/CarService/WebContent/jsp/orders/orders.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="freeworkers.jsp" tooltip="CarService/WebContent/jsp/orders/freeworkers.jsp">
+<persistable path="/CarService/WebContent/jsp/orders/freeworkers.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="deleteorder.jsp" tooltip="CarService/WebContent/jsp/orders/deleteorder.jsp">
+<persistable path="/CarService/WebContent/jsp/orders/deleteorder.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="clientorders.jsp" tooltip="CarService/WebContent/jsp/orders/clientorders.jsp">
+<persistable path="/CarService/WebContent/jsp/orders/clientorders.jsp"/>
 </file>
 </mruList>
 </workbench>

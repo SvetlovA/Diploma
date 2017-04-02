@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -17,11 +17,11 @@
 	<label>Client guid: ${clientguid}</label><br/>
 	<label>Client login: ${clientlogin}</label><br/>
 	<label for="clientsurname">Client surname:</label><br/>
-	<input id="clientsurname" type="text" name="clientsurname" value="${clientsurname}"/><br/>
+	<input id="clientsurname" type="text" name="clientsurname" value="${clientsurname}" required="required"><br/>
 	<label for="clientname">Client name:</label><br/>
-	<input id="clientname" type="text" name="clientname" value="${clientname}"/><br/>
+	<input id="clientname" type="text" name="clientname" value="${clientname}" required="required"><br/>
 	<label for="clientpatronymic">Client patronymic:</label><br/>
-	<input type="text" name="clientpatronymic" value="${clientpatronymic}"/><br/>
+	<input type="text" name="clientpatronymic" value="${clientpatronymic}" required="required"><br/>
 	<hr/>
 	<input type="submit" value="Update"/>
 	<a href="admin_clients?action=getallclients">Cancel</a>

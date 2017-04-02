@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -17,13 +17,13 @@
 		<label>Worker guid: ${workerguid}</label><br/>
 		<label>Login: ${workerlogin}</label><br/>
 		<label for="surname">Surname:</label><br/>
-		<input id="surname" type="text" name="surname" value="${workersurname}"/><br/>
+		<input id="surname" type="text" name="surname" value="${workersurname}" required="required"><br/>
 		<label for="name">Name:</label><br/>
-		<input id="name" type="text" name="name" value="${workername}"/><br/>
+		<input id="name" type="text" name="name" value="${workername}" required="required"><br/>
 		<label for="patronymic">Patronymic:</label><br/>
-		<input id="patronymic" type="text" name="patronymic" value="${workerpatronymic}"/><br/>
+		<input id="patronymic" type="text" name="patronymic" value="${workerpatronymic}" required="required"><br/>
 		<label for="experience">Experience</label><br/>
-		<input id="experience" type="text" name="experience" value="${workerexperience}"/><br/>
+		<input id="experience" type="number" name="experience" value="${workerexperience}" required="required"><br/>
 		<hr/>
 		<input type="submit" value="Update"/>
 		<a href="admin_workers?action=getallworkers">Cancel</a>

@@ -1,6 +1,0 @@
-package ru.rsreu.carservice.controller.actions;
-
-public enum Permission {
-	USER,
-	ADMIN
-}
