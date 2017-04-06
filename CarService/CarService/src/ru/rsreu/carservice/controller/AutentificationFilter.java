@@ -14,12 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import resources.Resourcer;
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.bll.Permission;
 
 public class AutentificationFilter implements Filter {
 	
-	private CarServiceBl carServiceBl;
+	private CarService carServiceBl;
 	
 	@Override
 	public void destroy() {
@@ -61,7 +61,7 @@ public class AutentificationFilter implements Filter {
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		try {
-			this.carServiceBl = new CarServiceBl();
+			this.carServiceBl = new CarService();
 		} catch (SQLException e) {
 			throw new ServletException(e);
 		}

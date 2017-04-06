@@ -71,6 +71,18 @@
 <dataTypeSize>50</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="IsOnline" id="B8B2FFFE-75F7-B98A-4DCD-4ECF8C59192A">
+<createdBy>21art</createdBy>
+<createdTime>2017-04-06 18:56:26 UTC</createdTime>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<defaultValue>0</defaultValue>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<usesDefaultValue>true</usesDefaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes>
 <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5732CBC7-8BC5-CFB6-FFF6-4AF761A5E7C3" name="Users_PK">

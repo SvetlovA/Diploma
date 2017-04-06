@@ -3,11 +3,12 @@ package ru.rsreu.carservice.controller.actions.works;
 import java.sql.SQLException;
 import java.util.UUID;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.actions.utils.WorkUtils;
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Work;
 
 public class AddWorkAction implements Action {
@@ -16,7 +17,7 @@ public class AddWorkAction implements Action {
 	private static final String WORKNAME_PARAMETER_NAME = "workname";
 
 	@Override
-	public String execute(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+	public String execute(HttpServletRequest request) throws SQLException {
 		Work work = new Work();
 		work.setWorkGuid(UUID.randomUUID());
 		String workName = request.getParameter(WORKNAME_PARAMETER_NAME);
@@ -25,8 +26,10 @@ public class AddWorkAction implements Action {
 		work.setPrice(workPrice);
 		String workDescription = request.getParameter(WORKDESCRIPTION_PARAMETERNAME);
 		work.setDescription(workDescription);
-		carServiceBl.addWork(work);
-		WorkUtils.setWorks(request, carServiceBl.getAllWorks());
+		ServletContext context = request.getServletContext();
+		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
+		carService.addWork(work);
+		WorkUtils.setWorks(request, carService.getAllWorks());
 		return Resourcer.getString("path.page.all.works");
 	}
 

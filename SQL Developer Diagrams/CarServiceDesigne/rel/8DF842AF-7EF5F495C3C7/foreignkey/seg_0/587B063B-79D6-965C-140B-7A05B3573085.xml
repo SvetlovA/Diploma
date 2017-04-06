@@ -4,7 +4,7 @@
 <createdTime>2017-02-13 19:55:10 UTC</createdTime>
 <ownerDesignName>CarServiceDesigne</ownerDesignName>
 <containerWithKeyObject>523CDD8F-F4E5-D483-33D8-A92906435591</containerWithKeyObject>
-<deleteRule>CASCADE</deleteRule>
+<deleteRule>NO ACTION</deleteRule>
 <localFKIndex>473FD3D1-4C9D-4A11-ED5F-8DAA1C28D42E</localFKIndex>
 <keyObject>C4E6807F-14D5-641C-BEB1-308A3D6F8F2B</keyObject>
 <mandatory>true</mandatory>

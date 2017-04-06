@@ -1,0 +1,18 @@
+package ru.rsreu.carservice.controller.actions.clients;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import resources.Resourcer;
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.model.bll.CarService;
+
+public class GetAddClientPageAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, CarService carServiceBl) throws SQLException {
+		return Resourcer.getString("path.page.client.add");
+	}
+
+}

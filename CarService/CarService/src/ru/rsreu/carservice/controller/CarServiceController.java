@@ -4,17 +4,18 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import resources.Resourcer;
+import ru.rsreu.carservice.model.bll.CarService;
 
 public class CarServiceController extends HttpServlet {
 	
 	private ActionFactory client;
-	private CarServiceBl carServiceBl;
 	
 	/**
 	 * 
@@ -23,7 +24,17 @@ public class CarServiceController extends HttpServlet {
 	
 	public CarServiceController() throws SQLException {
 		this.client = new ActionFactory();
-		this.carServiceBl = new CarServiceBl();
+	}
+	
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		ServletContext context = getServletContext();
+		try {
+			context.setAttribute(Resourcer.getString("parameter.carservice"), new CarService());
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
 	}
 
 	@Override
@@ -42,7 +53,7 @@ public class CarServiceController extends HttpServlet {
 		Action action = this.client.getAction(request);
 		String page = null;
 		try {
-			page = action.execute(request, this.carServiceBl);
+			page = action.execute(request);
 		} catch (Exception ex) {
 			throw new ServletException(ex);
 		}

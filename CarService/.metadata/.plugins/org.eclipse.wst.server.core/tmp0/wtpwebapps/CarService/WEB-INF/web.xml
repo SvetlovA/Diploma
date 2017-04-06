@@ -89,4 +89,7 @@
     
     <url-pattern>/worker_orders</url-pattern>
   </filter-mapping>
+  <listener>
+    <listener-class>ru.rsreu.carservice.controller.SessionListener</listener-class>
+  </listener>
 </web-app>

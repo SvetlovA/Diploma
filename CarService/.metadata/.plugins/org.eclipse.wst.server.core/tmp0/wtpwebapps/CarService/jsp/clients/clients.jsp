@@ -17,6 +17,7 @@
 			<th>Name</th>
 			<th>Patronymic</th>
 			<th>Cars</th>
+			<th></th>
 		</tr>
 		<c:forEach items="${clients}" var="client">
 			<tr>
@@ -27,6 +28,7 @@
 				<td>${client.getName()}</td>
 				<td>${client.getPatronymic()}</td>
 				<td>${client.getCars()}</td>
+				<td>${client.getIsOnlineName()}</td>
 				<td>
 					<a href="admin_cars?action=getclientcarspage&clientid=${client.getUserId()}&clientguid=${client.getUserGuid()}&clientlogin=${client.getLogin()}&clientsurname=${client.getSurname()}&clientname=${client.getName()}&clientpatronymic=${client.getPatronymic()}">Cars</a>
 					<a href="admin_deleteclient?action=getclientdeletepage&clientid=${client.getUserId()}&clientguid=${client.getUserGuid()}&clientlogin=${client.getLogin()}&clientsurname=${client.getSurname()}&clientname=${client.getName()}&clientpatronymic=${client.getPatronymic()}">Delete</a>

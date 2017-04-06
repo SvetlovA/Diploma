@@ -3,12 +3,13 @@ package ru.rsreu.carservice.controller.actions.clients.cars;
 import java.sql.SQLException;
 import java.util.UUID;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.actions.utils.CarUtils;
 import ru.rsreu.carservice.controller.actions.utils.ClientUtils;
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Client;
 
@@ -19,7 +20,7 @@ public class AddCarAction implements Action {
 	private static final String CARSTATENUMBER_PARAMETER_NAME = "carstatenumber";
 
 	@Override
-	public String execute(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+	public String execute(HttpServletRequest request) throws SQLException {
 		Car car = new Car();
 		UUID carGuid = UUID.randomUUID();
 		car.setCarGuid(carGuid);
@@ -31,8 +32,10 @@ public class AddCarAction implements Action {
 		car.setModel(carModel);
 		Client client = ClientUtils.parseClient(request);
 		car.setClient(client);
-		carServiceBl.addCar(car);
-		CarUtils.setCars(request, carServiceBl.getClientCars(client));
+		ServletContext context = request.getServletContext();
+		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
+		carService.addCar(car);
+		CarUtils.setCars(request, carService.getClientCars(client));
 		return Resourcer.getString("path.page.client.cars");
 	}
 	

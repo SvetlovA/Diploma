@@ -66,8 +66,10 @@ public interface ICarServiceDao extends Disposable {
 	void deleteCar(UUID carGuid) throws SQLException;
 	void deleteSharePart(SharePart sharePart) throws SQLException;
 	void deleteSharePart(UUID sharePartGuid) throws SQLException;
+	void deleteAllOrderShareParts(SharePart sharePart) throws SQLException;
 	void deleteWork(Work work) throws SQLException;
 	void deleteWork(UUID workGuid) throws SQLException;
+	void deleteAllOrderWorks(Work work) throws SQLException;
 	void deleteOrder(Order order) throws SQLException;
 	void deleteOrder(UUID orderGuid) throws SQLException;
 	void deleteOrderWorker(Order order, Worker worker) throws SQLException;

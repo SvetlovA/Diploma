@@ -7,7 +7,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Order;
 import ru.rsreu.carservice.model.entities.WorkStatus;
 import ru.rsreu.carservice.model.entities.Worker;
@@ -48,7 +48,7 @@ public class OrderUtils {
 		request.setAttribute(ORDERS_ATTRIBUTE_NAME, orders);
 	}
 	
-	public static Set<Worker> getSelectedWorkers(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+	public static Set<Worker> getSelectedWorkers(HttpServletRequest request, CarService carServiceBl) throws SQLException {
 		Set<Worker> selectedWorkers = new HashSet<Worker>();
 		String[] selectedParameters = request.getParameterValues(ISSELECTED_PARAMETER_NAME);
 		for (String selectedParameter : selectedParameters) {

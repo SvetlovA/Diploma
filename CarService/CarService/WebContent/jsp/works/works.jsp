@@ -24,13 +24,13 @@
 				<td>${work.getPrice()}</td>
 				<td>${work.getDescription()}</td>
 				<td>
-					<a href="deletework?action=getworkdeletepage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Delete</a>
-					<a href="editwork?action=getworkeditpage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Edit</a>
+					<a href="admin_deletework?action=getworkdeletepage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Delete</a>
+					<a href="admin_editwork?action=getworkeditpage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Edit</a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="addwork?action=getworkaddpage">Add</a><br/>
+	<a href="admin_addwork?action=getworkaddpage">Add</a><br/>
 	<a href="menu?action=getadminmenu">Back menu</a>
 </body>
 </html>

@@ -7,7 +7,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Work;
 
 public class WorkUtils {
@@ -50,7 +50,7 @@ public class WorkUtils {
 		request.setAttribute(WORKS_ATTRIBUTE_NAME, works);
 	}
 	
-	public static Set<Work> getSelectedWorks(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+	public static Set<Work> getSelectedWorks(HttpServletRequest request, CarService carServiceBl) throws SQLException {
 		Set<Work> selectedWorks = new HashSet<Work>();
 		String[] selectedParameters = request.getParameterValues(ISSELECTED_PARAMETER_NAME);
 		if (selectedParameters != null) {						//TODO: Delete this condition

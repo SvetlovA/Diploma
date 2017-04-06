@@ -41,6 +41,7 @@ public class DataExtracter {
 		client.setSurname(resultSet.getString("Surname"));
 		client.setName(resultSet.getString("Name"));
 		client.setPatronymic(resultSet.getString("Patronymic"));
+		client.setIsOnline(resultSet.getBoolean("IsOnline"));
 		return client;
 	}
 	
@@ -63,6 +64,7 @@ public class DataExtracter {
 		worker.setName(resultSet.getString("Name"));
 		worker.setPatronymic(resultSet.getString("Patronymic"));
 		worker.setExperience(resultSet.getInt("Experience"));
+		worker.setIsOnline(resultSet.getBoolean("IsOnline"));
 		return worker;
 	}
 	

@@ -3,11 +3,12 @@ package ru.rsreu.carservice.controller.actions.shareparts;
 import java.sql.SQLException;
 import java.util.UUID;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.actions.utils.SharePartUtils;
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.SharePart;
 
 public class AddSharePartAction implements Action {
@@ -18,7 +19,7 @@ public class AddSharePartAction implements Action {
 	private static final String SHAREPARTNAME_PARAMETER_NAME = "sharepartname";
 
 	@Override
-	public String execute(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+	public String execute(HttpServletRequest request) throws SQLException {
 		SharePart sharePart = new SharePart();
 		UUID sharePartGuid = UUID.randomUUID();
 		sharePart.setSharePartGuid(sharePartGuid);
@@ -30,8 +31,10 @@ public class AddSharePartAction implements Action {
 		sharePart.setCount(sharePartCount);
 		String sharePartDescription = request.getParameter(SHAREPARTDESCRIPTION_PARAMETER_NAME);
 		sharePart.setDescription(sharePartDescription);
-		carServiceBl.addSharePart(sharePart);
-		SharePartUtils.setShareParts(request, carServiceBl.getAllShareParts());
+		ServletContext context = request.getServletContext();
+		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
+		carService.addSharePart(sharePart);
+		SharePartUtils.setShareParts(request, carService.getAllShareParts());
 		return Resourcer.getString("path.page.all.shareparts");
 	}
 

@@ -78,7 +78,7 @@ public class CarServiceDao implements ICarServiceDao {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.client"));
-			addUser(new User(client.getUserId(), client.getUserGuid(), client.getLogin()));
+			addUser(new User(client.getUserId(), client.getUserGuid(), client.getLogin(), client.getIsOnline()));
 			User user = readUser(client.getLogin());
 			if (user == null) {
 				throw new NullPointerException(Resourcer.getString("message.user.null"));
@@ -129,7 +129,7 @@ public class CarServiceDao implements ICarServiceDao {
 		if (worker == null) {
 			throw new NullPointerException(Resourcer.getString("message.worker.null"));
 		}
-		addUser(new User(worker.getUserId(), worker.getUserGuid(), worker.getLogin()));
+		addUser(new User(worker.getUserId(), worker.getUserGuid(), worker.getLogin(), worker.getIsOnline()));
 		User user = readUser(worker.getLogin());
 		if (user == null) {
 			throw new NullPointerException(Resourcer.getString("message.user.null"));
@@ -1135,7 +1135,8 @@ public class CarServiceDao implements ICarServiceDao {
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.update.user"));
 			preparedStatement.setString(1, user.getLogin());
-			preparedStatement.setString(2, user.getUserGuid().toString());
+			preparedStatement.setBoolean(2, user.getIsOnline());
+			preparedStatement.setString(3, user.getUserGuid().toString());
 			preparedStatement.executeUpdate();
 		} finally {
 			preparedStatement.close();
@@ -1147,7 +1148,7 @@ public class CarServiceDao implements ICarServiceDao {
 		if (client == null) {
 			throw new NullPointerException(Resourcer.getString("message.client.null"));
 		}
-		updateUser(new User(client.getUserId(), client.getUserGuid(), client.getLogin()));
+		updateUser(new User(client.getUserId(), client.getUserGuid(), client.getLogin(), client.getIsOnline()));
 		User user = readUser(client.getLogin());
 		if (user == null) {
 			throw new NullPointerException(Resourcer.getString("message.user.null"));
@@ -1170,7 +1171,7 @@ public class CarServiceDao implements ICarServiceDao {
 		if (worker == null) {
 			throw new NullPointerException(Resourcer.getString("message.worker.null"));
 		}
-		updateUser(new User(worker.getUserId(), worker.getUserGuid(), worker.getLogin()));
+		updateUser(new User(worker.getUserId(), worker.getUserGuid(), worker.getLogin(), worker.getIsOnline()));
 		User user = readUser(worker.getLogin());
 		if (user == null) {
 			throw new NullPointerException(Resourcer.getString("message.user.null"));
@@ -1315,6 +1316,23 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
+	public void deleteAllOrderShareParts(SharePart sharePart)
+			throws SQLException {
+		if (sharePart == null) {
+			throw new NullPointerException(Resourcer.getString("message.sharepart.null"));
+		}
+		SharePart readedSharePart = readSharePart(sharePart.getName());
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.all.shareparts"));
+			preparedStatement.setInt(1, readedSharePart.getSharePartId());
+			preparedStatement.executeUpdate();
+		} finally {
+			preparedStatement.close();
+		}
+	}
+	
+	@Override
 	public void deleteWork(UUID workGuid) throws SQLException {
 		PreparedStatement preparedStatement = null;
 		try {
@@ -1332,6 +1350,22 @@ public class CarServiceDao implements ICarServiceDao {
 			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
 		deleteWork(work.getWorkGuid());
+	}
+	
+	@Override
+	public void deleteAllOrderWorks(Work work) throws SQLException {
+		if (work == null) {
+			throw new NullPointerException(Resourcer.getString("message.work.null"));
+		}
+		Work readedWork = readWork(work.getName());
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.all.order.works"));
+			preparedStatement.setInt(1, readedWork.getWorkId());
+			preparedStatement.executeUpdate();
+		} finally {
+			preparedStatement.close();
+		}
 	}
 	
 	@Override

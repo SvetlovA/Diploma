@@ -7,7 +7,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import ru.rsreu.carservice.model.bll.CarServiceBl;
+import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.SharePart;
 
 public class SharePartUtils {
@@ -54,7 +54,7 @@ public class SharePartUtils {
 		request.setAttribute(SHAREPARTS_ATTRIBUTE_NAME, shareParts);
 	}
 	
-	public static Set<SharePart> getSelectedShareParts(HttpServletRequest request, CarServiceBl carServiceBl) throws SQLException {
+	public static Set<SharePart> getSelectedShareParts(HttpServletRequest request, CarService carServiceBl) throws SQLException {
 		Set<SharePart> selectedShareParts = new HashSet<SharePart>();
 		String[] selectedParameters = request.getParameterValues(ISSELECTED_PARAMETER_NAME);
 		if (selectedParameters != null) {

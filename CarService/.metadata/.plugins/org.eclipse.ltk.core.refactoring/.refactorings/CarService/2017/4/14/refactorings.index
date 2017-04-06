@@ -1,0 +1,10 @@
+1491392468358	Rename type 'CarServiceBl'
+1491504669388	Delete element
+1491504674531	Delete element
+1491506202741	Rename local variable 'carServiceBl'
+1491507039134	Change method 'execute'
+1491507696408	Delete element
+1491508586216	Delete element
+1491510962588	Rename local variable 'sessionEvent'
+1491512251345	Extract constant 'ONLINE_MESSAGE'
+1491512260953	Extract constant 'OFFLINE_MESSAGE'

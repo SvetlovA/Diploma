@@ -10,6 +10,12 @@
 <h3>Add car</h3>
 <form action="admin_cars" method="post">
 	<input type="hidden" name="action" value="addcar"/>
+	<input type="hidden" name="clientid" value="${clientid}">
+	<input type="hidden" name="clientguid" value="${clientguid}">
+	<input type="hidden" name="clientlogin" value="${clientlogin}">
+	<input type="hidden" name="clientsurname" value="${clientsurname}">
+	<input type="hidden" name="clientname" value="${clientname}">
+	<input type="hidden" name="clientpatronymic" value="${clientpatronymic}">
 	<label for="carstatenumber">Input car state number:</label><br/>
 	<input id="carstatenumber" type="text" name="carstatenumber" required="required"><br/>
 	<label for="carmark">Input mark of car:</label><br/>

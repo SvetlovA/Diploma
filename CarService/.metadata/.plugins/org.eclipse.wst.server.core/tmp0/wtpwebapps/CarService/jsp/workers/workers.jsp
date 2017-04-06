@@ -18,6 +18,7 @@
 			<th>Patronymic</th>
 			<th>Experience</th>
 			<th>Orders</th>
+			<th></th>
 		</tr>
 		<c:forEach items="${workers}" var="worker">
 			<tr>
@@ -29,6 +30,7 @@
 				<td>${worker.getPatronymic()}</td>
 				<td>${worker.getExperience()}</td>
 				<td>${worker.getOrders()}</td>
+				<td>${worker.getIsOnlineName()}</td>
 				<td>
 					<a href="admin_deleteworker?action=getworkerdeletepage&workerid=${worker.getUserId()}&workerguid=${worker.getUserGuid()}&workerlogin=${worker.getLogin()}&workersurname=${worker.getSurname()}&workername=${worker.getName()}&workerpatronymic=${worker.getPatronymic()}&workerexperience=${worker.getExperience()}">Delete</a>
 					<a href="admin_editworker?action=getworkereditpage&workerid=${worker.getUserId()}&workerguid=${worker.getUserGuid()}&workerlogin=${worker.getLogin()}&workersurname=${worker.getSurname()}&workername=${worker.getName()}&workerpatronymic=${worker.getPatronymic()}&workerexperience=${worker.getExperience()}">Edit</a>

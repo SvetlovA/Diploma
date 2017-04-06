@@ -4,17 +4,21 @@ import java.util.UUID;
 
 public class User {
 	
+	private static final String OFFLINE_MESSAGE = "Offline";
+	private static final String ONLINE_MESSAGE = "Online";
 	private int userId;
 	private UUID userGuid;
 	private String login;
+	private boolean isOnline;
 	
 	public User() {
 	}
 	
-	public User(int userId, UUID userGuid, String login) {
+	public User(int userId, UUID userGuid, String login, boolean isOnline) {
 		setUserId(userId);
 		setUserGuid(userGuid);
 		setLogin(login);
+		setIsOnline(isOnline);
 	}
 	
 	public int getUserId() {
@@ -39,6 +43,18 @@ public class User {
 	
 	public void setLogin(String login) {
 		this.login = login;
+	}
+	
+	public boolean getIsOnline() {
+		return this.isOnline;
+	}
+	
+	public String getIsOnlineName() {
+		return this.isOnline ? ONLINE_MESSAGE : OFFLINE_MESSAGE;
+	}
+	
+	public void setIsOnline(boolean isOnline) {
+		this.isOnline = isOnline;
 	}
 	
 	@Override
