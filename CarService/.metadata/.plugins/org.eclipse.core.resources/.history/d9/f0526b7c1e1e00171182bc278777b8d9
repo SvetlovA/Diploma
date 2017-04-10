@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -20,8 +19,11 @@ import ru.rsreu.carservice.model.bll.Permission;
 
 public class AutentificationFilter implements Filter {
 	
+	private CarService carService;
+	
 	@Override
 	public void destroy() {
+		this.carService = null;
 	}
 
 	@Override
@@ -31,8 +33,6 @@ public class AutentificationFilter implements Filter {
 		HttpServletResponse servletResponse = (HttpServletResponse) response;
 		String url = servletRequest.getRequestURI();
 		HttpSession session = servletRequest.getSession();
-		ServletContext context = servletRequest.getServletContext();
-		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		Object login = session.getAttribute(Resourcer.getString("parameter.user.login"));
 		Object password = session.getAttribute(Resourcer.getString("parameter.user.password"));
 		Permission permission = (Permission) session.getAttribute(Resourcer.getString("parameter.user.permission"));
@@ -42,7 +42,7 @@ public class AutentificationFilter implements Filter {
 			return;
 		}
 		try {
-			if (!carService.checkAutentification(login.toString(), password.toString())) {
+			if (!this.carService.checkAutentification(login.toString(), password.toString())) {
 				System.out.println("Autentification failed...");
 				servletResponse.sendRedirect(Resourcer.getString("path.page.start"));
 				return;
@@ -60,6 +60,11 @@ public class AutentificationFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
+		try {
+			this.carService = new CarService();
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
 	}
 
 }

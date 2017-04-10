@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.clients.ClientUtils"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.clients.cars.CarUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.shareparts.SharePartUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.workers.WorkersUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.works.WorkUtils"/>
@@ -51,13 +49,15 @@
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.User"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarService"/>
-<fullyQualifiedTypeName name="resources.Resourcer"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionEvent"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionAttributeListener"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionBindingEvent"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarService"/>
+<fullyQualifiedTypeName name="resources.Resourcer"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.ActionFactory"/>
 </qualifiedTypeNameHistroy>

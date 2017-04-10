@@ -24,11 +24,6 @@ public class SessionListener implements HttpSessionAttributeListener {
 
 	@Override
 	public void attributeReplaced(HttpSessionBindingEvent sessionBindingEvent) {
-		try {
-			throw new Exception("Session was changed.");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	
 	private void setUserStatus(HttpSessionBindingEvent sessionBindingEvent, boolean isOnline) {

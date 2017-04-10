@@ -80,7 +80,6 @@ message.order.null = Order can't be null.
 message.work.null = Work can't be null.
 message.sharepart.null = Share part can't be null.
 
-path.page.start = /CarService
 path.page.index = /index.jsp
 path.page.login = /jsp/login.jsp
 path.page.orders = /jsp/orders/orders.jsp
