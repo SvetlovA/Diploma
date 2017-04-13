@@ -14,4 +14,9 @@ public class GetAddWorkerPageAction implements Action {
 		return Resourcer.getString("path.page.worker.add");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

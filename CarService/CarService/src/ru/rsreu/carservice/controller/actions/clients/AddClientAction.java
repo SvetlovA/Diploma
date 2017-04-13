@@ -7,7 +7,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
-import ru.rsreu.carservice.controller.actions.utils.ClientUtils;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Client;
 
@@ -36,8 +36,12 @@ public class AddClientAction implements Action {
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		carService.addClient(client, clientPassword);
-		ClientUtils.setClients(request, carService.getAllClients());
-		return Resourcer.getString("path.page.all.clients");
+		return BaseUtils.getServletPath(Resourcer.getString("url.pattern.adminclients"), Resourcer.getString("action.getallclients"));
+	}
+
+	@Override
+	public boolean isForward() {
+		return false;
 	}
 	
 }

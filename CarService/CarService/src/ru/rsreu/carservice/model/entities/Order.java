@@ -152,4 +152,9 @@ public class Order {
 			return false;
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		return getOrderGuid().toString();
+	}
 }

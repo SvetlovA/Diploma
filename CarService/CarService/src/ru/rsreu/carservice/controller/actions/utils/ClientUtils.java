@@ -49,4 +49,33 @@ public class ClientUtils {
 	public static void setClients(HttpServletRequest request, Set<Client> clients) {
 		request.setAttribute(CLIENTS_ATTRIBUTE_NAME, clients);
 	}
+	
+	public static String getServletPath(String urlPattern, String action, Client client) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+		servletPath.append("&");
+		servletPath.append(CLIENTID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(client.getUserId());
+		servletPath.append("&");
+		servletPath.append(CLIENTGUID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(client.getUserGuid());
+		servletPath.append("&");
+		servletPath.append(CLIENTLOGIN_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(client.getLogin());
+		servletPath.append("&");
+		servletPath.append(CLIENTSURNAME_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(client.getSurname());
+		servletPath.append("&");
+		servletPath.append(CLIENTNAME_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(client.getName());
+		servletPath.append("&");
+		servletPath.append(CLIENTPATRONYMIC_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(client.getPatronymic());
+		return servletPath.toString();
+	}
 }

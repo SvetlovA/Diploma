@@ -58,4 +58,25 @@ public class OrderUtils {
 		
 		return selectedWorkers;
 	}
+	
+	public static String getServletPath(String urlPattern, String action, Order order) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+		servletPath.append("&");
+		servletPath.append(ORDERID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(order.getOrderId());
+		servletPath.append("&");
+		servletPath.append(ORDERGUID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(order.getOrderGuid());
+		servletPath.append("&");
+		servletPath.append(ORDERTOTALCOST_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(order.getTotalCost());
+		servletPath.append("&");
+		servletPath.append(ORDERWORKSTATUS_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(order.getStatus());
+		return servletPath.toString();
+	}
 }

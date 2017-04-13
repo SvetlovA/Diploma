@@ -6,16 +6,13 @@ import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
-import ru.rsreu.carservice.controller.actions.utils.OrderUtils;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.SharePartUtils;
 import ru.rsreu.carservice.controller.actions.utils.WorkUtils;
 import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Car;
-import ru.rsreu.carservice.model.entities.Client;
 import ru.rsreu.carservice.model.entities.Order;
 import ru.rsreu.carservice.model.entities.SharePart;
 import ru.rsreu.carservice.model.entities.Work;
@@ -40,12 +37,12 @@ public class AddOrderAction implements Action {
 		Set<SharePart> selectedShareParts = SharePartUtils.getSelectedShareParts(request, carService);
 		order.setShareParts(selectedShareParts);
 		carService.addOrder(order, order.getWorks(), order.getShareParts());
-		HttpSession session = request.getSession();
-		String login = session.getAttribute(Resourcer.getString("parameter.user.login")).toString();
-		Client client = carService.getClient(login);
-		Set<Order> orders = carService.getClientOrders(client);
-		OrderUtils.setOrders(request, orders);
-		return Resourcer.getString("path.page.client.orders");
+		return BaseUtils.getServletPath(Resourcer.getString("url.pattern.clientorders"), Resourcer.getString("action.getclientorders"));
+	}
+
+	@Override
+	public boolean isForward() {
+		return false;
 	}
 
 }

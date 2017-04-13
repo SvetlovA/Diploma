@@ -10,20 +10,20 @@
 <h3>Edit worker ${workername}</h3>
 	<form action="admin_workers" method="post">
 		<input type="hidden" name="action" value="editworker"/>
-		<input type="hidden" name="userId" value="${workerid}"/>
-		<input type="hidden" name="userGuid" value="${workerguid}"/>
-		<input type="hidden" name="workerLogin" value="${workerlogin}"/>
+		<input type="hidden" name="workerid" value="${workerid}"/>
+		<input type="hidden" name="workerguid" value="${workerguid}"/>
+		<input type="hidden" name="workerlogin" value="${workerlogin}"/>
 		<label>Worker ID: ${workerid}</label><br/>
 		<label>Worker guid: ${workerguid}</label><br/>
 		<label>Login: ${workerlogin}</label><br/>
 		<label for="surname">Surname:</label><br/>
-		<input id="surname" type="text" name="surname" value="${workersurname}" required="required"><br/>
+		<input id="surname" type="text" name="workersurname" value="${workersurname}" required="required"><br/>
 		<label for="name">Name:</label><br/>
-		<input id="name" type="text" name="name" value="${workername}" required="required"><br/>
+		<input id="name" type="text" name="workername" value="${workername}" required="required"><br/>
 		<label for="patronymic">Patronymic:</label><br/>
-		<input id="patronymic" type="text" name="patronymic" value="${workerpatronymic}" required="required"><br/>
+		<input id="patronymic" type="text" name="workerpatronymic" value="${workerpatronymic}" required="required"><br/>
 		<label for="experience">Experience</label><br/>
-		<input id="experience" type="number" name="experience" value="${workerexperience}" required="required"><br/>
+		<input id="experience" type="number" name="workerexperience" value="${workerexperience}" required="required"><br/>
 		<hr/>
 		<input type="submit" value="Update"/>
 		<a href="admin_workers?action=getallworkers">Cancel</a>

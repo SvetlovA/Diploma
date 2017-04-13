@@ -19,4 +19,9 @@ public class GetAllClientsAction implements Action {
 		ClientUtils.setClients(request, carService.getAllClients());
 		return Resourcer.getString("path.page.all.clients");
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

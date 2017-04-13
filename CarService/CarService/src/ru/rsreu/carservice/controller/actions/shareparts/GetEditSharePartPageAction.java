@@ -17,4 +17,9 @@ public class GetEditSharePartPageAction implements Action {
 		SharePartUtils.setSharePart(request, sharePart);
 		return Resourcer.getString("path.page.sharepart.edit");
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

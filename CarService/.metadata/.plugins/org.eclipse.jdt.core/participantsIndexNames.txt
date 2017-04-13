@@ -53,9 +53,9 @@ C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp
 \CarService\src
 C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2855459410.index
 \02-17-Svetlov\src
-C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3191415000.index
-\CarService\src
 C:\Users\21art\Desktop\?????\Diploma.git\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\502248100.index
+\CarService\src
+C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3191415000.index
 \CarService\src
 C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1238516585.index
 \03-23-Fedyaev\src
@@ -93,12 +93,8 @@ C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp
 \CarService\src
 C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2058723136.index
 \02-17-Svetlov\src
-C:\Users\21art\Desktop\?????\Diploma.git\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3667268569.index
-\CarService\src
 C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4131739535.index
 \04-17-Svetlov\src
-C:\Users\21art\Desktop\?????\Diploma.git\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\502248100.index
-\CarService\src
 C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2183106250.index
 \04-17-Svetlov\src
 C:\Users\21art\Desktop\Diploma\CarService\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1243351624.index

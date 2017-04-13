@@ -14,4 +14,9 @@ public class GetAddClientPageAction implements Action {
 		return Resourcer.getString("path.page.client.add");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

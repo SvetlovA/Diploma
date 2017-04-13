@@ -21,8 +21,12 @@ public class DeleteCarAction implements Action {
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		carService.deleteCar(car);
 		Client client = ClientUtils.parseClient(request);
-		CarUtils.setCars(request, carService.getClientCars(client));
-		return Resourcer.getString("path.page.client.cars");
+		return ClientUtils.getServletPath(Resourcer.getString("url.pattern.admincars"), Resourcer.getString("action.getclientcarspage"), client);
+	}
+
+	@Override
+	public boolean isForward() {
+		return false;
 	}
 
 }

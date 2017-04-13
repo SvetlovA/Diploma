@@ -15,4 +15,9 @@ public class GetWorkerMenuPageAction implements Action {
 		return Resourcer.getString("path.page.menu.worker");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

@@ -38,4 +38,9 @@ public class GetLoginPageAction implements Action {
 		Permission permission = Permission.valueOf(permissionName.toString().toUpperCase());
 		return LoginUtils.getPage(permission);
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

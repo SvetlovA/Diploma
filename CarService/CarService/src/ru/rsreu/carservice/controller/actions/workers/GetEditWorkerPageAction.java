@@ -16,4 +16,9 @@ public class GetEditWorkerPageAction implements Action {
 		WorkerUtils.setWorker(request, worker);
 		return Resourcer.getString("path.page.worker.edit");
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

@@ -50,7 +50,7 @@ import ru.rsreu.carservice.controller.actions.works.DeleteWorkAction;
 import ru.rsreu.carservice.controller.actions.works.EditWorkAction;
 import ru.rsreu.carservice.controller.actions.works.GetAllWorksAction;
 import ru.rsreu.carservice.controller.actions.works.GetDeleteWorkPageAction;
-import ru.rsreu.carservice.controller.actions.works.GetEditWorkAction;
+import ru.rsreu.carservice.controller.actions.works.GetEditWorkPageAction;
 import ru.rsreu.carservice.controller.actions.works.GetAddWorkPageAction;
 
 public enum ActionType {
@@ -159,7 +159,7 @@ public enum ActionType {
 	GETWORKEDITPAGE {
 		@Override
 		public Action getAction() {
-			return new GetEditWorkAction();
+			return new GetEditWorkPageAction();
 		}
 	},
 	DELETEWORK {

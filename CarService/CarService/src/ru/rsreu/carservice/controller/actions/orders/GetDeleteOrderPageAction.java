@@ -18,4 +18,9 @@ public class GetDeleteOrderPageAction implements Action {
 		return Resourcer.getString("path.page.order.delete");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

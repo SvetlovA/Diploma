@@ -7,6 +7,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.OrderUtils;
 import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.entities.Order;
@@ -21,7 +22,11 @@ public class AddOrderWorkersAction implements Action {
 		Set<Worker> selectedWorkers = OrderUtils.getSelectedWorkers(request, carService);
 		Order order = OrderUtils.parseOrder(request);
 		carService.addOrderWorkers(order, selectedWorkers);
-		OrderUtils.setOrders(request, carService.getAllOrders());
-		return Resourcer.getString("path.page.all.orders");
+		return BaseUtils.getServletPath(Resourcer.getString("url.pattern.adminorders"), Resourcer.getString("action.getallorders"));
+	}
+
+	@Override
+	public boolean isForward() {
+		return false;
 	}
 }

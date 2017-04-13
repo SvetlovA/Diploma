@@ -24,4 +24,9 @@ public class GetFreeWorkersPageAction implements Action {
 		return Resourcer.getString("path.page.free.workers");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

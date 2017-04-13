@@ -62,4 +62,29 @@ public class WorkUtils {
 		}
 		return selectedWorks;
 	}
+	
+	public static String getServletPath(String urlPattern, String action, Work work) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+		servletPath.append("&");
+		servletPath.append(WORKID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(work.getWorkId());
+		servletPath.append("&");
+		servletPath.append(WORKGUID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(work.getWorkGuid());
+		servletPath.append("&");
+		servletPath.append(WORKNAME_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(work.getName());
+		servletPath.append("&");
+		servletPath.append(WORKPRICE_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(work.getPrice());
+		servletPath.append("&");
+		servletPath.append(WORKDESCRIPTION_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(work.getDescription());
+		return servletPath.toString();
+	}
 }

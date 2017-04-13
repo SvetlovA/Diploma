@@ -26,4 +26,9 @@ public class GetClientCarsPageAction implements Action {
 		return Resourcer.getString("path.page.client.cars");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

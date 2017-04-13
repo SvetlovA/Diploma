@@ -17,4 +17,9 @@ public class GetDeleteWorkPageAction implements Action {
 		WorkUtils.setWork(request, work);
 		return Resourcer.getString("path.page.work.delete");
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

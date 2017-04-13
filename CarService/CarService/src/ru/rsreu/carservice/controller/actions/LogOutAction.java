@@ -15,4 +15,9 @@ public class LogOutAction implements Action {
 		return Resourcer.getString("path.page.index");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

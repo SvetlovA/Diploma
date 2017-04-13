@@ -45,4 +45,29 @@ public class CarUtils {
 	public static void setCars(HttpServletRequest request, Set<Car> cars) {
 		request.setAttribute(CARS_ATTRIBUTE_NAME, cars);
 	}
+	
+	public static String getServletPath(String urlPattern, String action, Car car) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+		servletPath.append("&");
+		servletPath.append(CARID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(car.getCarId());
+		servletPath.append("&");
+		servletPath.append(CARGUID_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(car.getCarGuid());
+		servletPath.append("&");
+		servletPath.append(CARNUMBER_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(car.getNumber());
+		servletPath.append("&");
+		servletPath.append(CARMARK_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(car.getMark());
+		servletPath.append("&");
+		servletPath.append(CARMODEL_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(car.getModel());
+		return servletPath.toString();
+	}
 }

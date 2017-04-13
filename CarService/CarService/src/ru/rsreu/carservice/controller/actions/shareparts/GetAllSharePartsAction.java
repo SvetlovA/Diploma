@@ -20,4 +20,9 @@ public class GetAllSharePartsAction implements Action {
 		return Resourcer.getString("path.page.all.shareparts");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

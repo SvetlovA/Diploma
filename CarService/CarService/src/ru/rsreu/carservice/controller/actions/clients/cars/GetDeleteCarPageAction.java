@@ -22,4 +22,9 @@ public class GetDeleteCarPageAction implements Action {
 		return Resourcer.getString("path.page.car.delete");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

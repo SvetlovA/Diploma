@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>Are you sure to delete car ${carmark} ${carmodel}</h3>
-<form action="admin_carservicecontroller" method="post">
+<form action="admin_cars" method="post">
 	<input type="hidden" name="action" value="deletecar"/>
 	<input type="hidden" name="clientid" value="${clientid}">
 	<input type="hidden" name="clientguid" value="${clientguid}">

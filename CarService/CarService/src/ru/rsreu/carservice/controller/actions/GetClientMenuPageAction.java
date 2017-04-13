@@ -15,4 +15,9 @@ public class GetClientMenuPageAction implements Action {
 		return Resourcer.getString("path.page.menu.client");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

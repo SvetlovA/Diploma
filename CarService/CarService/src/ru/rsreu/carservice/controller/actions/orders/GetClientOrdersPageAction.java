@@ -29,4 +29,9 @@ public class GetClientOrdersPageAction implements Action {
 		return Resourcer.getString("path.page.client.orders");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

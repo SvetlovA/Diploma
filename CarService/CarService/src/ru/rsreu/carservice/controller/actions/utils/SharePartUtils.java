@@ -66,4 +66,33 @@ public class SharePartUtils {
 		}
 		return selectedShareParts;
 	}
+	
+	public static String getServletPath(String urlPattern, String action, SharePart sharePart) {
+		StringBuilder servlePath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+		servlePath.append("&");
+		servlePath.append(SHAREPARTID_PARAMETER_NAME);
+		servlePath.append("=");
+		servlePath.append(sharePart.getSharePartId());
+		servlePath.append("&");
+		servlePath.append(SHAREPARTGUID_PARAMETER_NAME);
+		servlePath.append("=");
+		servlePath.append(sharePart.getSharePartGuid());
+		servlePath.append("&");
+		servlePath.append(SHAREPARTNAME_PARAMETER_NAME);
+		servlePath.append("=");
+		servlePath.append(sharePart.getName());
+		servlePath.append("&");
+		servlePath.append(SHAREPARTPRICE_PARAMETER_NAME);
+		servlePath.append("=");
+		servlePath.append(sharePart.getPrice());
+		servlePath.append("&");
+		servlePath.append(SHAREPARTCOUNT_PARAMETER_NAME);
+		servlePath.append("=");
+		servlePath.append(sharePart.getCount());
+		servlePath.append("&");
+		servlePath.append(SHAREPARTDESCRIPTION_PARAMETER_NAME);
+		servlePath.append("=");
+		servlePath.append(sharePart.getDescription());
+		return servlePath.toString();
+	}
 }

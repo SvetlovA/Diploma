@@ -17,4 +17,9 @@ public class GetDeleteSharePartPageAction implements Action {
 		SharePartUtils.setSharePart(request, sharePart);
 		return Resourcer.getString("path.page.sharepart.delete");
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

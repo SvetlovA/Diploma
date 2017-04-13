@@ -23,4 +23,9 @@ public class GetOrderWorkersPageAction implements Action {
 		return Resourcer.getString("path.page.order.workers");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

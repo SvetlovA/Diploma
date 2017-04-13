@@ -20,4 +20,9 @@ public class GetAllWorksAction implements Action {
 		return Resourcer.getString("path.page.all.works");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

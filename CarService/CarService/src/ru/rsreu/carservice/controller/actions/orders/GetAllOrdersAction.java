@@ -20,4 +20,9 @@ public class GetAllOrdersAction implements Action {
 		return Resourcer.getString("path.page.all.orders");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

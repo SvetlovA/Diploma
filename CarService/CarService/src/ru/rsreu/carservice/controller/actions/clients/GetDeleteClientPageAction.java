@@ -18,4 +18,9 @@ public class GetDeleteClientPageAction implements Action {
 		return Resourcer.getString("path.page.client.delete");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

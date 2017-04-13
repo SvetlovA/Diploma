@@ -32,4 +32,9 @@ public class LoginAction implements Action {
 			return Resourcer.getString("path.page.login");
 		}
 	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
 }

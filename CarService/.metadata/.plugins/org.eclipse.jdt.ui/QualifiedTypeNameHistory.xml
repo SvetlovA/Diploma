@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.shareparts.SharePartUtils"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.workers.WorkersUtils"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.works.WorkUtils"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.workers.WorkerUtils"/>
 <fullyQualifiedTypeName name="javax.servlet.FilterConfig"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.OrderUtils"/>
@@ -13,11 +9,9 @@
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.CarUtils"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Car"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.WorkUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.AddOrderAction"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.GETSTATIC"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Client"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.SharePartUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarServiceBl"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -40,7 +34,6 @@
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.OrderUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Work"/>
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.SharePart"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="sun.util.resources.LocaleData"/>
 <fullyQualifiedTypeName name="java.util.UUID"/>
@@ -58,6 +51,13 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarService"/>
-<fullyQualifiedTypeName name="resources.Resourcer"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.ActionFactory"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.Utils"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Client"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.SharePart"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.ClientUtils"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.BaseUtils"/>
+<fullyQualifiedTypeName name="resources.Resourcer"/>
 </qualifiedTypeNameHistroy>

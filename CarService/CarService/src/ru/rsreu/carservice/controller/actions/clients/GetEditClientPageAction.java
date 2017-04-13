@@ -18,4 +18,9 @@ public class GetEditClientPageAction implements Action {
 		return Resourcer.getString("path.page.client.edit");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }

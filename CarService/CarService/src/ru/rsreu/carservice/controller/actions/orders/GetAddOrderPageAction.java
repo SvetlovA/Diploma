@@ -37,4 +37,9 @@ public class GetAddOrderPageAction implements Action {
 		return Resourcer.getString("path.page.order.add");
 	}
 
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
 }
