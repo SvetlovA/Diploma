@@ -1,0 +1,11 @@
+(function() {
+	var indicators = document.querySelectorAll(".indicator"),
+		parentNode;
+	
+	indicators.forEach(function(indicator) {
+		parentNode = indicator.parentNode;
+		if (parentNode.innerHtml === "Online") {
+			indicator.classList.add("online");
+		}
+	});
+})();

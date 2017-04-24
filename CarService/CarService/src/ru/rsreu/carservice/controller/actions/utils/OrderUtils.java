@@ -1,6 +1,7 @@
 package ru.rsreu.carservice.controller.actions.utils;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -14,6 +15,7 @@ import ru.rsreu.carservice.model.entities.Worker;
 
 public class OrderUtils {
 	
+	private static final String ORDERDATE_PARAMETER_NAME = "orderdate";
 	private static final String ORDERS_ATTRIBUTE_NAME = "orders";
 	private static final String ORDERWORKSTATUS_PARAMETER_NAME = "orderworkstatus";
 	private static final String ORDERTOTALCOST_PARAMETER_NAME = "ordertotalcost";
@@ -30,6 +32,8 @@ public class OrderUtils {
 		order.setOrderId(orderId);
 		UUID orderGuid = UUID.fromString(request.getParameter(ORDERGUID_PARAMETER_NAME));
 		order.setOrderGuid(orderGuid);
+		Timestamp orderDate = Timestamp.valueOf(request.getParameter(ORDERDATE_PARAMETER_NAME));
+		order.setOrderDate(orderDate);
 		double orderTotalCost = Double.parseDouble(request.getParameter(ORDERTOTALCOST_PARAMETER_NAME));
 		order.setTotalCost(orderTotalCost);
 		WorkStatus orderWorkStatus = WorkStatus.valueOf(request.getParameter(ORDERWORKSTATUS_PARAMETER_NAME));
@@ -40,6 +44,7 @@ public class OrderUtils {
 	public static void setOrder(HttpServletRequest request, Order order) {
 		request.setAttribute(ORDERID_PARAMETER_NAME, order.getOrderId());
 		request.setAttribute(ORDERGUID_PARAMETER_NAME, order.getOrderGuid());
+		request.setAttribute(ORDERDATE_PARAMETER_NAME, order.getOrderDate());
 		request.setAttribute(ORDERTOTALCOST_PARAMETER_NAME, order.getTotalCost());
 		request.setAttribute(ORDERWORKSTATUS_PARAMETER_NAME, order.getStatus());
 	}
@@ -69,6 +74,10 @@ public class OrderUtils {
 		servletPath.append(ORDERGUID_PARAMETER_NAME);
 		servletPath.append("=");
 		servletPath.append(order.getOrderGuid());
+		servletPath.append("&");
+		servletPath.append(ORDERDATE_PARAMETER_NAME);
+		servletPath.append("=");
+		servletPath.append(order.getOrderDate());
 		servletPath.append("&");
 		servletPath.append(ORDERTOTALCOST_PARAMETER_NAME);
 		servletPath.append("=");

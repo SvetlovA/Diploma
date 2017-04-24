@@ -5,10 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Menu</title>
+<link rel="stylesheet" href="styles/CarServiceMenuStyle.css">
 </head>
 <body>
 	<h3>Hello ${login}</h3>
-	<a href="worker_orders?action=getworkerorders">Orders</a>
+	<ul class="menu">
+		<li class="menu-item"><a href="worker_orders?action=getworkerorders">Orders</a></li>
+	</ul>
 	<hr>
 	<a href="login?action=logout">Logout</a>
 </body>

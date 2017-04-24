@@ -1,0 +1,7 @@
+package ru.rsreu.carservice.controller;
+
+public class Page {
+	public Page() {
+		
+	}
+}

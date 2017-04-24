@@ -13,8 +13,9 @@
 		<input id="login" type="text" name="login" required="required"><br/>
 		<label for="password"> Password:</label><br/>
 		<input id="password" type="password" name="password" required="required"> <br />
-		${errorLoginPassword}
 		<input type="submit" value="login">
+		<a href="registration?action=getregistrationpage">Registration</a>
+		${errorLoginPassword}
 	</form>
 </body>
 </html>

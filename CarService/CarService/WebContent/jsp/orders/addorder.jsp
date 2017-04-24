@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Works</title>
+<title>Add order</title>
+<link rel="stylesheet" href="styles/TableStyle.css">
 </head>
 <body>
 	<form action="client_addorder" method="post">
@@ -16,50 +17,49 @@
 				<option value="${car.getNumber()}">${car}</option>
 			</c:forEach>
 		</select>
+		<hr>
 		<h3>Select works for order:</h3>
-		<table>
-			<tr>
-				<th>Work ID</th>
-				<th>Work Guid</th>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Description</th>
+		<table class="table">
+			<tr class="table-row">
+				<th class="table-header-cell action"></th>
+				<th class="table-header-cell">Work Guid</th>
+				<th class="table-header-cell">Name</th>
+				<th class="table-header-cell">Price</th>
+				<th class="table-header-cell">Description</th>
 			</tr>
 			<c:forEach items="${works}" var="work">
-				<tr>
-					<td>${work.getWorkId()}</td>
-					<td>${work.getWorkGuid()}</td>
-					<td>${work.getName()}</td>
-					<td>${work.getPrice()}</td>
-					<td>${work.getDescription()}</td>
-					<td>
+				<tr class="table-row">
+					<td class="table-cell action">
 						<input type="checkbox" name="isselectedwork" value="${work.getWorkGuid()}">
 					</td>
+					<td class="table-cell">${work.getWorkGuid()}</td>
+					<td class="table-cell">${work.getName()}</td>
+					<td class="table-cell">${work.getPrice()}</td>
+					<td class="table-cell">${work.getDescription()}</td>
 				</tr>
 			</c:forEach>
 		</table>
 		<hr>
 		<h3>Select share parts for order(if you need it):</h3>
-		<table>
-			<tr>
-				<th>Share part ID</th>
-				<th>Share part Guid</th>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Count</th>
-				<th>Description</th>
+		<table class="table">
+			<tr class="table-row">
+				<th class="table-header-cell action"></th>
+				<th class="table-header-cell">Share part Guid</th>
+				<th class="table-header-cell">Name</th>
+				<th class="table-header-cell">Price</th>
+				<th class="table-header-cell">Count</th>
+				<th class="table-header-cell">Description</th>
 			</tr>
 			<c:forEach items="${shareparts}" var="sharePart">
-				<tr>
-					<td>${sharePart.getSharePartId()}</td>
-					<td>${sharePart.getSharePartGuid()}</td>
-					<td>${sharePart.getName()}</td>
-					<td>${sharePart.getPrice()}</td>
-					<td>${sharePart.getCount()}</td>
-					<td>${sharePart.getDescription()}</td>
-					<td>
+				<tr class="table-row">
+					<td class="table-cell action">
 						<input type="checkbox" name="isselectedsharepart" value="${sharePart.getSharePartGuid()}">
 					</td>
+					<td class="table-cell">${sharePart.getSharePartGuid()}</td>
+					<td class="table-cell">${sharePart.getName()}</td>
+					<td class="table-cell">${sharePart.getPrice()}</td>
+					<td class="table-cell">${sharePart.getCount()}</td>
+					<td class="table-cell">${sharePart.getDescription()}</td>
 				</tr>
 			</c:forEach>
 		</table>

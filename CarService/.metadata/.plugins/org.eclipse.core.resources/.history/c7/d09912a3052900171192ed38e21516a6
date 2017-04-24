@@ -1,0 +1,9 @@
+(function() {
+	var indicators = document.querySelectorAll(".indicator"),
+		parentNode;
+	
+	indicators.forEach(function(indicator) {
+		parentNode = inicator.parentNode;
+		if ()
+	});
+})();

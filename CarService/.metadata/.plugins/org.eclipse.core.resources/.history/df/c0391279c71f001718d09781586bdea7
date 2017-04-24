@@ -1,8 +1,0 @@
-package ru.rsreu.carservice.controller.actions.utils;
-
-public class BaseUtils {
-	private BaseUtils() {
-	}
-	
-	
-}

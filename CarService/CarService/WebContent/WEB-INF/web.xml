@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>CarService</display-name>
-  <welcome-file-list><welcome-file>index.jsp</welcome-file>
-    
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>CarServiceController</servlet-name>
@@ -12,6 +12,11 @@
     <servlet-name>CarServiceController</servlet-name>
     <url-pattern>/login</url-pattern>
     <url-pattern>/menu</url-pattern>
+    <url-pattern>/registration</url-pattern>
+    
+    <url-pattern>/admin_menu</url-pattern>
+    <url-pattern>/client_menu</url-pattern>
+    <url-pattern>/worker_menu</url-pattern>
     
     <url-pattern>/admin_orders</url-pattern>
     <url-pattern>/client_orders</url-pattern>
@@ -50,12 +55,16 @@
     <location>/jsp/error/error.jsp</location>
   </error-page>
   <filter>
-  	<filter-name>AutentificationFilter</filter-name>
-  	<filter-class>ru.rsreu.carservice.controller.AutentificationFilter</filter-class>
+    <filter-name>AutentificationFilter</filter-name>
+    <filter-class>ru.rsreu.carservice.controller.AutentificationFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>AutentificationFilter</filter-name>
-  	<url-pattern>/admin_orders</url-pattern>
+    <filter-name>AutentificationFilter</filter-name>
+    <url-pattern>/admin_menu</url-pattern>
+    <url-pattern>/client_menu</url-pattern>
+    <url-pattern>/worker_menu</url-pattern>
+    
+    <url-pattern>/admin_orders</url-pattern>
     <url-pattern>/admin_freeworkers</url-pattern>
     <url-pattern>/admin_orderworkers</url-pattern>
     <url-pattern>/admin_deleteorder</url-pattern>
@@ -86,7 +95,6 @@
     
     <url-pattern>/client_orders</url-pattern>
     <url-pattern>/client_addorder</url-pattern>
-    
     <url-pattern>/worker_orders</url-pattern>
   </filter-mapping>
   <listener>

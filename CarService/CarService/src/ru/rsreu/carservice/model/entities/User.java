@@ -49,7 +49,7 @@ public class User {
 		return this.isOnline;
 	}
 	
-	public String getIsOnlineName() {
+	public String getStatus() {
 		return this.isOnline ? ONLINE_MESSAGE : OFFLINE_MESSAGE;
 	}
 	

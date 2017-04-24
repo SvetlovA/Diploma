@@ -1,0 +1,8 @@
+(function() {
+	var indicatorCellText = document.querySelector(".indicator-cell").nodeValue,
+		indicator = document.querySelector(".indicator");
+	
+	if (indicatorCellText === "Online") {
+		indicator.classList.toggle("online");
+	}
+})();

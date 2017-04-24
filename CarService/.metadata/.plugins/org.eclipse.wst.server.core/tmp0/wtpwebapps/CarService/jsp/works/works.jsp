@@ -6,31 +6,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Works</title>
+<link rel="stylesheet" href="styles/TableStyle.css">
 </head>
 <body>
-	<table>
-		<tr>
-			<th>Work ID</th>
-			<th>Work Guid</th>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Description</th>
+	<table class="table">
+		<tr class="table-row">
+			<th class="table-header-cell">Work Guid</th>
+			<th class="table-header-cell">Name</th>
+			<th class="table-header-cell">Price</th>
+			<th class="table-header-cell">Description</th>
+			<th class="table-header-cell action"></th>
 		</tr>
 		<c:forEach items="${works}" var="work">
-			<tr>
-				<td>${work.getWorkId()}</td>
-				<td>${work.getWorkGuid()}</td>
-				<td>${work.getName()}</td>
-				<td>${work.getPrice()}</td>
-				<td>${work.getDescription()}</td>
-				<td>
-					<a href="admin_deletework?action=getworkdeletepage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Delete</a>
-					<a href="admin_editwork?action=getworkeditpage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Edit</a>
-				</td>
-			</tr>
+		<tr class="table-row">
+			<td class="table-cell">${work.getWorkGuid()}</td>
+			<td class="table-cell">${work.getName()}</td>
+			<td class="table-cell">${work.getPrice()}</td>
+			<td class="table-cell">${work.getDescription()}</td>
+			<td class="table-cell action">
+				<a href="admin_deletework?action=getworkdeletepage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Delete</a>
+				<a href="admin_editwork?action=getworkeditpage&workid=${work.getWorkId()}&workguid=${work.getWorkGuid()}&workname=${work.getName()}&workprice=${work.getPrice()}&workdescription=${work.getDescription()}">Edit</a>
+			</td>
+		</tr>
 		</c:forEach>
 	</table>
-	<a href="admin_addwork?action=getworkaddpage">Add</a><br/>
+	<hr>
+	<a href="admin_addwork?action=getworkaddpage">Add</a>
 	<a href="menu?action=getadminmenu">Back menu</a>
 </body>
 </html>

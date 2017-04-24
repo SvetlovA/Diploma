@@ -1,5 +1,6 @@
 package ru.rsreu.carservice.model.entities;
 
+import java.sql.Timestamp;
 import java.util.Set;
 import java.util.UUID;
 
@@ -13,6 +14,7 @@ public class Order {
 	private Set<SharePart> shareParts;
 	private double totalCost;
 	private WorkStatus status;
+	private Timestamp orderDate;
 	
 	public Order() {
 	}
@@ -91,6 +93,14 @@ public class Order {
 	
 	public void setStatus(WorkStatus status) {
 		this.status = status;
+	}
+	
+	public Timestamp getOrderDate() {
+		return this.orderDate;
+	}
+	
+	public void setOrderDate(Timestamp orderDate) {
+		this.orderDate = orderDate;
 	}
 	
 	@Override

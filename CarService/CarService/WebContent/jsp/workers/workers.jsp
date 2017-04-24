@@ -6,39 +6,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Workers</title>
+<link rel="stylesheet" href="styles/TableStyle.css">
 </head>
 <body>
-	<table>
-		<tr>
-			<th>Worker ID</th>
-			<th>worker Guid</th>
-			<th>Login</th>
-			<th>Surname</th>
-			<th>Name</th>
-			<th>Patronymic</th>
-			<th>Experience</th>
-			<th>Orders</th>
-			<th></th>
+	<table class="table">
+		<tr class="table-row">
+			<th class="table-header-cell">Worker Guid</th>
+			<th class="table-header-cell">Login</th>
+			<th class="table-header-cell">Surname</th>
+			<th class="table-header-cell">Name</th>
+			<th class="table-header-cell">Patronymic</th>
+			<th class="table-header-cell">Experience</th>
+			<th class="table-header-cell">Orders</th>
+			<th class="table-header-cell">Status</th>
+			<th class="table-header-cell action"></th>
 		</tr>
 		<c:forEach items="${workers}" var="worker">
-			<tr>
-				<td>${worker.getUserId()}</td>
-				<td>${worker.getUserGuid()}</td>
-				<td>${worker.getLogin()}</td>
-				<td>${worker.getSurname()}</td>
-				<td>${worker.getName()}</td>
-				<td>${worker.getPatronymic()}</td>
-				<td>${worker.getExperience()}</td>
-				<td>${worker.getOrders()}</td>
-				<td>${worker.getIsOnlineName()}</td>
-				<td>
-					<a href="admin_deleteworker?action=getworkerdeletepage&workerid=${worker.getUserId()}&workerguid=${worker.getUserGuid()}&workerlogin=${worker.getLogin()}&workersurname=${worker.getSurname()}&workername=${worker.getName()}&workerpatronymic=${worker.getPatronymic()}&workerexperience=${worker.getExperience()}">Delete</a>
-					<a href="admin_editworker?action=getworkereditpage&workerid=${worker.getUserId()}&workerguid=${worker.getUserGuid()}&workerlogin=${worker.getLogin()}&workersurname=${worker.getSurname()}&workername=${worker.getName()}&workerpatronymic=${worker.getPatronymic()}&workerexperience=${worker.getExperience()}">Edit</a>
-				</td>
-			</tr>
+		<tr class="table-row">
+			<td class="table-cell">${worker.getUserGuid()}</td>
+			<td class="table-cell">${worker.getLogin()}</td>
+			<td class="table-cell">${worker.getSurname()}</td>
+			<td class="table-cell">${worker.getName()}</td>
+			<td class="table-cell">${worker.getPatronymic()}</td>
+			<td class="table-cell">${worker.getExperience()}</td>
+			<td class="table-cell">${worker.getOrders()}</td>
+			<td class="table-cell">${worker.getStatus()}</td>
+			<td class="table-cell action">
+				<a href="admin_deleteworker?action=getworkerdeletepage&workerid=${worker.getUserId()}&workerguid=${worker.getUserGuid()}&workerlogin=${worker.getLogin()}&workersurname=${worker.getSurname()}&workername=${worker.getName()}&workerpatronymic=${worker.getPatronymic()}&workerexperience=${worker.getExperience()}">Delete</a>
+				<a href="admin_editworker?action=getworkereditpage&workerid=${worker.getUserId()}&workerguid=${worker.getUserGuid()}&workerlogin=${worker.getLogin()}&workersurname=${worker.getSurname()}&workername=${worker.getName()}&workerpatronymic=${worker.getPatronymic()}&workerexperience=${worker.getExperience()}">Edit</a>
+			</td>
+		</tr>
 		</c:forEach>
 	</table>
-	<a href="admin_addworker?action=getworkeraddpage">Add</a><br/>
+	<hr>
+	<a href="admin_addworker?action=getworkeraddpage">Add</a>
 	<a href="menu?action=getadminmenu">Back menu</a>
 </body>
 </html>

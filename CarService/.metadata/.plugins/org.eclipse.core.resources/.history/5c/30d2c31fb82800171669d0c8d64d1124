@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+
+.menu-item {
+	display: block;
+	width: 20%;
+	min-width: 15%;
+	text-decoration: none;
+	background-color: #4169E1;
+	color: #FFFFFF;
+	vertical-align: middle;
+	padding-left: 10px;
+}

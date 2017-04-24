@@ -3,9 +3,11 @@ package ru.rsreu.carservice.controller;
 import ru.rsreu.carservice.controller.actions.GetAdminMenuPageAction;
 import ru.rsreu.carservice.controller.actions.GetClientMenuPageAction;
 import ru.rsreu.carservice.controller.actions.GetLoginPageAction;
+import ru.rsreu.carservice.controller.actions.GetRegistrationPageAction;
 import ru.rsreu.carservice.controller.actions.GetWorkerMenuPageAction;
 import ru.rsreu.carservice.controller.actions.LogOutAction;
 import ru.rsreu.carservice.controller.actions.LoginAction;
+import ru.rsreu.carservice.controller.actions.RegisterAction;
 import ru.rsreu.carservice.controller.actions.clients.AddClientAction;
 import ru.rsreu.carservice.controller.actions.clients.DeleteClientAction;
 import ru.rsreu.carservice.controller.actions.clients.EditClientAction;
@@ -364,6 +366,18 @@ public enum ActionType {
 		@Override
 		public Action getAction() {
 			return new ResolveAction();
+		}
+	},
+	GETREGISTRATIONPAGE {
+		@Override
+		public Action getAction() {
+			return new GetRegistrationPageAction();
+		}
+	},
+	REGISTER {
+		@Override
+		public Action getAction() {
+			return new RegisterAction();
 		}
 	};
 	public abstract Action getAction();

@@ -12,10 +12,12 @@
 		<input type="hidden" name="action" value="deleteorder"/>
 		<input type="hidden" name="orderid" value="${orderid}"/>
 		<input type="hidden" name="orderguid" value="${orderguid}"/>
+		<input type="hidden" name="orderdate" value="${orderdate}">
 		<input type="hidden" name="ordertotalcost" value="${ordertotalcost}"/>
 		<input type="hidden" name="orderworkstatus" value="${orderworkstatus}"/>
 		<label> Order ID: ${orderid}</label><br>
 		<label> Order GUID: ${orderguid}</label><br>
+		<label> Order date: ${orderdate}</label><br>
 		<label> Order total cost: ${ordertotalcost}</label><br>
 		<label> Order work status: ${orderworkstatus}</label><br>
 		<hr>

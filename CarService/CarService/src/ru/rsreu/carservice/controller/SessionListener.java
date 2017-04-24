@@ -12,16 +12,25 @@ import ru.rsreu.carservice.model.entities.User;
 
 public class SessionListener implements HttpSessionAttributeListener {
 
+	/**
+	 * Add attribute to session
+	 */
 	@Override
 	public void attributeAdded(HttpSessionBindingEvent sessionBindingEvent) {
 		setUserStatus(sessionBindingEvent, true);
 	}
 
+	/**
+	 * Remove attribute from session
+	 */
 	@Override
 	public void attributeRemoved(HttpSessionBindingEvent sessionBindingEvent) {
 		setUserStatus(sessionBindingEvent, false);
 	}
 
+	/**
+	 * Replace atrribut from session
+	 */
 	@Override
 	public void attributeReplaced(HttpSessionBindingEvent sessionBindingEvent) {
 		try {
@@ -31,6 +40,11 @@ public class SessionListener implements HttpSessionAttributeListener {
 		}
 	}
 	
+	/**
+	 * Set user status
+	 * @param sessionBindingEvent
+	 * @param isOnline
+	 */
 	private void setUserStatus(HttpSessionBindingEvent sessionBindingEvent, boolean isOnline) {
 		HttpSession session = sessionBindingEvent.getSession();
 		ServletContext context = session.getServletContext();

@@ -6,32 +6,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Client orders</title>
+<link rel="stylesheet" href="styles/TableStyle.css">
 </head>
 <body>
-	<table>
-		<tr>
-			<th>OrderId</th>
-			<th>OrderGuid</th>
-			<th>Car</th>
-			<th>Workers</th>
-			<th>Share parts</th>
-			<th>Works</th>
-			<th>Total cost</th>
-			<th>Status</th>
+	<table class="table">
+		<tr class="table-row">
+			<th class="table-header-cell">OrderGuid</th>
+			<th class="table-header-cell">Order date</th>
+			<th class="table-header-cell">Car</th>
+			<th class="table-header-cell">Workers</th>
+			<th class="table-header-cell">Share parts</th>
+			<th class="table-header-cell">Works</th>
+			<th class="table-header-cell">Total cost</th>
+			<th class="table-header-cell">Status</th>
+			<th class="table-header-cell action"></th>
 		</tr>
 		<c:forEach items="${orders}" var="order">
-			<tr>
-				<td>${order.getOrderId()}</td>
-				<td>${order.getOrderGuid()}</td>
-				<td>${order.getCar()}</td>
-				<td>${order.getWorkers()}</td>
-				<td>${order.getShareParts()}</td>
-				<td>${order.getWorks()}</td>
-				<td>${order.getTotalCost()}</td>
-				<td>${order.getStatus()}</td>
-			</tr>
+		<tr class="table-row">
+			<td class="table-cell">${order.getOrderGuid()}</td>
+			<td class="table-cell">${order.getOrderDate()}</td>
+			<td class="table-cell">${order.getCar()}</td>
+			<td class="table-cell">${order.getWorkers()}</td>
+			<td class="table-cell">${order.getShareParts()}</td>
+			<td class="table-cell">${order.getWorks()}</td>
+			<td class="table-cell">${order.getTotalCost()}</td>
+			<td class="table-cell">${order.getStatus()}</td>
+		</tr>
 		</c:forEach>
 	</table>
+	<hr>
 	<a href="client_addorder?action=getaddorderpage">Add</a>
 	<a href="menu?action=getclientmenu">Back menu</a>
 </body>

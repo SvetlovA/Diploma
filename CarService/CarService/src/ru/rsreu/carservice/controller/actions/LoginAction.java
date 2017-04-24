@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.LoginUtils;
 import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.bll.Permission;
@@ -29,12 +30,12 @@ public class LoginAction implements Action {
 			return LoginUtils.getPage(permission);
 		} else {
 			request.setAttribute(ERROR_LOGIN_PASSWORD_ATTRIBUTE_NAME, Resourcer.getString("meassage.incorrect.login.password"));
-			return Resourcer.getString("path.page.login");
+			return BaseUtils.getServletPath(Resourcer.getString("url.pattern.login"), Resourcer.getString("action.getloginpage"));
 		}
 	}
 
 	@Override
 	public boolean isForward() {
-		return true;
+		return false;
 	}
 }

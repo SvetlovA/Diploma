@@ -1,0 +1,8 @@
+(function() {
+	var indicatorCells = document.querySelectorAll(".indicator-cell"),
+		indicator = document.querySelector(".indicator");
+	
+	if (indicatorCellText === "Online") {
+		indicator.classList.add("online");
+	}
+})();

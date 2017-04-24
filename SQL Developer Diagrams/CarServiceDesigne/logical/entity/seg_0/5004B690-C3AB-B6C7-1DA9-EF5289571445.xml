@@ -128,8 +128,11 @@
 <item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
+<defaultValue>SYSTIMESTAMP</defaultValue>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
 </Attribute>
 </attributes>
 <identifiers>

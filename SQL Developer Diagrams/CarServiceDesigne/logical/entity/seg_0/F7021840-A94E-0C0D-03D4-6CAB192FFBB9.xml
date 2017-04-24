@@ -90,6 +90,21 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
 </Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="IsOnline" id="EFBE6330-A581-771C-E388-9329B7993B80">
+<createdBy>21art</createdBy>
+<createdTime>2017-04-24 05:04:02 UTC</createdTime>
+<generatorID>B8B2FFFE-75F7-B98A-4DCD-4ECF8C59192A</generatorID>
+<ownerDesignName>CarServiceDesigne</ownerDesignName>
+<engineerTo>
+<item key="8DF842AF-867E-818B-6189-7EF5F495C3C7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<defaultValue>0</defaultValue>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<usesDefaultValue>true</usesDefaultValue>
+</Attribute>
 </attributes>
 <identifiers>
 <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="80101E63-1F7E-F22B-E472-CD73308504AC" name="Users_PK">

@@ -1,0 +1,24 @@
+package ru.rsreu.carservice.controller.actions;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.model.entities.Client;
+
+public class RgisterAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request) throws SQLException,
+			Exception {
+		Client client = new Client();
+		return null;
+	}
+
+	@Override
+	public boolean isForward() {
+		return false;
+	}
+
+}

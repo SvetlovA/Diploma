@@ -20,10 +20,16 @@ import ru.rsreu.carservice.model.bll.Permission;
 
 public class AutentificationFilter implements Filter {
 	
+	/**
+	 * Destroy filter
+	 */
 	@Override
 	public void destroy() {
 	}
 
+	/**
+	 * Main filter logic
+	 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain filterChain) throws IOException, ServletException {
@@ -58,6 +64,9 @@ public class AutentificationFilter implements Filter {
 		filterChain.doFilter(request, response);
 	}
 
+	/**
+	 * Init filter
+	 */
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}

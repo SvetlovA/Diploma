@@ -1,0 +1,4 @@
+(function() {
+	var indicatorCellText = document.querySelector(".indicator-cell").nodeValue,
+		indicator = document.querySelector(".indicator"),
+})();

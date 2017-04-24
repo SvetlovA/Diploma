@@ -1,0 +1,5 @@
+(function() {
+	var indicatorCells = document.querySelectorAll(".indicator-cell");
+	
+	indicatorCells
+})();

@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+.indicator {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #ff0000;
+}
+
+.online {
+	background-color: #33cc33;
+}

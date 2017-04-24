@@ -93,6 +93,7 @@ public class DataExtracter {
 		Order order = new Order();
 		order.setOrderId(resultSet.getInt("OrderId"));
 		order.setOrderGuid(UUID.fromString(resultSet.getString("OrderGuid")));
+		order.setOrderDate(resultSet.getTimestamp("OrderDate"));
 		order.setTotalCost(resultSet.getDouble("TotalCost"));
 		order.setStatus(WorkStatus.valueOf(resultSet.getString("Status")));
 		return order;

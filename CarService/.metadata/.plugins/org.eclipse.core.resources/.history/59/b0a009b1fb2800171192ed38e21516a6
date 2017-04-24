@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+.table, .table-cell, .table-header-cell {
+	border: 1px solid #000000;
+	border-collapse: collapse;
+}
+
+.table-row:nth-child(2n) {
+	background-color: #e6f2ff;
+}
+
+.table-row:nth-child(2n-1) {
+	background-color: #f2f2f2;
+}
