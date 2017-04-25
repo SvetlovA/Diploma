@@ -1,6 +1,5 @@
 package ru.rsreu.carservice.controller.actions.utils;
 
-import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -8,6 +7,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.SharePart;
 
 public class SharePartUtils {
@@ -54,7 +54,7 @@ public class SharePartUtils {
 		request.setAttribute(SHAREPARTS_ATTRIBUTE_NAME, shareParts);
 	}
 	
-	public static Set<SharePart> getSelectedShareParts(HttpServletRequest request, CarService carServiceBl) throws SQLException {
+	public static Set<SharePart> getSelectedShareParts(HttpServletRequest request, CarService carServiceBl) throws DataBaseException {
 		Set<SharePart> selectedShareParts = new HashSet<SharePart>();
 		String[] selectedParameters = request.getParameterValues(ISSELECTED_PARAMETER_NAME);
 		if (selectedParameters != null) {
@@ -67,8 +67,8 @@ public class SharePartUtils {
 		return selectedShareParts;
 	}
 	
-	public static String getServletPath(String urlPattern, String action, SharePart sharePart) {
-		StringBuilder servlePath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, SharePart sharePart) {
+		StringBuilder servlePath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servlePath.append("&");
 		servlePath.append(SHAREPARTID_PARAMETER_NAME);
 		servlePath.append("=");

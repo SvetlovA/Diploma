@@ -1,6 +1,5 @@
 package ru.rsreu.carservice.controller.actions.orders;
 
-import java.sql.SQLException;
 import java.util.Set;
 
 import javax.servlet.ServletContext;
@@ -9,10 +8,14 @@ import javax.servlet.http.HttpSession;
 
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.RedirectType;
+import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.CarUtils;
 import ru.rsreu.carservice.controller.actions.utils.SharePartUtils;
 import ru.rsreu.carservice.controller.actions.utils.WorkUtils;
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Client;
 import ru.rsreu.carservice.model.entities.SharePart;
@@ -21,8 +24,9 @@ import ru.rsreu.carservice.model.entities.Work;
 public class GetAddOrderPageAction implements Action {
 
 	@Override
-	public String execute(HttpServletRequest request)
-			throws SQLException, Exception {
+	public Url execute(HttpServletRequest request)
+			throws Exception, DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		HttpSession session = request.getSession();
 		String login = session.getAttribute(Resourcer.getString("parameter.user.login")).toString();
 		ServletContext context = request.getServletContext();
@@ -34,12 +38,6 @@ public class GetAddOrderPageAction implements Action {
 		CarUtils.setCars(request, clientCras);
 		WorkUtils.setWorks(request, works);
 		SharePartUtils.setShareParts(request, shareParts);
-		return Resourcer.getString("path.page.order.add");
+		return new Url(Resourcer.getString("path.page.order.add"), RedirectType.FORWARD);
 	}
-
-	@Override
-	public boolean isForward() {
-		return true;
-	}
-
 }

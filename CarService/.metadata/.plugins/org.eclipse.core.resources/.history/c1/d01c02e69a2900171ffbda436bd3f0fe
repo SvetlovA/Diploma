@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+#indicator {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radious: 100%;
+}
+
+.valid {
+	background-color: #33cc33;
+}
+
+.invalid {
+	background-color: #ff0000;
+}

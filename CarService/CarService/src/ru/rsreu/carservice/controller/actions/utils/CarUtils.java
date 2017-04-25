@@ -46,8 +46,8 @@ public class CarUtils {
 		request.setAttribute(CARS_ATTRIBUTE_NAME, cars);
 	}
 	
-	public static String getServletPath(String urlPattern, String action, Car car) {
-		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, Car car) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servletPath.append("&");
 		servletPath.append(CARID_PARAMETER_NAME);
 		servletPath.append("=");

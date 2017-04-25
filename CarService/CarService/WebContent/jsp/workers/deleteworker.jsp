@@ -9,6 +9,7 @@
 </head>
 <body>
 <h3>Are you sure to delete worker ${workername}?</h3>
+	<div class="error-message">${errorMessage}</div>
 	<form action="admin_workers" method="post">
 		<input type="hidden" name="action" value="deleteworker"/>
 		<input type="hidden" name="workerid" value="${workerid}">

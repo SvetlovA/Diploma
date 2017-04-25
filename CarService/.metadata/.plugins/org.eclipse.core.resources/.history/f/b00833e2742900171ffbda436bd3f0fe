@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+
+item {
+	margin-bottom: 10px;
+	width: 30%;
+}
+
+div input {
+	display: block;
+	width: 100%;
+}

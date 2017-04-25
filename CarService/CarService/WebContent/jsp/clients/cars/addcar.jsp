@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Add car</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_cars" method="post">
 	<input type="hidden" name="action" value="addcar"/>
 	<input type="hidden" name="clientid" value="${clientid}">

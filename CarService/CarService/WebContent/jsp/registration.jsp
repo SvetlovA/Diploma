@@ -5,18 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
+<link rel="stylesheet" href="styles/RegistrationPageStyle.css">
 </head>
 <body>
 	<h3>Registration</h3>
-	<form action="login" method="post">
+	<div class="error-message">${errorMessage}</div>
+	<form id="registration-form" action="login" method="post">
 		<input type="hidden" name="action" value="register">
 		<label for="client-login">Login:</label><br>
 		<input id="client-login" type="text" name="clientlogin" required="required"><br>
 		<label for="client-password">Password:</label><br>
 		<input id="client-password" type="password" name="clientpassword" required="required"><br>
-		<label for="repeat-clent-password">Repeat password:</label><br>
+		<label for="repeat-client-password">Repeat password:</label><br>
 		<input id="repeat-client-password" type="password" name="repeatclientpassword" required="required">
-		<div class="indicator"></div><br>
+		<div id="indicator"></div><br>
 		<label for="client-surname">Surname:</label><br>
 		<input id="client-surname" type="text" name="clientsurname" required="required"><br>
 		<label for="client-name">Name:</label><br>
@@ -27,5 +29,6 @@
 		<input type="submit" value="Register">
 		<a href="login?action=getloginpage">Cancel</a>
 	</form>
+	<script src="scripts/RegistrationFormValidation.js"></script>
 </body>
 </html>

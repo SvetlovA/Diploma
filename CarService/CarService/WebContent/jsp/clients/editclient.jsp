@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Edit client</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_clients" method="post">
 	<input type="hidden" name="action" value="editclient">
 	<input type="hidden" name="clientid" value="${clientid}"/>

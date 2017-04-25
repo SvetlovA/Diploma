@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Are you sure to delete client ${clientname}</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_clients" method="post">
 	<input type="hidden" name="action" value="deleteclient"/>
 	<input type="hidden" name="clientid" value="${clientid}"/>

@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Are you sure to delete share part: ${sharepartname}</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_shareparts" method="post">
 	<input type="hidden" name="action" value="deletesharepart"/>
 	<input type="hidden" name="sharepartid" value="${sharepartid}">

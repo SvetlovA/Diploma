@@ -11,9 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import resources.Resourcer;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 
 public class CarServiceController extends HttpServlet {
+	
+	private static final String REFERER = "referer";
 	
 	private ActionFactory client;
 	
@@ -68,17 +72,20 @@ public class CarServiceController extends HttpServlet {
 	 */
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Action action = this.client.getAction(request);
-		String url = null;
+		Url url;
 		try {
 			url = action.execute(request);
+		} catch (DataBaseException ex) {
+			String previousUrl = request.getHeader(REFERER);
+			url = new Url(BaseUtils.createErrorUrl(previousUrl, ex.getMessage()), RedirectType.SEND_REDIRECT);
 		} catch (Exception ex) {
 			throw new ServletException(ex);
 		}
-		if (action.isForward()) {
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+		if (url.getRedirectType() == RedirectType.FORWARD) {
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url.getUrl());
 			dispatcher.forward(request, response);
 		} else {
-			response.sendRedirect(url);
+			response.sendRedirect(url.getUrl());
 		}
 		return;
 	}

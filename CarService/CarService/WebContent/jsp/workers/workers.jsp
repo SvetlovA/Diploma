@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="styles/TableStyle.css">
 </head>
 <body>
+	<div class="error-message">${errorMessage}</div>
 	<table class="table">
 		<tr class="table-row">
 			<th class="table-header-cell">Worker Guid</th>

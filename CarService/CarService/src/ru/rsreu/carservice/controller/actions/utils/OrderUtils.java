@@ -1,6 +1,5 @@
 package ru.rsreu.carservice.controller.actions.utils;
 
-import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -9,6 +8,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Order;
 import ru.rsreu.carservice.model.entities.WorkStatus;
 import ru.rsreu.carservice.model.entities.Worker;
@@ -53,7 +53,7 @@ public class OrderUtils {
 		request.setAttribute(ORDERS_ATTRIBUTE_NAME, orders);
 	}
 	
-	public static Set<Worker> getSelectedWorkers(HttpServletRequest request, CarService carServiceBl) throws SQLException {
+	public static Set<Worker> getSelectedWorkers(HttpServletRequest request, CarService carServiceBl) throws DataBaseException {
 		Set<Worker> selectedWorkers = new HashSet<Worker>();
 		String[] selectedParameters = request.getParameterValues(ISSELECTED_PARAMETER_NAME);
 		for (String selectedParameter : selectedParameters) {
@@ -64,8 +64,8 @@ public class OrderUtils {
 		return selectedWorkers;
 	}
 	
-	public static String getServletPath(String urlPattern, String action, Order order) {
-		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, Order order) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servletPath.append("&");
 		servletPath.append(ORDERID_PARAMETER_NAME);
 		servletPath.append("=");

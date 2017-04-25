@@ -1,0 +1,20 @@
+package ru.rsreu.carservice.controller;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
+
+
+public interface Action {
+	/**
+	 * Execute action
+	 * @param request Request
+	 * @return Page to redirect or forward to
+	 * @throws SQLException
+	 * @throws Exception
+	 * @throws DataBaseException TODO
+	 */
+	Url execute(HttpServletRequest request) throws SQLException, Exception, DataBaseException;
+}

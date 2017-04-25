@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="styles/IndicatorStyle.css">
 </head>
 <body>
+	<div class="error-message">${errorMessage}</div>
 	<table class="table">
 		<tr class="table-row">
 			<th class="table-header-cell">Client Guid</th>

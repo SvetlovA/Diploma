@@ -1,8 +1,6 @@
 package ru.rsreu.carservice.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -17,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import resources.Resourcer;
 import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.bll.Permission;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 
 public class AutentificationFilter implements Filter {
 	
@@ -53,8 +52,8 @@ public class AutentificationFilter implements Filter {
 				servletResponse.sendRedirect(Resourcer.getString("path.page.start"));
 				return;
 			}
-		} catch (SQLException e) {
-			throw new ServletException(e);
+		} catch (DataBaseException ex) {
+			throw new ServletException(ex);
 		}
 		if (!url.contains(permission.toString().toLowerCase())) {
 			System.out.println("No permission");

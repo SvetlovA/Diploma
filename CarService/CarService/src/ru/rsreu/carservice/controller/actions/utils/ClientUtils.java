@@ -50,8 +50,8 @@ public class ClientUtils {
 		request.setAttribute(CLIENTS_ATTRIBUTE_NAME, clients);
 	}
 	
-	public static String getServletPath(String urlPattern, String action, Client client) {
-		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, Client client) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servletPath.append("&");
 		servletPath.append(CLIENTID_PARAMETER_NAME);
 		servletPath.append("=");

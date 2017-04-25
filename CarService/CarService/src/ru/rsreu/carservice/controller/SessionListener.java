@@ -1,13 +1,12 @@
 package ru.rsreu.carservice.controller;
 
-import java.sql.SQLException;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import resources.Resourcer;
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.User;
 
 public class SessionListener implements HttpSessionAttributeListener {
@@ -54,8 +53,8 @@ public class SessionListener implements HttpSessionAttributeListener {
 				User user = carService.getUser(sessionBindingEvent.getValue().toString());
 				user.setIsOnline(isOnline);
 				carService.updateUser(user);
-			} catch (SQLException e) {
-				e.printStackTrace();
+			} catch (DataBaseException ex) {
+				ex.printStackTrace();
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 package ru.rsreu.carservice.controller.actions;
 
-import java.sql.SQLException;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
@@ -8,8 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.RedirectType;
+import ru.rsreu.carservice.controller.Url;
 import ru.rsreu.carservice.controller.actions.utils.LoginUtils;
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Client;
 
 public class RegisterAction implements Action {
@@ -21,8 +23,7 @@ public class RegisterAction implements Action {
 	private static final String CLIENTLOGIN_PARAMETER_NAME = "clientlogin";
 	
 	@Override
-	public String execute(HttpServletRequest request) throws SQLException,
-			Exception {
+	public Url execute(HttpServletRequest request) throws Exception, DataBaseException {
 		Client client = new Client();
 		UUID clientGuid = UUID.randomUUID();
 		client.setUserGuid(clientGuid);
@@ -38,12 +39,9 @@ public class RegisterAction implements Action {
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		carService.addClient(client, clientPassword);
-		return LoginUtils.getServletPath(Resourcer.getString("url.pattern.login"), Resourcer.getString("action.login"), clientLogin, clientPassword);
+		return new Url(LoginUtils.getUrl(Resourcer.getString("url.pattern.login"),
+				Resourcer.getString("action.login"),
+				clientLogin,
+				clientPassword), RedirectType.SEND_REDIRECT);
 	}
-
-	@Override
-	public boolean isForward() {
-		return false;
-	}
-
 }

@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Add share part</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_shareparts" method="post">
 	<input type="hidden" name="action" value="addsharepart"/>
 	<label for="sharepartname">Input share part name:</label><br/>

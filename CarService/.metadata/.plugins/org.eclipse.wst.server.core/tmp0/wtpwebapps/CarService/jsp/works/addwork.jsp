@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Add work</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_works" method="post">
 	<input type="hidden" name="action" value="addwork"/>
 	<label for="workname">Input work name:</label><br/>

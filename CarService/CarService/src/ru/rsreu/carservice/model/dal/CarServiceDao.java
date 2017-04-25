@@ -5,11 +5,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
 import resources.Resourcer;
+import ru.rsreu.carservice.model.dal.exceptions.AddCarException;
+import ru.rsreu.carservice.model.dal.exceptions.AddPasswordException;
+import ru.rsreu.carservice.model.dal.exceptions.AddUserException;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Client;
 import ru.rsreu.carservice.model.entities.Order;
@@ -40,7 +45,7 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 
 	@Override
-	public void addUser(User user) throws SQLException {
+	public void addUser(User user) throws DataBaseException {
 		if (user == null) {
 			throw new NullPointerException(Resourcer.getString("message.user.null"));
 		}
@@ -50,13 +55,21 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setString(1, user.getUserGuid().toString());
 			preparedStatement.setString(2, user.getLogin());
 			preparedStatement.executeUpdate();
+		} catch (SQLIntegrityConstraintViolationException ex) {
+			throw new AddUserException(Resourcer.getString("message.add.user.exception"), ex, user.getLogin());
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.user.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void addPassword(Password password) throws SQLException {
+	public void addPassword(Password password) throws DataBaseException {
 		if (password == null) {
 			throw new NullPointerException(Resourcer.getString("message.password.null"));
 		}
@@ -65,13 +78,21 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.password"));
 			preparedStatement.setInt(1, password.getPasswordHash());
 			preparedStatement.executeUpdate();
+		} catch(SQLIntegrityConstraintViolationException ex) {
+			throw new AddPasswordException(Resourcer.getString("message.add.password.exception"), ex);
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.password.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void addClient(Client client) throws SQLException {
+	public void addClient(Client client) throws DataBaseException {
 		if (client == null) {
 			throw new NullPointerException(Resourcer.getString("message.client.null"));
 		}
@@ -95,13 +116,21 @@ public class CarServiceDao implements ICarServiceDao {
 					addCar(car);
 				}
 			}
+		} catch (SQLIntegrityConstraintViolationException ex) {
+			throw new AddUserException(Resourcer.getString("message.add.client.exception"), ex, client.getLogin());
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.client.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addCar(Car car) throws SQLException {
+	public void addCar(Car car) throws DataBaseException {
 		if (car == null) {
 			throw new NullPointerException(Resourcer.getString("message.car.null"));
 		}
@@ -119,37 +148,53 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setString(4, car.getMark());
 			preparedStatement.setString(5, car.getModel());
 			preparedStatement.executeUpdate();
+		} catch (SQLIntegrityConstraintViolationException ex) {
+			throw new AddCarException(Resourcer.getString("message.add.car.exception"), ex, car.getNumber());
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.car.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addWorker(Worker worker) throws SQLException {
+	public void addWorker(Worker worker) throws DataBaseException {
 		if (worker == null) {
 			throw new NullPointerException(Resourcer.getString("message.worker.null"));
-		}
-		addUser(new User(worker.getUserId(), worker.getUserGuid(), worker.getLogin(), worker.getIsOnline()));
-		User user = readUser(worker.getLogin());
-		if (user == null) {
-			throw new NullPointerException(Resourcer.getString("message.user.null"));
 		}
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.worker"));
+			addUser(new User(worker.getUserId(), worker.getUserGuid(), worker.getLogin(), worker.getIsOnline()));
+			User user = readUser(worker.getLogin());
+			if (user == null) {
+				throw new NullPointerException(Resourcer.getString("message.user.null"));
+			}
 			preparedStatement.setInt(1, user.getUserId());
 			preparedStatement.setString(2, worker.getSurname());
 			preparedStatement.setString(3, worker.getName());
 			preparedStatement.setString(4, worker.getPatronymic());
 			preparedStatement.setInt(5, worker.getExperience());
 			preparedStatement.executeUpdate();
+		} catch (SQLIntegrityConstraintViolationException ex){
+			throw new AddUserException(Resourcer.getString("message.add.worker.exception"), ex, worker.getLogin());
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.worker.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addSharePart(SharePart sharePart) throws SQLException {
+	public void addSharePart(SharePart sharePart) throws DataBaseException {
 		if (sharePart == null) {
 			throw new NullPointerException(Resourcer.getString("message.sharepart.null"));
 		}
@@ -162,13 +207,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setInt(4, sharePart.getCount());
 			preparedStatement.setString(5, sharePart.getDescription());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addWork(Work work) throws SQLException {
+	public void addWork(Work work) throws DataBaseException {
 		if (work == null) {
 			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
@@ -180,105 +231,135 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setDouble(3, work.getPrice());
 			preparedStatement.setString(4, work.getDescription());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.work.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addOrder(Order order) throws SQLException {
+	public void addOrder(Order order) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		Car car = readCar(order.getCar().getNumber());
-		if (car == null) {
-			throw new NullPointerException(Resourcer.getString("message.car.null"));
 		}
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.order"));
 			preparedStatement.setString(1, order.getOrderGuid().toString());
+			Car car = readCar(order.getCar().getNumber());
+			if (car == null) {
+				throw new NullPointerException(Resourcer.getString("message.car.null"));
+			}
 			preparedStatement.setInt(2, car.getCarId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.order.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addOrderWork(Order order, Work work) throws SQLException {
+	public void addOrderWork(Order order, Work work) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		Order readOrder = readOrder(order.getOrderGuid());
-		if (readOrder == null) {
-			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		Work readWork = readWork(work.getName());
-		if (readWork == null) {
-			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.order.works"));
+			Order readOrder = readOrder(order.getOrderGuid());
+			if (readOrder == null) {
+				throw new NullPointerException(Resourcer.getString("message.order.null"));
+			}
 			preparedStatement.setInt(1, readOrder.getOrderId());
+			Work readWork = readWork(work.getName());
+			if (readWork == null) {
+				throw new NullPointerException(Resourcer.getString("message.work.null"));
+			}
 			preparedStatement.setInt(2, readWork.getWorkId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.order.work.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addOrderWorker(Order order, Worker worker) throws SQLException {
+	public void addOrderWorker(Order order, Worker worker) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		Order readOrder = readOrder(order.getOrderGuid());
-		if (readOrder == null) {
-			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		User user = readWorker(worker.getLogin());
-		if (user == null) {
-			throw new NullPointerException(Resourcer.getString("message.user.null"));
 		}
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.order.workers"));
+			Order readOrder = readOrder(order.getOrderGuid());
+			if (readOrder == null) {
+				throw new NullPointerException(Resourcer.getString("message.order.null"));
+			}
 			preparedStatement.setInt(1, readOrder.getOrderId());
+			User user = readWorker(worker.getLogin());
+			if (user == null) {
+				throw new NullPointerException(Resourcer.getString("message.user.null"));
+			}
 			preparedStatement.setInt(2, user.getUserId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.order.worker.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void addOrderSharePart(Order order, SharePart sharePart) throws SQLException {
+	public void addOrderSharePart(Order order, SharePart sharePart) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		Order readOrder = readOrder(order.getOrderGuid());
-		if (readOrder == null) {
-			throw new NullPointerException(Resourcer.getString("message.order.null"));
-		}
-		SharePart readSharePart = readSharePart(sharePart.getName());
-		if (readSharePart == null) {
-			throw new NullPointerException(Resourcer.getString("meaage.sharepart.null"));
 		}
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.add.order.shareparts"));
+			Order readOrder = readOrder(order.getOrderGuid());
+			if (readOrder == null) {
+				throw new NullPointerException(Resourcer.getString("message.order.null"));
+			}
 			preparedStatement.setInt(1, readOrder.getOrderId());
+			SharePart readSharePart = readSharePart(sharePart.getName());
+			if (readSharePart == null) {
+				throw new NullPointerException(Resourcer.getString("meaage.sharepart.null"));
+			}
 			preparedStatement.setInt(2, readSharePart.getSharePartId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.add.order.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public User readUser(String login) throws SQLException {
+	public User readUser(String login) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.user"));
@@ -293,13 +374,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.user.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Client readClient(String login) throws SQLException {
+	public Client readClient(String login) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.client"));
@@ -316,13 +403,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.client.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Client readClient(UUID clientGuid) throws SQLException {
+	public Client readClient(UUID clientGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.client.guid"));
@@ -339,13 +432,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.client.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Car readCar(String number) throws SQLException {
+	public Car readCar(String number) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.car"));
@@ -367,13 +466,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.car.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Car readCar(UUID carGuid) throws SQLException {
+	public Car readCar(UUID carGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.car.guid"));
@@ -393,13 +498,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.car.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}
 	
-	private Client findClient(int clientId) throws SQLException {
+	private Client findClient(int clientId) throws SQLException, DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.find.client"));
@@ -422,7 +533,7 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public Worker readWorker(String login) throws SQLException {
+	public Worker readWorker(String login) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.worker"));
@@ -439,13 +550,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.worker.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Worker readWorker(UUID workerGuid) throws SQLException {
+	public Worker readWorker(UUID workerGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.worker.guid"));
@@ -463,13 +580,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.worker.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public SharePart readSharePart(String name) throws SQLException {
+	public SharePart readSharePart(String name) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.sharepart"));
@@ -487,13 +610,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public SharePart readSharePart(UUID shareGuid) throws SQLException {
+	public SharePart readSharePart(UUID shareGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.sharepart.guid"));
@@ -511,13 +640,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Work readWork(String name) throws SQLException {
+	public Work readWork(String name) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.work"));
@@ -534,13 +669,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.work.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Work readWork(UUID workGuid) throws SQLException {
+	public Work readWork(UUID workGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.work.guid"));
@@ -558,13 +699,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.work.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Order readOrder(UUID orderGuid) throws SQLException {
+	public Order readOrder(UUID orderGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.order"));
@@ -584,8 +731,14 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.order.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -742,7 +895,7 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public Set<Client> readAllClients() throws SQLException {
+	public Set<Client> readAllClients() throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.all.clients"));
@@ -759,13 +912,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.clients.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Worker> readAllWorkers() throws SQLException {
+	public Set<Worker> readAllWorkers() throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.all.workers"));
@@ -782,13 +941,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.workers.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Worker> readFreeWorkers() throws SQLException {
+	public Set<Worker> readFreeWorkers() throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.free.workers"));
@@ -805,13 +970,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.workers.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Worker> readOrderWorkers(Order order) throws SQLException {
+	public Set<Worker> readOrderWorkers(Order order) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -832,13 +1003,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.workers.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Work> readOrderWorks(Order order) throws SQLException {
+	public Set<Work> readOrderWorks(Order order) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -859,13 +1036,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.works.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<SharePart> readOrderShareParts(Order order) throws SQLException {
+	public Set<SharePart> readOrderShareParts(Order order) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.null.order"));
 		}
@@ -886,13 +1069,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.shareparts.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Car> readClientCars(Client client) throws SQLException {
+	public Set<Car> readClientCars(Client client) throws DataBaseException {
 		if (client == null) {
 			throw new NullPointerException(Resourcer.getString("message.client.null"));
 		}
@@ -918,13 +1107,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.cars.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<SharePart> readAllShareParts() throws SQLException {
+	public Set<SharePart> readAllShareParts() throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.all.shareparts"));
@@ -941,13 +1136,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.shareparts.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Work> readAllWorks() throws SQLException {
+	public Set<Work> readAllWorks() throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.all.works"));
@@ -964,13 +1165,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.works.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Password readPassword(int passwordHash) throws SQLException {
+	public Password readPassword(int passwordHash) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.password"));
@@ -985,13 +1192,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.password.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public Set<Order> readClientOrders(Client client) throws SQLException {
+	public Set<Order> readClientOrders(Client client) throws DataBaseException {
 		if (client == null) {
 			throw new NullPointerException(Resourcer.getString("message.client.null"));
 		}
@@ -1014,15 +1227,21 @@ public class CarServiceDao implements ICarServiceDao {
 				} finally {
 					resultSet.close();
 				}
+			} catch (SQLException ex) {
+				throw new DataBaseException(Resourcer.getString("message.read.orders.exception"), ex);
 			} finally {
-				preparedStatement.close();
+				try {
+					preparedStatement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return new HashSet<Order>();
 	}
 
 	@Override
-	public Set<Order> readWorkerOrders(Worker worker) throws SQLException {
+	public Set<Order> readWorkerOrders(Worker worker) throws DataBaseException {
 		if (worker == null) {
 			throw new NullPointerException(Resourcer.getString("message.worker.null"));
 		}
@@ -1043,12 +1262,18 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.orders.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
-	private Set<Order> readSharePartOrders(SharePart sharePart) throws SQLException {
+	private Set<Order> readSharePartOrders(SharePart sharePart) throws SQLException, DataBaseException {
 		if (sharePart == null) {
 			throw new NullPointerException(Resourcer.getString("message.sharepart.null"));
 		}
@@ -1074,7 +1299,7 @@ public class CarServiceDao implements ICarServiceDao {
 		}
 	}
 	
-	private Set<Order> readWorkOrders(Work work) throws SQLException {
+	private Set<Order> readWorkOrders(Work work) throws SQLException, DataBaseException {
 		if (work == null) {
 			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
@@ -1101,7 +1326,7 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public Set<Order> readAllOrders() throws SQLException {
+	public Set<Order> readAllOrders() throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.all.orders"));
@@ -1121,13 +1346,19 @@ public class CarServiceDao implements ICarServiceDao {
 			} finally {
 				resultSet.close();
 			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.orders.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void updateUser(User user) throws SQLException {
+	public void updateUser(User user) throws DataBaseException {
 		if (user == null) {
 			throw new NullPointerException(Resourcer.getString("message.user.null"));
 		}
@@ -1138,13 +1369,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setBoolean(2, user.getIsOnline());
 			preparedStatement.setString(3, user.getUserGuid().toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.update.user.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void updateClient(Client client) throws SQLException {
+	public void updateClient(Client client) throws DataBaseException {
 		if (client == null) {
 			throw new NullPointerException(Resourcer.getString("message.client.null"));
 		}
@@ -1161,13 +1398,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setString(3, client.getPatronymic());
 			preparedStatement.setInt(4, user.getUserId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.update.client.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void updateWorker(Worker worker) throws SQLException {
+	public void updateWorker(Worker worker) throws DataBaseException {
 		if (worker == null) {
 			throw new NullPointerException(Resourcer.getString("message.worker.null"));
 		}
@@ -1185,13 +1428,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setInt(4, worker.getExperience());
 			preparedStatement.setInt(5, user.getUserId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.update.worker.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void updateSharePart(SharePart sharePart) throws SQLException {
+	public void updateSharePart(SharePart sharePart) throws DataBaseException {
 		if (sharePart == null) {
 			throw new NullPointerException(Resourcer.getString("message.sahrepart.null"));
 		}
@@ -1204,13 +1453,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setString(4, sharePart.getDescription());
 			preparedStatement.setString(5, sharePart.getSharePartGuid().toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.update.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void updateWork(Work work) throws SQLException {
+	public void updateWork(Work work) throws DataBaseException {
 		if (work == null) {
 			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
@@ -1222,13 +1477,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setString(3, work.getDescription());
 			preparedStatement.setString(4, work.getWorkGuid().toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.update.work.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void updateOrder(Order order) throws SQLException {
+	public void updateOrder(Order order) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -1238,25 +1499,37 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setString(1, order.getStatus().toString());
 			preparedStatement.setString(2, order.getOrderGuid().toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.update.order.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteUser(UUID userGuid) throws SQLException {
+	public void deleteUser(UUID userGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.user"));
 			preparedStatement.setString(1, userGuid.toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.user.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteUser(User user) throws SQLException {
+	public void deleteUser(User user) throws DataBaseException {
 		if (user == null) {
 			throw new NullPointerException(Resourcer.getString("message.user.null"));
 		}
@@ -1264,31 +1537,43 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public void deletePassword(Password password) throws SQLException {
+	public void deletePassword(Password password) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.password"));
 			preparedStatement.setInt(1, password.getPasswordHash());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.password.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteCar(UUID carGuid) throws SQLException {
+	public void deleteCar(UUID carGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.car"));
 			preparedStatement.setString(1, carGuid.toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.car.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteCar(Car car) throws SQLException {
+	public void deleteCar(Car car) throws DataBaseException {
 		if (car == null) {
 			throw new NullPointerException(Resourcer.getString("message.car.null"));
 		}
@@ -1296,19 +1581,25 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public void deleteSharePart(UUID sharePartGuid) throws SQLException {
+	public void deleteSharePart(UUID sharePartGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.sharepart"));
 			preparedStatement.setString(1, sharePartGuid.toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteSharePart(SharePart sharePart) throws SQLException {
+	public void deleteSharePart(SharePart sharePart) throws DataBaseException {
 		if (sharePart == null) {
 			throw new NullPointerException(Resourcer.getString("message.sharepart.null"));
 		}
@@ -1317,7 +1608,7 @@ public class CarServiceDao implements ICarServiceDao {
 	
 	@Override
 	public void deleteAllOrderShareParts(SharePart sharePart)
-			throws SQLException {
+			throws DataBaseException {
 		if (sharePart == null) {
 			throw new NullPointerException(Resourcer.getString("message.sharepart.null"));
 		}
@@ -1327,25 +1618,37 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.all.shareparts"));
 			preparedStatement.setInt(1, readedSharePart.getSharePartId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.shareparts.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteWork(UUID workGuid) throws SQLException {
+	public void deleteWork(UUID workGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.work"));
 			preparedStatement.setString(1, workGuid.toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.work.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteWork(Work work) throws SQLException {
+	public void deleteWork(Work work) throws DataBaseException {
 		if (work == null) {
 			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
@@ -1353,7 +1656,7 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public void deleteAllOrderWorks(Work work) throws SQLException {
+	public void deleteAllOrderWorks(Work work) throws DataBaseException {
 		if (work == null) {
 			throw new NullPointerException(Resourcer.getString("message.work.null"));
 		}
@@ -1363,25 +1666,37 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.all.order.works"));
 			preparedStatement.setInt(1, readedWork.getWorkId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.works.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteOrder(UUID orderGuid) throws SQLException {
+	public void deleteOrder(UUID orderGuid) throws DataBaseException {
 		PreparedStatement preparedStatement = null;
 		try {
 			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.delete.order"));
 			preparedStatement.setString(1, orderGuid.toString());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.order.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	@Override
-	public void deleteOrder(Order order) throws SQLException {
+	public void deleteOrder(Order order) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -1389,7 +1704,7 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public void deleteOrderWorker(Order order, Worker worker) throws SQLException {
+	public void deleteOrderWorker(Order order, Worker worker) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -1410,13 +1725,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setInt(1, readOrder.getOrderId());
 			preparedStatement.setInt(2, readWorker.getUserId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.worker.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void deleteOrderWork(Order order, Work work) throws SQLException {
+	public void deleteOrderWork(Order order, Work work) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -1437,13 +1758,19 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setInt(1, readOrder.getOrderId());
 			preparedStatement.setInt(2, readWork.getWorkId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.work.exception"), ex);
 		} finally {
+			try {
 				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@Override
-	public void deleteOrderSharePart(Order order, SharePart sharePart) throws SQLException {
+	public void deleteOrderSharePart(Order order, SharePart sharePart) throws DataBaseException {
 		if (order == null) {
 			throw new NullPointerException(Resourcer.getString("message.order.null"));
 		}
@@ -1464,8 +1791,14 @@ public class CarServiceDao implements ICarServiceDao {
 			preparedStatement.setInt(1, readOrder.getOrderId());
 			preparedStatement.setInt(2, readSharePart.getSharePartId());
 			preparedStatement.executeUpdate();
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.delete.sharepart.exception"), ex);
 		} finally {
-			preparedStatement.close();
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

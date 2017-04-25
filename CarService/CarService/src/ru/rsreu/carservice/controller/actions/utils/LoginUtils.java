@@ -1,6 +1,8 @@
 package ru.rsreu.carservice.controller.actions.utils;
 
 import resources.Resourcer;
+import ru.rsreu.carservice.controller.RedirectType;
+import ru.rsreu.carservice.controller.Url;
 import ru.rsreu.carservice.model.bll.Permission;
 
 public class LoginUtils {
@@ -11,21 +13,21 @@ public class LoginUtils {
 	private LoginUtils() {
 	}
 	
-	public static String getPage(Permission permission) throws Exception {
+	public static Url getPage(Permission permission) throws Exception {
 		switch (permission) {
 		case ADMIN:
-			return BaseUtils.getServletPath(Resourcer.getString("url.pattern.adminmenu"), Resourcer.getString("action.getadminmenu"));
+			return new Url(BaseUtils.createUrl(Resourcer.getString("url.pattern.adminmenu"), Resourcer.getString("action.getadminmenu")), RedirectType.SEND_REDIRECT);
 		case CLIENT:
-			return BaseUtils.getServletPath(Resourcer.getString("url.pattern.clientmenu"), Resourcer.getString("action.getclientmenu"));
+			return new Url(BaseUtils.createUrl(Resourcer.getString("url.pattern.clientmenu"), Resourcer.getString("action.getclientmenu")), RedirectType.SEND_REDIRECT);
 		case WORKER:
-			return BaseUtils.getServletPath(Resourcer.getString("url.pattern.workermenu"), Resourcer.getString("action.getworkermenu"));
+			return new Url(BaseUtils.createUrl(Resourcer.getString("url.pattern.workermenu"), Resourcer.getString("action.getworkermenu")), RedirectType.SEND_REDIRECT);
 		default:
 			throw new Exception("Page doesn't exists.");
 		}
 	}
 	
-	public static String getServletPath(String urlPattern, String action, String login, String password) {
-		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, String login, String password) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servletPath.append("&");
 		servletPath.append(LOGIN_PARAMETER_NAME);
 		servletPath.append("=");

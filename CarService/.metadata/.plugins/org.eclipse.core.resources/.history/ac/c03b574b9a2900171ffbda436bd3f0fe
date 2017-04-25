@@ -1,0 +1,21 @@
+(function() {
+	var formNode = document.getElementById("registration-form"),
+		clientPasswordNode = document.getElementById("client-password"),
+		repeateClientPasswordNode = document.getElementById("repeat-client-password"),
+		indicator = document.getElementById("indicator"),
+		isValid;
+	
+	repeateClientPasswordNode.oninput = function() {
+		if (clientPasswordNode.value === repeateClientPasswordNode.value) {
+			replaceClass(indicator, "invalid", "valid");
+			isValid = true;
+		} else {
+			replaceClass(indicator, "valid", "invalid");
+		}
+	};
+	
+	function replaceClass(node, oldClass, newClass) {
+		node.classList.remove(oldClass);
+		node.classList.add(newClass);
+	}
+})();

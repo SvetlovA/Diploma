@@ -1,0 +1,5 @@
+package ru.rsreu.carservice.model.dal.exceptions;
+
+public class AddCarException {
+
+}

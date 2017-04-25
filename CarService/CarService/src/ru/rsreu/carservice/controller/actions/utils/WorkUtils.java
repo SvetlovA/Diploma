@@ -1,6 +1,5 @@
 package ru.rsreu.carservice.controller.actions.utils;
 
-import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -8,6 +7,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Work;
 
 public class WorkUtils {
@@ -50,21 +50,19 @@ public class WorkUtils {
 		request.setAttribute(WORKS_ATTRIBUTE_NAME, works);
 	}
 	
-	public static Set<Work> getSelectedWorks(HttpServletRequest request, CarService carServiceBl) throws SQLException {
+	public static Set<Work> getSelectedWorks(HttpServletRequest request, CarService carServiceBl) throws DataBaseException {
 		Set<Work> selectedWorks = new HashSet<Work>();
 		String[] selectedParameters = request.getParameterValues(ISSELECTED_PARAMETER_NAME);
-		if (selectedParameters != null) {						//TODO: Delete this condition
-			for (String parameter : selectedParameters) {
-				UUID workGuid = UUID.fromString(parameter);
-				Work work = carServiceBl.getWork(workGuid);
-				selectedWorks.add(work);
-			}
+		for (String parameter : selectedParameters) {
+			UUID workGuid = UUID.fromString(parameter);
+			Work work = carServiceBl.getWork(workGuid);
+			selectedWorks.add(work);
 		}
 		return selectedWorks;
 	}
 	
-	public static String getServletPath(String urlPattern, String action, Work work) {
-		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, Work work) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servletPath.append("&");
 		servletPath.append(WORKID_PARAMETER_NAME);
 		servletPath.append("=");

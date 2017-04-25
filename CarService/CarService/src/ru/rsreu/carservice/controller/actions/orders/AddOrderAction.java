@@ -1,6 +1,5 @@
 package ru.rsreu.carservice.controller.actions.orders;
 
-import java.sql.SQLException;
 import java.util.Set;
 import java.util.UUID;
 
@@ -8,10 +7,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.RedirectType;
+import ru.rsreu.carservice.controller.Url;
 import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.SharePartUtils;
 import ru.rsreu.carservice.controller.actions.utils.WorkUtils;
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Order;
 import ru.rsreu.carservice.model.entities.SharePart;
@@ -22,8 +24,8 @@ public class AddOrderAction implements Action {
 	private static final String SELECTED_CAR_PARAMETER_NAME = "selectedCar";
 
 	@Override
-	public String execute(HttpServletRequest request)
-			throws SQLException, Exception {
+	public Url execute(HttpServletRequest request)
+			throws Exception, DataBaseException {
 		Order order = new Order();
 		UUID orderGuid = UUID.randomUUID();
 		order.setOrderGuid(orderGuid);
@@ -37,12 +39,7 @@ public class AddOrderAction implements Action {
 		Set<SharePart> selectedShareParts = SharePartUtils.getSelectedShareParts(request, carService);
 		order.setShareParts(selectedShareParts);
 		carService.addOrder(order, order.getWorks(), order.getShareParts());
-		return BaseUtils.getServletPath(Resourcer.getString("url.pattern.clientorders"), Resourcer.getString("action.getclientorders"));
+		return new Url(BaseUtils.createUrl(Resourcer.getString("url.pattern.clientorders"),
+				Resourcer.getString("action.getclientorders")), RedirectType.SEND_REDIRECT);
 	}
-
-	@Override
-	public boolean isForward() {
-		return false;
-	}
-
 }

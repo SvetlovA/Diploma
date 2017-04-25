@@ -1,22 +1,18 @@
 package ru.rsreu.carservice.controller.actions;
 
-import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.RedirectType;
+import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 
 public class GetAdminMenuPageAction implements Action {
 	
 	@Override
-	public String execute(HttpServletRequest request) throws SQLException {
-		return Resourcer.getString("path.page.menu.admin");
+	public Url execute(HttpServletRequest request) throws DataBaseException {
+		return new Url(Resourcer.getString("path.page.menu.admin"), RedirectType.FORWARD);
 	}
-
-	@Override
-	public boolean isForward() {
-		return true;
-	}
-	
 }

@@ -1,14 +1,16 @@
 package ru.rsreu.carservice.controller.actions.clients.cars;
 
-import java.sql.SQLException;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.RedirectType;
+import ru.rsreu.carservice.controller.Url;
 import ru.rsreu.carservice.controller.actions.utils.ClientUtils;
 import ru.rsreu.carservice.model.bll.CarService;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Client;
 
@@ -19,7 +21,7 @@ public class AddCarAction implements Action {
 	private static final String CARSTATENUMBER_PARAMETER_NAME = "carstatenumber";
 
 	@Override
-	public String execute(HttpServletRequest request) throws SQLException {
+	public Url execute(HttpServletRequest request) throws DataBaseException {
 		Car car = new Car();
 		UUID carGuid = UUID.randomUUID();
 		car.setCarGuid(carGuid);
@@ -34,12 +36,7 @@ public class AddCarAction implements Action {
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		carService.addCar(car);
-		return ClientUtils.getServletPath(Resourcer.getString("url.pattern.admincars"), Resourcer.getString("action.getclientcarspage"), client);
+		return new Url(ClientUtils.getUrl(Resourcer.getString("url.pattern.admincars"),
+				Resourcer.getString("action.getclientcarspage"), client), RedirectType.SEND_REDIRECT);
 	}
-
-	@Override
-	public boolean isForward() {
-		return false;
-	}
-	
 }

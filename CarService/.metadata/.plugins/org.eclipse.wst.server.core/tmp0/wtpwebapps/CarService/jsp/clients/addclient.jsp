@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Add client</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_clients" method="post">
 	<input type="hidden" name="action" value="addclient"/>
 	<label for="clientlogin">Input client login:</label><br/>

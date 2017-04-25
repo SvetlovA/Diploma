@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.GetClientMenuPageAction"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.GetSelectWorksPageAction"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.CarUtils"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Car"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.WorkUtils"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.orders.AddOrderAction"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.GETSTATIC"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.SharePartUtils"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarServiceBl"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="com.sun.media.sound.HsbParser"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.DataExtracter"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.orbutil.fsm.Action"/>
@@ -32,7 +20,6 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="sun.util.resources.LocaleData"/>
 <fullyQualifiedTypeName name="java.util.UUID"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.SessionListener"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.User"/>
@@ -41,7 +28,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionAttributeListener"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionBindingEvent"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarService"/>
@@ -50,14 +36,28 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.SharePart"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Page"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.GetRegistrationPageAction"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Client"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.ClientUtils"/>
-<fullyQualifiedTypeName name="resources.Resourcer"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.RgisterAction"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.BaseUtils"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.LoginUtils"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.AddPasswordException"/>
+<fullyQualifiedTypeName name="java.lang.Throwable"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.AddCarException"/>
+<fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.AddUserException"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Url"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.RedirectType"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.BaseUtils"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="oracle.jdbc.driver.DatabaseError"/>
+<fullyQualifiedTypeName name="resources.Resourcer"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.DataBaseException"/>
 </qualifiedTypeNameHistroy>

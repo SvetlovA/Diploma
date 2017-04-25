@@ -54,8 +54,8 @@ public class WorkerUtils {
 		request.setAttribute(WORKERS_ATTRIBUTE_NAME, workers);
 	}
 	
-	public static String getServletPath(String urlPattern, String action, Worker worker) {
-		StringBuilder servletPath = new StringBuilder(BaseUtils.getServletPath(urlPattern, action));
+	public static String getUrl(String urlPattern, String action, Worker worker) {
+		StringBuilder servletPath = new StringBuilder(BaseUtils.createUrl(urlPattern, action));
 		servletPath.append("&");
 		servletPath.append(WORKERID_PARAMETER_NAME);
 		servletPath.append("=");

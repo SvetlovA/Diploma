@@ -1,0 +1,4 @@
+(function() {
+	var form = document.getElementById("registration-form"),
+		
+})();

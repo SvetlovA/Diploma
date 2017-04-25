@@ -10,6 +10,7 @@
 </head>
 <body>
 <h3>${clientname} cars</h3>
+<div class="error-message">${errorMessage}</div>
 <table class="table">
 	<tr class="table-row">
 		<th class="table-header-cell">Car Guid</th>

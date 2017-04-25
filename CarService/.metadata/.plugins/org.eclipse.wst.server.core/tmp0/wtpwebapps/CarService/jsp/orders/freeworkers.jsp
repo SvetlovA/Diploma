@@ -10,6 +10,7 @@
 </head>
 <body>
 <h3>Select workers for order ${orderguid}</h3>
+<div class="error-message">${errorMessage}</div>
 <form action="admin_orders" method="post">
 	<input type="hidden" name="action" value="addorderworkers">
 	<input type="hidden" name="orderid" value="${orderid}">

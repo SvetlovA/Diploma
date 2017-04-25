@@ -8,6 +8,7 @@
 </head>
 <body>
 <h3>Edit worker ${workername}</h3>
+	<div class="error-message">${errorMessage}</div>
 	<form action="admin_workers" method="post">
 		<input type="hidden" name="action" value="editworker"/>
 		<input type="hidden" name="workerid" value="${workerid}"/>

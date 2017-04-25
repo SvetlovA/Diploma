@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="styles/TableStyle.css">
 </head>
 <body>
+	<div class="error-message">${errorMessage}</div>
 	<form action="client_addorder" method="post">
 		<input type="hidden" name="action" value="addorder">
 		<h3>Select car for order:</h3>

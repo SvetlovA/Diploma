@@ -1,0 +1,24 @@
+package ru.rsreu.carservice.controller.actions.clients;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import resources.Resourcer;
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
+
+public class GetAddClientPageAction implements Action {
+
+	@Override
+	public Url execute(HttpServletRequest request) throws SQLException, DataBaseException {
+		return Resourcer.getString("path.page.client.add");
+	}
+
+	@Override
+	public boolean isForward() {
+		return true;
+	}
+
+}
