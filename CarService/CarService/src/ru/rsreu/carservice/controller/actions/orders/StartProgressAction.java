@@ -18,6 +18,7 @@ public class StartProgressAction implements Action {
 	@Override
 	public Url execute(HttpServletRequest request)
 			throws Exception, DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		Order order = OrderUtils.parseOrder(request);
 		order.setStatus(WorkStatus.InProgress);
 		ServletContext context = request.getServletContext();

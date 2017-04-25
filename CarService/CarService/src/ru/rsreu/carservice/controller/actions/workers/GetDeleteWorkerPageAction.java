@@ -7,6 +7,7 @@ import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.RedirectType;
 import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.WorkerUtils;
 import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Worker;
@@ -15,6 +16,7 @@ public class GetDeleteWorkerPageAction implements Action {
 
 	@Override
 	public Url execute(HttpServletRequest request) throws DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		Worker worker = WorkerUtils.parseWorker(request);
 		WorkerUtils.setWorker(request, worker);
 		return new Url(Resourcer.getString("path.page.worker.delete"), RedirectType.FORWARD);

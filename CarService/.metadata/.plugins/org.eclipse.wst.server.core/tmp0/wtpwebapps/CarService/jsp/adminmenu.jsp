@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h3>Hello ${login}</h3>
+	<div class="item error-message">${errorMessage}</div>
 	<ul class="menu">
 		<li class="menu-item"><a href="admin_orders?action=getallorders">All orders</a></li>
 		<li class="menu-item"><a href="admin_clients?action=getallclients">All clients</a></li>

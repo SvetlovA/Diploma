@@ -7,6 +7,7 @@ import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.RedirectType;
 import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.OrderUtils;
 import ru.rsreu.carservice.controller.actions.utils.WorkerUtils;
 import ru.rsreu.carservice.model.bll.CarService;
@@ -17,6 +18,7 @@ public class GetOrderWorkersPageAction implements Action {
 	
 	@Override
 	public Url execute(HttpServletRequest request) throws DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		Order order = OrderUtils.parseOrder(request);
 		OrderUtils.setOrder(request, order);
 		ServletContext context = request.getServletContext();

@@ -18,6 +18,7 @@ public class LoginAction implements Action {
 	
 	@Override
 	public Url execute(HttpServletRequest request) throws Exception, DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		String login = request.getParameter(Resourcer.getString("parameter.user.login"));
 		String password = request.getParameter(Resourcer.getString("parameter.user.password"));
 		ServletContext context = request.getServletContext();

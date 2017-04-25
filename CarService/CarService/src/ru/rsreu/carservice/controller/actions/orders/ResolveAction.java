@@ -18,6 +18,7 @@ public class ResolveAction implements Action {
 	@Override
 	public Url execute(HttpServletRequest request)
 			throws Exception, DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		Order order = OrderUtils.parseOrder(request);
 		order.setStatus(WorkStatus.Completed);
 		ServletContext context = request.getServletContext();

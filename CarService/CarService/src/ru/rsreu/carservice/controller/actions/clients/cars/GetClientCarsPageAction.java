@@ -7,6 +7,7 @@ import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.RedirectType;
 import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.CarUtils;
 import ru.rsreu.carservice.controller.actions.utils.ClientUtils;
 import ru.rsreu.carservice.model.bll.CarService;
@@ -19,6 +20,7 @@ public class GetClientCarsPageAction implements Action {
 
 	@Override
 	public Url execute(HttpServletRequest request) throws DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		Client client = ClientUtils.parseClient(request);
 		request.setAttribute(CLIENTNAME_PARAMETER_NAME, client.getName());
 		ServletContext context = request.getServletContext();

@@ -14,6 +14,7 @@ public class GetAddWorkPageAction implements Action {
 	@Override
 	public Url execute(HttpServletRequest request) throws DataBaseException {
 		BaseUtils.setErrorMessage(request);
+		BaseUtils.setErrorMessage(request);
 		return new Url(Resourcer.getString("path.page.work.add"), RedirectType.FORWARD);
 	}
 }

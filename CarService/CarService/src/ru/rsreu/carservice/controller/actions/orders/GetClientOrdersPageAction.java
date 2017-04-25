@@ -10,6 +10,7 @@ import resources.Resourcer;
 import ru.rsreu.carservice.controller.Action;
 import ru.rsreu.carservice.controller.RedirectType;
 import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
 import ru.rsreu.carservice.controller.actions.utils.OrderUtils;
 import ru.rsreu.carservice.model.bll.CarService;
 import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
@@ -21,6 +22,7 @@ public class GetClientOrdersPageAction implements Action {
 	@Override
 	public Url execute(HttpServletRequest request)
 			throws Exception, DataBaseException {
+		BaseUtils.setErrorMessage(request);
 		HttpSession session = request.getSession();
 		String login = session.getAttribute(Resourcer.getString("parameter.user.login")).toString();
 		ServletContext context = request.getServletContext();
