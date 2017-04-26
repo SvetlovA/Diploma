@@ -19,7 +19,7 @@ public class GetLoginPageAction implements Action {
 	
 	@Override
 	public Url execute(HttpServletRequest request)
-			throws Exception, DataBaseException {
+			throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		HttpSession session = request.getSession();
 		Object login = session.getAttribute(Resourcer.getString("parameter.user.login"));

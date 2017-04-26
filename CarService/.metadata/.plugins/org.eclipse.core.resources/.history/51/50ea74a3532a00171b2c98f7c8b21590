@@ -1,0 +1,5 @@
+package ru.rsreu.carservice.model.entities;
+
+public class Password {
+
+}

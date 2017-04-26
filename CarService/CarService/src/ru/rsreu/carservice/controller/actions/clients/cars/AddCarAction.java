@@ -21,7 +21,7 @@ public class AddCarAction implements Action {
 	private static final String CARSTATENUMBER_PARAMETER_NAME = "carstatenumber";
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Car car = new Car();
 		UUID carGuid = UUID.randomUUID();
 		car.setCarGuid(carGuid);

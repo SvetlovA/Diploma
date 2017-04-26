@@ -23,7 +23,7 @@ public class RegisterAction implements Action {
 	private static final String CLIENTLOGIN_PARAMETER_NAME = "clientlogin";
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws Exception, DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Client client = new Client();
 		UUID clientGuid = UUID.randomUUID();
 		client.setUserGuid(clientGuid);

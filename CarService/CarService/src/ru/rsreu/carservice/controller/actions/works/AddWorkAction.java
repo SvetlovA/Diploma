@@ -19,7 +19,7 @@ public class AddWorkAction implements Action {
 	private static final String WORKNAME_PARAMETER_NAME = "workname";
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Work work = new Work();
 		work.setWorkGuid(UUID.randomUUID());
 		String workName = request.getParameter(WORKNAME_PARAMETER_NAME);

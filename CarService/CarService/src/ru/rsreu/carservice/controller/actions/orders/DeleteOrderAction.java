@@ -20,7 +20,7 @@ import ru.rsreu.carservice.model.entities.Worker;
 public class DeleteOrderAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Order order = OrderUtils.parseOrder(request);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));

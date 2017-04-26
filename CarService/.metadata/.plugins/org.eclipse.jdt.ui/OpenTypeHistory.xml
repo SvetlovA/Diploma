@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=CarService/C:\/Program Files\/Java\/jdk1.6.0_45\/jre\/lib\/rt.jar&lt;com.sun.security.auth.callback(DialogCallbackHandler$Action.class[Action" modifiers="1546" timestamp="1486408283639"/>
-<typeInfo handle="=CarService/src&lt;ru.rsreu.carservice.controller{Action.java[Action" modifiers="513" timestamp="1493135798598"/>
+<typeInfo handle="=CarService/src&lt;ru.rsreu.carservice.controller{Action.java[Action" modifiers="513" timestamp="1493197389842"/>
 <typeInfo handle="=CarService/src&lt;ru.rsreu.carservice.model.dal.exceptions{DataBaseException.java[DataBaseException" modifiers="1" timestamp="1493099311745"/>
+<typeInfo handle="=CarService/C:\/Program Files\/Java\/jdk1.6.0_45\/jre\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1486408283639"/>
 </typeInfoHistroy>

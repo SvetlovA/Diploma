@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Add work</title>
+</head>
+<body>
+<h3>Add work</h3>
+<div class="error-message">${errorMessage}</div>
+<form id="form" action="admin_works" method="post">
+	<input type="hidden" name="action" value="addwork"/>
+	<label for="workname">Input work name:</label><br/>
+	<input id="workname" class="cash-field" type="text" name="workname" required="required"><br/>
+	<label for="workprice">Input price of work:</label><br/>
+	<input id="workprice" class="cash-field" type="number" name="workprice" required="required"><br/>
+	<label for="workdescription">Input description of the work</label><br/>
+	<textarea id="workdescription" class="cash-field" name="workdescription"></textarea><br/>
+	<hr/>
+	<input type="submit" value="Add"/>
+	<a href="admin_works?action=getallworks">Cancel</a>
+</form>
+<script src="scripts/DataSaver.js"></script>
+</body>
+</html>

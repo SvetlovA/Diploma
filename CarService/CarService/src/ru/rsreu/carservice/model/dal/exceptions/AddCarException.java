@@ -1,9 +1,8 @@
 package ru.rsreu.carservice.model.dal.exceptions;
 
+import resources.Resourcer;
+
 public class AddCarException extends DataBaseException {
-
-	private static final String NUMBER_EXISTS_MESSAGE = " Number %s also exists.";
-
 	/**
 	 * 
 	 */
@@ -41,7 +40,7 @@ public class AddCarException extends DataBaseException {
 	@Override
 	public String getMessage() {
 		StringBuilder message = new StringBuilder(super.getMessage());
-		message.append(String.format(NUMBER_EXISTS_MESSAGE, getNumber()));
+		message.append(String.format(Resourcer.getString("message.add.car.exception.explanation"), getNumber()));
 		return message.toString();
 	}
 }

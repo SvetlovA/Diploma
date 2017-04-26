@@ -1,0 +1,19 @@
+(function() {
+	onunload = function() {
+		var fields = document.querySelectorAll(".field"),
+		i;
+	
+		for (i = 0; i < fields.length; i++) {
+			localStorage.setItem(fields[i].name, fields[i].value);
+		}
+	};
+	
+	onload = function() {
+		var fields = document.querySelectorAll(".field"),
+		 i;
+		
+		for (i = 0; i < fields.length; i++) {
+			fields[i].value = localStorage.getItem(fields[i].name);
+		}
+	};
+})();

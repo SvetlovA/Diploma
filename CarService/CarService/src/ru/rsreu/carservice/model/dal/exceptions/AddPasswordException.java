@@ -1,8 +1,8 @@
 package ru.rsreu.carservice.model.dal.exceptions;
 
-public class AddPasswordException extends DataBaseException {
+import resources.Resourcer;
 
-	private static final String PASSWORD_EXISTS_MESSAGE = " Such password also exists.";
+public class AddPasswordException extends DataBaseException {
 	/**
 	 * 
 	 */
@@ -26,7 +26,7 @@ public class AddPasswordException extends DataBaseException {
 	@Override
 	public String getMessage() {
 		StringBuilder message = new StringBuilder(super.getMessage());
-		message.append(PASSWORD_EXISTS_MESSAGE);
+		message.append(Resourcer.getString("message.add.password.exception.explanation"));
 		return message.toString();
 	}
 }

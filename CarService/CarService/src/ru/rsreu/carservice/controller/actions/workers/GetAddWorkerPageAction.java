@@ -13,7 +13,7 @@ import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 public class GetAddWorkerPageAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		return new Url(Resourcer.getString("path.page.worker.add"), RedirectType.FORWARD);
 	}

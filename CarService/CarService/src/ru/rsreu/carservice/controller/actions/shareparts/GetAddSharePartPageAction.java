@@ -13,7 +13,7 @@ import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 public class GetAddSharePartPageAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		return new Url(Resourcer.getString("path.page.sharepart.add"), RedirectType.FORWARD);
 	}

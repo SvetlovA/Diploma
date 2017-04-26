@@ -14,7 +14,7 @@ public class GetClientMenuPageAction implements Action {
 
 	@Override
 	public Url execute(HttpServletRequest request)
-			throws Exception, DataBaseException {
+			throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		return new Url(Resourcer.getString("path.page.menu.client"), RedirectType.FORWARD);
 	}

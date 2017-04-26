@@ -17,7 +17,7 @@ import ru.rsreu.carservice.model.entities.Client;
 public class GetDeleteCarPageAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		Car car = CarUtils.parseCar(request);
 		Client client = ClientUtils.parseClient(request);

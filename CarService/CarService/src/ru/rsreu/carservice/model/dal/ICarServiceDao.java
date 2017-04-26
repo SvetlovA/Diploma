@@ -1,5 +1,6 @@
 package ru.rsreu.carservice.model.dal;
 
+import java.sql.SQLException;
 import java.util.Set;
 import java.util.UUID;
 
@@ -7,18 +8,16 @@ import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Client;
 import ru.rsreu.carservice.model.entities.Order;
-import ru.rsreu.carservice.model.entities.Password;
 import ru.rsreu.carservice.model.entities.SharePart;
 import ru.rsreu.carservice.model.entities.User;
 import ru.rsreu.carservice.model.entities.Work;
 import ru.rsreu.carservice.model.entities.Worker;
 
 public interface ICarServiceDao extends Disposable {
-	void addUser(User user) throws DataBaseException;
-	void addPassword(Password password) throws DataBaseException;
-	void addClient(Client client) throws DataBaseException;
+	void addUserAccount(User user, int passwordHash) throws DataBaseException, SQLException;
+	void addClientAccount(Client client, int passwordHash) throws DataBaseException, SQLException;
 	void addCar(Car car) throws DataBaseException;
-	void addWorker(Worker worker) throws DataBaseException;
+	void addWorkerAccount(Worker worker, int passwordHash) throws DataBaseException, SQLException;
 	void addSharePart(SharePart sharePart) throws DataBaseException;
 	void addWork(Work work) throws DataBaseException;
 	void addOrder(Order order) throws DataBaseException;
@@ -27,7 +26,7 @@ public interface ICarServiceDao extends Disposable {
 	void addOrderSharePart(Order order, SharePart sharePart) throws DataBaseException;
 	
 	User readUser(String login) throws DataBaseException;
-	Password readPassword(int passwordHash) throws DataBaseException;
+	boolean checkPassword(int passwordHash) throws DataBaseException;
 	Client readClient(String login) throws DataBaseException;
 	Client readClient(UUID clientGuid) throws DataBaseException;
 	Car readCar(String number) throws DataBaseException;
@@ -61,7 +60,6 @@ public interface ICarServiceDao extends Disposable {
 	
 	void deleteUser(User user) throws DataBaseException;
 	void deleteUser(UUID userGuid) throws DataBaseException;
-	void deletePassword(Password password) throws DataBaseException;
 	void deleteCar(Car car) throws DataBaseException;
 	void deleteCar(UUID carGuid) throws DataBaseException;
 	void deleteSharePart(SharePart sharePart) throws DataBaseException;

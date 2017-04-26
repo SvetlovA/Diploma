@@ -23,7 +23,7 @@ public class AddWorkerAction implements Action {
 	private static final String LOGIN_PARMETER_NAME = "workerlogin";
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Worker worker = new Worker();
 		worker.setUserGuid(UUID.randomUUID());
 		worker.setLogin(request.getParameter(LOGIN_PARMETER_NAME));

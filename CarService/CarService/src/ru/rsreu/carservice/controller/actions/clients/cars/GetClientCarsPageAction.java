@@ -19,7 +19,7 @@ public class GetClientCarsPageAction implements Action {
 	private static final String CLIENTNAME_PARAMETER_NAME = "clientname";
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		Client client = ClientUtils.parseClient(request);
 		request.setAttribute(CLIENTNAME_PARAMETER_NAME, client.getName());

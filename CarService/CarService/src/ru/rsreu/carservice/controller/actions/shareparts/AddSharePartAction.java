@@ -21,7 +21,7 @@ public class AddSharePartAction implements Action {
 	private static final String SHAREPARTNAME_PARAMETER_NAME = "sharepartname";
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		SharePart sharePart = new SharePart();
 		UUID sharePartGuid = UUID.randomUUID();
 		sharePart.setSharePartGuid(sharePartGuid);

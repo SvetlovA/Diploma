@@ -16,7 +16,7 @@ import ru.rsreu.carservice.model.entities.Worker;
 public class EditWorkerAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Worker worker = WorkerUtils.parseWorker(request);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));

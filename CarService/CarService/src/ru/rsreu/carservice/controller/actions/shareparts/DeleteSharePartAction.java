@@ -16,7 +16,7 @@ import ru.rsreu.carservice.model.entities.SharePart;
 public class DeleteSharePartAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		SharePart sharePart = SharePartUtils.parseSharePart(request);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));

@@ -44,3 +44,10 @@
 1493120760529	Rename local variable 'e'
 1493120783738	Rename local variable 'e'
 1493120949106	Change method 'execute'
+1493188716916	Delete element
+1493191269561	Encapsulate field 'password'
+1493191309628	Delete element
+1493192426828	Encapsulate field 'passwordHash'
+1493194366461	Delete element
+1493197372403	Change method 'execute'
+1493197392837	Change method 'execute'

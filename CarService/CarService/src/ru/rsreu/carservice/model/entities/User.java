@@ -9,6 +9,7 @@ public class User {
 	private int userId;
 	private UUID userGuid;
 	private String login;
+	private String password;
 	private boolean isOnline;
 	
 	public User() {
@@ -43,6 +44,14 @@ public class User {
 	
 	public void setLogin(String login) {
 		this.login = login;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public boolean getIsOnline() {

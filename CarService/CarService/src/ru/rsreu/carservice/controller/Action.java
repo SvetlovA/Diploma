@@ -11,8 +11,8 @@ public interface Action {
 	 * Execute action
 	 * @param request Request
 	 * @return Page to redirect or forward to
-	 * @throws Exception
 	 * @throws DataBaseException
+	 * @throws Exception TODO
 	 */
-	Url execute(HttpServletRequest request) throws Exception, DataBaseException;
+	Url execute(HttpServletRequest request) throws DataBaseException, Exception;
 }

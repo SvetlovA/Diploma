@@ -15,7 +15,7 @@ import ru.rsreu.carservice.model.entities.Work;
 public class GetDeleteWorkPageAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		Work work = WorkUtils.parseWork(request);
 		WorkUtils.setWork(request, work);

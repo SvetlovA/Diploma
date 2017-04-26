@@ -15,7 +15,7 @@ import ru.rsreu.carservice.model.entities.SharePart;
 public class GetEditSharePartPageAction implements Action {
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		SharePart sharePart = SharePartUtils.parseSharePart(request);
 		SharePartUtils.setSharePart(request, sharePart);

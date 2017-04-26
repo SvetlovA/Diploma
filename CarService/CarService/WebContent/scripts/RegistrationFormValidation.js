@@ -1,5 +1,5 @@
 (function() {
-	var formNode = document.getElementById("registration-form"),
+	var formNode = document.getElementById("form"),
 		clientPasswordNode = document.getElementById("client-password"),
 		repeateClientPasswordNode = document.getElementById("repeat-client-password"),
 		indicator = document.getElementById("indicator"),

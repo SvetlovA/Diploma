@@ -1,9 +1,8 @@
 package ru.rsreu.carservice.model.dal.exceptions;
 
+import resources.Resourcer;
+
 public class AddUserException extends DataBaseException {
-
-	private static final String LOGIN_EXISTS_MESSAGE = " Login %s also exists.";
-
 	/**
 	 * 
 	 */
@@ -41,7 +40,7 @@ public class AddUserException extends DataBaseException {
 	@Override
 	public String getMessage() {
 		StringBuilder message = new StringBuilder(super.getMessage());
-		message.append(String.format(LOGIN_EXISTS_MESSAGE, getLogin()));
+		message.append(String.format(Resourcer.getString("message.add.user.exception.explanation"), getLogin()));
 		return message.toString();
 	}
 }

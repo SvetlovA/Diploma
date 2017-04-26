@@ -14,7 +14,7 @@ import ru.rsreu.carservice.model.entities.Worker;
 public class GetEditWorkerPageAction implements Action {
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		Worker worker = WorkerUtils.parseWorker(request);
 		WorkerUtils.setWorker(request, worker);

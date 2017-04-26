@@ -10,7 +10,7 @@
 <body>
 	<h3>Registration</h3>
 	<div class="error-message">${errorMessage}</div>
-	<form id="registration-form" action="login" method="post">
+	<form id="form" action="login" method="post">
 		<input type="hidden" name="action" value="register">
 		<label for="client-login">Login:</label><br>
 		<input id="client-login" type="text" name="clientlogin" required="required"><br>

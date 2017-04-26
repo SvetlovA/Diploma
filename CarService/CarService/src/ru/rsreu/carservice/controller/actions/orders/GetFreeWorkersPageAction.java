@@ -18,7 +18,7 @@ import ru.rsreu.carservice.model.entities.Order;
 public class GetFreeWorkersPageAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		Order order = OrderUtils.parseOrder(request);
 		OrderUtils.setOrder(request, order);

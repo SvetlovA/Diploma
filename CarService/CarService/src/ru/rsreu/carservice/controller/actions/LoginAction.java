@@ -17,7 +17,7 @@ import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 public class LoginAction implements Action {
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws Exception, DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		String login = request.getParameter(Resourcer.getString("parameter.user.login"));
 		String password = request.getParameter(Resourcer.getString("parameter.user.password"));

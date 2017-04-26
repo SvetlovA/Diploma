@@ -18,7 +18,7 @@ import ru.rsreu.carservice.model.entities.Worker;
 public class AddOrderWorkersAction implements Action {
 
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		Set<Worker> selectedWorkers = OrderUtils.getSelectedWorkers(request, carService);

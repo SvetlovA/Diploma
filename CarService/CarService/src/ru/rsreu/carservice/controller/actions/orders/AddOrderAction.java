@@ -25,7 +25,7 @@ public class AddOrderAction implements Action {
 
 	@Override
 	public Url execute(HttpServletRequest request)
-			throws Exception, DataBaseException {
+			throws DataBaseException, Exception {
 		Order order = new Order();
 		UUID orderGuid = UUID.randomUUID();
 		order.setOrderGuid(orderGuid);

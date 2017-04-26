@@ -15,7 +15,7 @@ import ru.rsreu.carservice.model.entities.Client;
 public class GetEditClientPageAction implements Action {
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		Client client = ClientUtils.parseClient(request);
 		ClientUtils.setClient(request, client);

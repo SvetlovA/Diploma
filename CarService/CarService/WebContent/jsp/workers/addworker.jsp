@@ -27,5 +27,6 @@
 		<input type="submit" value="Add"/>
 		<a href="admin_workers?action=getallworkers">Cancel</a>
 	</form>
+	<script src="scripts/DataSaver.js"></script>
 </body>
 </html>

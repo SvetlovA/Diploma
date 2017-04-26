@@ -25,7 +25,7 @@ public class GetAddOrderPageAction implements Action {
 
 	@Override
 	public Url execute(HttpServletRequest request)
-			throws Exception, DataBaseException {
+			throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		HttpSession session = request.getSession();
 		String login = session.getAttribute(Resourcer.getString("parameter.user.login")).toString();

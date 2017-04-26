@@ -16,7 +16,7 @@ import ru.rsreu.carservice.model.entities.Work;
 public class DeleteWorkAction implements Action {
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		Work work = WorkUtils.parseWork(request);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));

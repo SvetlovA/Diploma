@@ -10,7 +10,6 @@ import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 import ru.rsreu.carservice.model.entities.Car;
 import ru.rsreu.carservice.model.entities.Client;
 import ru.rsreu.carservice.model.entities.Order;
-import ru.rsreu.carservice.model.entities.Password;
 import ru.rsreu.carservice.model.entities.SharePart;
 import ru.rsreu.carservice.model.entities.User;
 import ru.rsreu.carservice.model.entities.Work;
@@ -29,30 +28,27 @@ public class CarService {
 		if (user == null || password == null || password.isEmpty()) {
 			return false;
 		}
-		int passwordHash = (password.hashCode() ^ user.getLogin().hashCode()) | password.hashCode();
-		Password passwordEntity = this.carServiceDao.readPassword(passwordHash);
-		return passwordEntity != null;
+		int passwordHash = generateSaultPasswordHash(user.getLogin(), password);
+		return this.carServiceDao.checkPassword(passwordHash);
 	}
 	
-	public void addAdminAccount(User user, String password) throws DataBaseException {
-		int saultPasswordHash = (password.hashCode() ^ user.getLogin().hashCode()) | password.hashCode();
-		Password passwordHash = new Password(saultPasswordHash);
-		this.carServiceDao.addUser(user);
-		this.carServiceDao.addPassword(passwordHash);
+	public void addAdminAccount(User user, String password) throws DataBaseException, SQLException {
+		int saultPasswordHash = generateSaultPasswordHash(user.getLogin(), password);
+		this.carServiceDao.addUserAccount(user, saultPasswordHash);
 	}
 	
-	public void addClient(Client client, String password) throws DataBaseException {
-		int saultPasswordHash = (password.hashCode() ^ client.getLogin().hashCode()) | password.hashCode();
-		Password passwordHash = new Password(saultPasswordHash);
-		this.carServiceDao.addClient(client);
-		this.carServiceDao.addPassword(passwordHash);
+	public void addClient(Client client, String password) throws DataBaseException, SQLException {
+		int saultPasswordHash = generateSaultPasswordHash(client.getLogin(), password);
+		this.carServiceDao.addClientAccount(client, saultPasswordHash);
 	}
 	
-	public void addWorker(Worker worker, String password) throws DataBaseException {
-		int saultPasswordHash = (password.hashCode() ^ worker.getLogin().hashCode()) | password.hashCode();
-		Password passwordHash = new Password(saultPasswordHash);
-		this.carServiceDao.addWorker(worker);
-		this.carServiceDao.addPassword(passwordHash);
+	public void addWorker(Worker worker, String password) throws DataBaseException, SQLException {
+		int saultPasswordHash = generateSaultPasswordHash(worker.getLogin(), password);
+		this.carServiceDao.addWorkerAccount(worker, saultPasswordHash);
+	}
+	
+	private int generateSaultPasswordHash(String login, String password) {
+		return (password.hashCode() ^ login.hashCode()) | password.hashCode();
 	}
 	
 	public Permission getPermission(String login) throws Exception {
@@ -209,10 +205,6 @@ public class CarService {
 	
 	public void updateOrder(Order order) throws DataBaseException {
 		this.carServiceDao.updateOrder(order);
-	}
-	
-	public void deleteAccount(User user) throws DataBaseException {
-		this.carServiceDao.deleteUser(user);
 	}
 	
 	public void deleteUser(User user) throws DataBaseException {

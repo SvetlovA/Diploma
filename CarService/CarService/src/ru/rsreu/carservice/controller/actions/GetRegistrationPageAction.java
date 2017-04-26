@@ -13,7 +13,7 @@ import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
 public class GetRegistrationPageAction implements Action {
 	
 	@Override
-	public Url execute(HttpServletRequest request) throws Exception, DataBaseException {
+	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		BaseUtils.setErrorMessage(request);
 		return new Url(Resourcer.getString("path.page.registration"), RedirectType.FORWARD);
 	}
