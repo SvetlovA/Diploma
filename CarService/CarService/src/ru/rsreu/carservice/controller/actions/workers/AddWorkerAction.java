@@ -34,7 +34,7 @@ public class AddWorkerAction implements Action {
 		String password = request.getParameter(PASSWORD_PARAMETER_NAME);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
-		carService.addWorker(worker, password);
+		carService.addAccount(worker, password);
 		return new Url(BaseUtils.createUrl(Resourcer.getString("url.pattern.adminworkers"),
 				Resourcer.getString("action.getallworkers")), RedirectType.SEND_REDIRECT);
 	}

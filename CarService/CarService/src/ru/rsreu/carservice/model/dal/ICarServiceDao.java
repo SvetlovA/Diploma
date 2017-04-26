@@ -14,10 +14,8 @@ import ru.rsreu.carservice.model.entities.Work;
 import ru.rsreu.carservice.model.entities.Worker;
 
 public interface ICarServiceDao extends Disposable {
-	void addUserAccount(User user, int passwordHash) throws DataBaseException, SQLException;
-	void addClientAccount(Client client, int passwordHash) throws DataBaseException, SQLException;
+	void addAccount(User user, int passwordHash) throws DataBaseException, SQLException;
 	void addCar(Car car) throws DataBaseException;
-	void addWorkerAccount(Worker worker, int passwordHash) throws DataBaseException, SQLException;
 	void addSharePart(SharePart sharePart) throws DataBaseException;
 	void addWork(Work work) throws DataBaseException;
 	void addOrder(Order order) throws DataBaseException;

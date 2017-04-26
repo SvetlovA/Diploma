@@ -1,0 +1,15 @@
+(function() {
+	var rows = document.querySelectorAll(".table-row"),
+		rowChildNodes,
+		i;
+	
+	for (i = 0; i < rows.length; i++) {
+		rowChildNodes = rows[i].children;
+		rowChildNodes.forEach(function(rowNode) {
+			if (rowNode.getAttribute("class") === "table-cell work-status" &&
+					rowNode.innerHtml === "Completed") {
+				rowChildNodes[childNodes.length - 1]
+			}
+		});
+	}
+})();

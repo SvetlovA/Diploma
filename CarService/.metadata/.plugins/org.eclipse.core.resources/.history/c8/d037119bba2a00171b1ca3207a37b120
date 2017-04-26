@@ -1,0 +1,12 @@
+(function() {
+	var rows = document.querySelectorAll(".table-row"),
+		childNodes,
+		i;
+	
+	for (i = 0; i < rows.length; i++) {
+		childNodes = rows[i].children;
+		childNodes.forEach(function(node) {
+			if (node.getAttribute("class") === "table-cell work-status")
+		});
+	}
+})();

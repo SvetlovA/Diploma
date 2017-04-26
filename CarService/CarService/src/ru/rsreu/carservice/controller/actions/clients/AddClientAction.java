@@ -37,7 +37,7 @@ public class AddClientAction implements Action {
 		String clientPassword = request.getParameter(CLIENTPASSWORD_PARAMETER_NAME);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
-		carService.addClient(client, clientPassword);
+		carService.addAccount(client, clientPassword);
 		return new Url(BaseUtils.createUrl(Resourcer.getString("url.pattern.adminclients"),
 				Resourcer.getString("action.getallclients")), RedirectType.SEND_REDIRECT);
 	}

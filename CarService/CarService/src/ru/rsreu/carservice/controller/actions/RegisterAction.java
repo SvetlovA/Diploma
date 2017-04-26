@@ -38,7 +38,7 @@ public class RegisterAction implements Action {
 		String clientPassword = request.getParameter(CLIENTPASSWORD_PARAMETER_NAME);
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
-		carService.addClient(client, clientPassword);
+		carService.addAccount(client, clientPassword);
 		return new Url(LoginUtils.getUrl(Resourcer.getString("url.pattern.login"),
 				Resourcer.getString("action.login"),
 				clientLogin,

@@ -44,10 +44,16 @@ public class CarServiceDao implements ICarServiceDao {
 	}
 	
 	@Override
-	public void addUserAccount(User user, int passwordHash) throws DataBaseException, SQLException {
+	public void addAccount(User user, int passwordHash) throws DataBaseException, SQLException {
 		try {
 			this.connection.setAutoCommit(false);
-			addUser(user);
+			if (user instanceof Client) {
+				addClient((Client)user);
+			} else if (user instanceof Worker) {
+				addWorker((Worker)user);
+			} else {
+				addUser(user);
+			}
 			addPassword(passwordHash);
 			this.connection.commit();
 		} catch (DataBaseException ex) {
@@ -59,45 +65,6 @@ public class CarServiceDao implements ICarServiceDao {
 		} finally {
 			this.connection.setAutoCommit(true);
 		}
-	}
-	
-	@Override
-	public void addClientAccount(Client client, int passwordHash)
-			throws DataBaseException, SQLException {
-		try {
-			this.connection.setAutoCommit(false);
-			addClient(client);
-			addPassword(passwordHash);
-			this.connection.commit();
-		} catch (DataBaseException ex) {
-			this.connection.rollback();
-			throw ex;
-		} catch (SQLException ex) {
-			this.connection.rollback();
-			throw new DataBaseException(Resourcer.getString("message.add.user.exception"), ex);
-		} finally {
-			this.connection.setAutoCommit(true);
-		}
-	}
-	
-	@Override
-	public void addWorkerAccount(Worker worker, int passwordHash)
-			throws DataBaseException, SQLException {
-		try {
-			this.connection.setAutoCommit(false);
-			addWorker(worker);
-			addPassword(passwordHash);
-			this.connection.commit();
-		} catch (DataBaseException ex) {
-			this.connection.rollback();
-			throw ex;
-		} catch (SQLException ex) {
-			this.connection.rollback();
-			throw new DataBaseException(Resourcer.getString("message.add.user.exception"), ex);
-		} finally {
-			this.connection.setAutoCommit(true);
-		}
-		
 	}
 	
 	private void addUser(User user)throws DataBaseException, SQLException {

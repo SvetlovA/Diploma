@@ -51,3 +51,5 @@
 1493194366461	Delete element
 1493197372403	Change method 'execute'
 1493197392837	Change method 'execute'
+1493233286756	Rename method 'addUserAccount'
+1493233339734	Rename method 'addAdminAccount'

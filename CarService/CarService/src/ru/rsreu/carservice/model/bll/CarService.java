@@ -32,19 +32,9 @@ public class CarService {
 		return this.carServiceDao.checkPassword(passwordHash);
 	}
 	
-	public void addAdminAccount(User user, String password) throws DataBaseException, SQLException {
+	public void addAccount(User user, String password) throws DataBaseException, SQLException {
 		int saultPasswordHash = generateSaultPasswordHash(user.getLogin(), password);
-		this.carServiceDao.addUserAccount(user, saultPasswordHash);
-	}
-	
-	public void addClient(Client client, String password) throws DataBaseException, SQLException {
-		int saultPasswordHash = generateSaultPasswordHash(client.getLogin(), password);
-		this.carServiceDao.addClientAccount(client, saultPasswordHash);
-	}
-	
-	public void addWorker(Worker worker, String password) throws DataBaseException, SQLException {
-		int saultPasswordHash = generateSaultPasswordHash(worker.getLogin(), password);
-		this.carServiceDao.addWorkerAccount(worker, saultPasswordHash);
+		this.carServiceDao.addAccount(user, saultPasswordHash);
 	}
 	
 	private int generateSaultPasswordHash(String login, String password) {

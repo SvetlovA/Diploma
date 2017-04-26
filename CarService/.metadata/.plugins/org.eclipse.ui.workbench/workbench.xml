@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="73" version="2.0">
+<workbench progressCount="71" version="2.0">
 <workbenchAdvisor/>
 <window height="1047" maximized="true" width="974" x="-7" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -13,7 +13,7 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
 <coolItem id="org.eclipse.jst.j2ee.J2eeMainActionSet" itemType="typeToolBarContribution" x="91" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -164,10 +164,6 @@
 <part id="123"/>
 <part id="124"/>
 <part id="125"/>
-<part id="126"/>
-<part id="127"/>
-<part id="128"/>
-<part id="129"/>
 </presentation>
 </folder>
 </info>
@@ -182,7 +178,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddWorkerAction.java" partName="AddWorkerAction.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/controller/actions/workers/AddWorkerAction.java" title="AddWorkerAction.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/workers/AddWorkerAction.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/controller/actions/workers/AddWorkerAction.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1955" selectionTopPixel="33"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="902" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DeleteWorkerAction.java" partName="DeleteWorkerAction.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/controller/actions/workers/DeleteWorkerAction.java" title="DeleteWorkerAction.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/workers/DeleteWorkerAction.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/controller/actions/workers/DeleteWorkerAction.java"/>
@@ -265,7 +261,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CarServiceDao.java" partName="CarServiceDao.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/model/dal/CarServiceDao.java" title="CarServiceDao.java" tooltip="CarService/src/ru/rsreu/carservice/model/dal/CarServiceDao.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/model/dal/CarServiceDao.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="42" selectionTopPixel="1530"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2230" selectionTopPixel="4083"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataExtracter.java" partName="DataExtracter.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/model/dal/DataExtracter.java" title="DataExtracter.java" tooltip="CarService/src/ru/rsreu/carservice/model/dal/DataExtracter.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/model/dal/DataExtracter.java"/>
@@ -281,7 +277,7 @@
 </editor>
 <editor id="org.eclipse.jst.jsp.core.jspsource.source" name="orders.jsp" partName="orders.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/orders.jsp" title="orders.jsp" tooltip="CarService/WebContent/jsp/orders/orders.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/orders.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="418" selectionTopPixel="85"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2370" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jst.jsp.core.jspsource.source" name="clientorders.jsp" partName="clientorders.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/orders/clientorders.jsp" title="clientorders.jsp" tooltip="CarService/WebContent/jsp/orders/clientorders.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/orders/clientorders.jsp"/>
@@ -329,7 +325,7 @@
 </editor>
 <editor id="org.eclipse.wst.css.core.csssource.source" name="TableStyle.css" partName="TableStyle.css" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/styles/TableStyle.css" title="TableStyle.css" tooltip="CarService/WebContent/styles/TableStyle.css" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/styles/TableStyle.css"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="63" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="353" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jst.jsp.core.jspsource.source" name="addcar.jsp" partName="addcar.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/clients/cars/addcar.jsp" title="addcar.jsp" tooltip="CarService/WebContent/jsp/clients/cars/addcar.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/clients/cars/addcar.jsp"/>
@@ -417,19 +413,19 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RegisterAction.java" partName="RegisterAction.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/controller/actions/RegisterAction.java" title="RegisterAction.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/RegisterAction.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/controller/actions/RegisterAction.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2159" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1942" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CarService.java" partName="CarService.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/model/bll/CarService.java" title="CarService.java" tooltip="CarService/src/ru/rsreu/carservice/model/bll/CarService.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/model/bll/CarService.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1913" selectionTopPixel="360"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1435" selectionTopPixel="90"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddClientAction.java" partName="AddClientAction.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/controller/actions/clients/AddClientAction.java" title="AddClientAction.java" tooltip="CarService/src/ru/rsreu/carservice/controller/actions/clients/AddClientAction.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/controller/actions/clients/AddClientAction.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2035" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1601" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Client.java" partName="Client.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/model/entities/Client.java" title="Client.java" tooltip="CarService/src/ru/rsreu/carservice/model/entities/Client.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/model/entities/Client.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="273"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.ClassFileEditor" name="HttpServlet.class" partName="HttpServlet.class" title="HttpServlet.class" tooltip="javax.servlet.http.HttpServlet" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=CarService/C:\/Users\/21art\/Desktop\/Учеба\/Java\/apache-tomcat-7.0.75\/lib\/servlet-api.jar&lt;javax.servlet.http(HttpServlet.class"/>
@@ -449,7 +445,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ICarServiceDao.java" partName="ICarServiceDao.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/model/dal/ICarServiceDao.java" title="ICarServiceDao.java" tooltip="CarService/src/ru/rsreu/carservice/model/dal/ICarServiceDao.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/model/dal/ICarServiceDao.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1410" selectionTopPixel="401"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="732" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataBaseException.java" partName="DataBaseException.java" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/src/ru/rsreu/carservice/model/dal/exceptions/DataBaseException.java" title="DataBaseException.java" tooltip="CarService/src/ru/rsreu/carservice/model/dal/exceptions/DataBaseException.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/src/ru/rsreu/carservice/model/dal/exceptions/DataBaseException.java"/>
@@ -666,6 +662,10 @@
 <editor id="org.eclipse.jst.jsp.core.jspsource.source" name="editwork.jsp" partName="editwork.jsp" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/jsp/works/editwork.jsp" title="editwork.jsp" tooltip="CarService/WebContent/jsp/works/editwork.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/jsp/works/editwork.jsp"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="329" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="ActionHidder.js" partName="ActionHidder.js" path="C:/Users/21art/Desktop/Учеба/Diploma.git/CarService/CarService/WebContent/scripts/ActionHidder.js" title="ActionHidder.js" tooltip="CarService/WebContent/scripts/ActionHidder.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CarService/WebContent/scripts/ActionHidder.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="360" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -974,6 +974,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="ActionHidder.js" tooltip="CarService/WebContent/scripts/ActionHidder.js">
+<persistable path="/CarService/WebContent/scripts/ActionHidder.js"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Password.java" tooltip="CarService/src/ru/rsreu/carservice/model/entities/Password.java">
 <persistable path="/CarService/src/ru/rsreu/carservice/model/entities/Password.java"/>
 </file>

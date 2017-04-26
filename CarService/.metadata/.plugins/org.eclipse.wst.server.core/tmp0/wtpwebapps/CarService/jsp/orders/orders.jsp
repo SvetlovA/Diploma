@@ -31,10 +31,10 @@
 			<td class="table-cell">${order.getShareParts()}</td>
 			<td class="table-cell">${order.getWorks()}</td>
 			<td class="table-cell">${order.getTotalCost()}</td>
-			<td class="table-cell">${order.getStatus()}</td>
+			<td class="table-cell work-status">${order.getStatus()}</td>
 			<td class="table-cell action">
-				<a href="admin_freeworkers?action=getfreeworkerspage&orderid=${order.getOrderId()}&orderguid=${order.getOrderGuid()}&orderdate=${order.getOrderDate()}&ordertotalcost=${order.getTotalCost()}&orderworkstatus=${order.getStatus()}">Add workers</a>
-				<a href="admin_orderworkers?action=getorderworkerspage&orderid=${order.getOrderId()}&orderguid=${order.getOrderGuid()}&orderdate=${order.getOrderDate()}&ordertotalcost=${order.getTotalCost()}&orderworkstatus=${order.getStatus()}">Delete workers</a>
+				<a class="hide-action" href="admin_freeworkers?action=getfreeworkerspage&orderid=${order.getOrderId()}&orderguid=${order.getOrderGuid()}&orderdate=${order.getOrderDate()}&ordertotalcost=${order.getTotalCost()}&orderworkstatus=${order.getStatus()}">Add workers</a>
+				<a class="hide-action" href="admin_orderworkers?action=getorderworkerspage&orderid=${order.getOrderId()}&orderguid=${order.getOrderGuid()}&orderdate=${order.getOrderDate()}&ordertotalcost=${order.getTotalCost()}&orderworkstatus=${order.getStatus()}">Delete workers</a>
 				<a href="admin_deleteorder?action=getorderdeletepage&orderid=${order.getOrderId()}&orderguid=${order.getOrderGuid()}&orderdate=${order.getOrderDate()}&ordertotalcost=${order.getTotalCost()}&orderworkstatus=${order.getStatus()}">Delete order</a>
 			</td>
 		</tr>
@@ -42,5 +42,6 @@
 	</table>
 	<hr>
 	<a href="menu?action=getadminmenu">Back menu</a>
+	<script src="scripts/ActionHidder.js"></script>
 </body>
 </html>
