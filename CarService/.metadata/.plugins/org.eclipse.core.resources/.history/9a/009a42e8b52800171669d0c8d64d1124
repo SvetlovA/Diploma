@@ -1,7 +1,0 @@
-@CHARSET "ISO-8859-1";
-.menu-item {
-	display: block;
-	width: 30%;
-	min-width: 20%;
-	text-decoration: none;
-}

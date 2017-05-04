@@ -1,0 +1,19 @@
+package ru.rsreu.carservice.controller.actions.admins;
+
+import javax.servlet.http.HttpServletRequest;
+
+import ru.rsreu.carservice.controller.Action;
+import ru.rsreu.carservice.controller.Url;
+import ru.rsreu.carservice.controller.actions.utils.BaseUtils;
+import ru.rsreu.carservice.model.dal.exceptions.DataBaseException;
+
+public class GetDeleteAdminPageAction implements Action {
+
+	@Override
+	public Url execute(HttpServletRequest request) throws DataBaseException,
+			Exception {
+		BaseUtils.setErrorMessage(request);
+		return null;
+	}
+
+}

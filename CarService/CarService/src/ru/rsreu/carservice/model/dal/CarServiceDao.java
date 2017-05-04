@@ -1345,6 +1345,34 @@ public class CarServiceDao implements ICarServiceDao {
 			}
 		}
 	}
+	
+	@Override
+	public Set<User> readAllAdmins() throws DataBaseException {
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = this.connection.prepareStatement(Resourcer.getString("query.read.all.admins"));
+			ResultSet resultSet = null;
+			try {
+				resultSet = preparedStatement.executeQuery();
+				Set<User> admins = new HashSet<User>();
+				while (resultSet.next()) {
+					User admin = DataExtracter.extractUserFromResultSet(resultSet);
+					admins.add(admin);
+				}
+				return admins;
+			} finally {
+				resultSet.close();
+			}
+		} catch (SQLException ex) {
+			throw new DataBaseException(Resourcer.getString("message.read.admin.exception"), ex);
+		} finally {
+			try {
+				preparedStatement.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
 
 	@Override
 	public void updateUser(User user) throws DataBaseException {

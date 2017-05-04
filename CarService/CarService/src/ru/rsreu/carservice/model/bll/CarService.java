@@ -101,6 +101,10 @@ public class CarService {
 		return this.carServiceDao.readUser(login);
 	}
 	
+	public Set<User> getAllAdmins() throws DataBaseException {
+		return this.carServiceDao.readAllAdmins();
+	}
+	
 	public Set<Order> getAllOrders() throws DataBaseException {
 		return this.carServiceDao.readAllOrders();
 	}

@@ -48,6 +48,7 @@ public interface ICarServiceDao extends Disposable {
 	Set<Order> readClientOrders(Client client) throws DataBaseException;
 	Set<Order> readWorkerOrders(Worker worker) throws DataBaseException;
 	Set<Order> readAllOrders() throws DataBaseException;
+	Set<User> readAllAdmins() throws DataBaseException;
 	
 	void updateUser(User user) throws DataBaseException;
 	void updateClient(Client client) throws DataBaseException;

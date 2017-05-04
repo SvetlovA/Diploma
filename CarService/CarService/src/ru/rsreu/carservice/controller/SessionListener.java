@@ -16,6 +16,7 @@ public class SessionListener implements HttpSessionAttributeListener {
 	 */
 	@Override
 	public void attributeAdded(HttpSessionBindingEvent sessionBindingEvent) {
+		System.out.println("Attribute added...");
 		setUserStatus(sessionBindingEvent, true);
 	}
 
@@ -24,6 +25,7 @@ public class SessionListener implements HttpSessionAttributeListener {
 	 */
 	@Override
 	public void attributeRemoved(HttpSessionBindingEvent sessionBindingEvent) {
+		System.out.println("Attribute removed...");
 		setUserStatus(sessionBindingEvent, false);
 	}
 

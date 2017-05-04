@@ -12,6 +12,7 @@
 	<div class="item error-message">${errorMessage}</div>
 	<ul class="menu">
 		<li class="menu-item"><a href="admin_orders?action=getallorders">All orders</a></li>
+		<li class="menu-item"><a href="admin_admins?action=getalladmins">All admins</a></li>
 		<li class="menu-item"><a href="admin_clients?action=getallclients">All clients</a></li>
 		<li class="menu-item"><a href="admin_workers?action=getallworkers">All workers</a></li>
 		<li class="menu-item"><a href="admin_shareparts?action=getallshareparts">All share parts</a></li>

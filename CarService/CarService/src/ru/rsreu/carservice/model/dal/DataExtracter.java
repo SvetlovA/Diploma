@@ -23,6 +23,7 @@ public class DataExtracter {
 		user.setUserId(resultSet.getInt("UserId"));
 		user.setUserGuid(UUID.fromString(resultSet.getString("UserGuid")));
 		user.setLogin(resultSet.getString("Login"));
+		user.setIsOnline(resultSet.getBoolean("IsOnline"));
 		return user;
 	}
 	

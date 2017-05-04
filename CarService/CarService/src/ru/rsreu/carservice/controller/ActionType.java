@@ -8,6 +8,11 @@ import ru.rsreu.carservice.controller.actions.GetWorkerMenuPageAction;
 import ru.rsreu.carservice.controller.actions.LogOutAction;
 import ru.rsreu.carservice.controller.actions.LoginAction;
 import ru.rsreu.carservice.controller.actions.RegisterAction;
+import ru.rsreu.carservice.controller.actions.admins.AddAdminAction;
+import ru.rsreu.carservice.controller.actions.admins.DeleteAdminAction;
+import ru.rsreu.carservice.controller.actions.admins.GetAddAdminPageAction;
+import ru.rsreu.carservice.controller.actions.admins.GetAllAdminsAction;
+import ru.rsreu.carservice.controller.actions.admins.GetDeleteAdminPageAction;
 import ru.rsreu.carservice.controller.actions.clients.AddClientAction;
 import ru.rsreu.carservice.controller.actions.clients.DeleteClientAction;
 import ru.rsreu.carservice.controller.actions.clients.EditClientAction;
@@ -378,6 +383,36 @@ public enum ActionType {
 		@Override
 		public Action getAction() {
 			return new RegisterAction();
+		}
+	},
+	GETALLADMINS {
+		@Override
+		public Action getAction() {
+			return new GetAllAdminsAction();
+		}
+	},
+	GETADMINADDPAGE {
+		@Override
+		public Action getAction() {
+			return new GetAddAdminPageAction();
+		}
+	},
+	ADDADMIN {
+		@Override
+		public Action getAction() {
+			return new AddAdminAction();
+		}
+	},
+	GETADMINDELETEPAGE {
+		@Override
+		public Action getAction() {
+			return new GetDeleteAdminPageAction();
+		}
+	},
+	DELETEADMIN {
+		@Override
+		public Action getAction() {
+			return new DeleteAdminAction();
 		}
 	};
 	public abstract Action getAction();

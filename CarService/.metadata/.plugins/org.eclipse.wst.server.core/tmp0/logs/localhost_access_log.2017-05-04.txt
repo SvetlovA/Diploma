@@ -1,0 +1,12 @@
+127.0.0.1 - - [04/May/2017:23:29:36 +0400] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:37 +0400] "GET /CarService/ HTTP/1.1" 200 829
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:37 +0400] "GET /CarService/styles/LoginStyle.css HTTP/1.1" 200 157
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:45 +0400] "GET /CarService/ HTTP/1.1" 200 829
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:45 +0400] "GET /CarService/styles/LoginStyle.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:50 +0400] "POST /CarService/menu HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:50 +0400] "GET /CarService/admin_menu?action=getadminmenu HTTP/1.1" 200 827
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:29:50 +0400] "GET /CarService/styles/CarServiceMenuStyle.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:32:26 +0400] "GET /CarService/admin_clients?action=getallclients HTTP/1.1" 200 12838
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:32:26 +0400] "GET /CarService/styles/TableStyle.css HTTP/1.1" 200 353
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:32:26 +0400] "GET /CarService/styles/IndicatorStyle.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/May/2017:23:32:26 +0400] "GET /CarService/scripts/IndicatorChecker.js HTTP/1.1" 304 -

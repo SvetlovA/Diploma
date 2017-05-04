@@ -1,5 +1,0 @@
-(function() {
-	var workStatus = document.querySelector(".work-status"),
-		hideActions = document.querySelectorAll(".hide-action"),
-		i;
-})();

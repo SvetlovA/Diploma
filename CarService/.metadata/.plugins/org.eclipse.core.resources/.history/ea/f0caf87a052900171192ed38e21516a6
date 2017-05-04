@@ -1,7 +1,0 @@
-(function() {
-	var indicatorCells = document.querySelectorAll(".indicator-cell");
-	
-	indicatorCells.forEach(function(indicatorCell) {
-		if (indicatorCell)
-	});
-})();

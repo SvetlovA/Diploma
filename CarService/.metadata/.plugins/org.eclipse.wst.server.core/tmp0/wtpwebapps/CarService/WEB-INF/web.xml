@@ -18,6 +18,10 @@
     <url-pattern>/client_menu</url-pattern>
     <url-pattern>/worker_menu</url-pattern>
     
+    <url-pattern>/admin_admins</url-pattern>
+    <url-pattern>/admin_addadmin</url-pattern>
+    <url-pattern>/admin_deleteadmin</url-pattern>
+    
     <url-pattern>/admin_orders</url-pattern>
     <url-pattern>/client_orders</url-pattern>
     <url-pattern>/worker_orders</url-pattern>
@@ -63,6 +67,10 @@
     <url-pattern>/admin_menu</url-pattern>
     <url-pattern>/client_menu</url-pattern>
     <url-pattern>/worker_menu</url-pattern>
+    
+    <url-pattern>/admin_admins</url-pattern>
+    <url-pattern>/admin_addadmin</url-pattern>
+    <url-pattern>/admin_deleteadmin</url-pattern>
     
     <url-pattern>/admin_orders</url-pattern>
     <url-pattern>/admin_freeworkers</url-pattern>

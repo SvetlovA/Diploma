@@ -1,6 +1,0 @@
-@CHARSET "ISO-8859-1";
-
-.table, .table-cell, .table-header-cell {
-	border: 1px solid #000000;
-	
-}
