@@ -1,0 +1,50 @@
+function FilterView() {
+	var view = this;
+	
+	window.onload = function() {
+		var tableHeaderNodes = document.querySelectorAll(".table-header-cell"),
+			propertyNamesNode = document.querySelector(".property-names"),
+			parameterOptionNodes = createOptionNodes(tableHeaderNodes),
+			signs = view.getSigns();
+		
+		addNodes(propertyNamesNode, parameterOptionNodes);
+	};
+	
+	function addNodes(parentNode, nodes) {
+		nodes.forEach(function(node) {
+			parentNode.appendChild(node);
+		});
+	}
+	
+	function getInnerHTML(nodes) {
+		var innerHTMLs = [],
+			i;
+		
+		for (i = 0; i < nodes.length; i++) {
+			innerHTMLs.push(nodes[i].innerHTML);
+		}
+		
+		return innerHTMLs;
+	}
+	
+	function createOptionNodes(values) {
+		var optionNode,
+			optionNodes = [];
+		
+		values.forEach(function(value) {
+			optionNode = createOptionNode(value);
+			optionNodes.push(optionNode);
+		});
+		
+		return optionNodes;
+	}
+	
+	function createOptionNode(value) {
+		var optionNode = document.createElement("option");
+		
+		optionNode.value = value;
+		optionNode.innerHTML = value;
+		
+		return optionNode;
+	}
+}

@@ -1,0 +1,15 @@
+function Filter() {
+	this.expression = "";
+}
+
+Filter.prototype.apply = function(items) {
+	var filteredItems = [];
+	
+	items.forEach(function (item) {
+		if (eval(this.expression)) {
+			filteredItems.push(item);
+		}
+	});
+	
+	return filteredItems;
+};

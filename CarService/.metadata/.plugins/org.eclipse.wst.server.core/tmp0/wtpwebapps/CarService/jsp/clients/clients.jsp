@@ -11,9 +11,14 @@
 </head>
 <body>
 	<div class="error-message">${errorMessage}</div>
+	<select class="property-names"></select>
+	<select class="signs"></select>
+	<input class="value" type="text">
+	<input class="btn-apply" type="button" value="Apply">
+	<input class="btn-cancel" type="button" value="Cancel">
 	<table class="table">
 		<tr class="table-row">
-			<th class="table-header-cell">Client Guid</th>
+			<th class="table-header-cell">Guid</th>
 			<th class="table-header-cell">Login</th>
 			<th class="table-header-cell">Surname</th>
 			<th class="table-header-cell">Name</th>
@@ -24,13 +29,13 @@
 		</tr>
 		<c:forEach items="${clients}" var="client">
 		<tr class="table-row">
-			<td class="table-cell">${client.getUserGuid()}</td>
-			<td class="table-cell">${client.getLogin()}</td>
-			<td class="table-cell">${client.getSurname()}</td>
-			<td class="table-cell">${client.getName()}</td>
-			<td class="table-cell">${client.getPatronymic()}</td>
-			<td class="table-cell">${client.getCars()}</td>
-			<td class="table-cell">
+			<td class="table-cell guid">${client.getUserGuid()}</td>
+			<td class="table-cell login">${client.getLogin()}</td>
+			<td class="table-cell surname">${client.getSurname()}</td>
+			<td class="table-cell name">${client.getName()}</td>
+			<td class="table-cell patronymic">${client.getPatronymic()}</td>
+			<td class="table-cell cars">${client.getCars()}</td>
+			<td class="table-cell status">
 				${client.getStatus()}
 				<div class="indicator"></div>
 			</td>
@@ -46,5 +51,9 @@
 	<a href="admin_addclient?action=getclientaddpage">Add</a>
 	<a href="menu?action=getadminmenu">Back menu</a>
 	<script src="scripts/IndicatorChecker.js"></script>
+	<script src="scripts/Filter.js"></script>
+	<script src="scripts/FilterPresenter.js"></script>
+	<script src="scripts/FilterView.js"></script>
+	<script src="scripts/FilterStarter.js"></script>
 </body>
 </html>

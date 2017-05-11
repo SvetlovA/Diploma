@@ -1,0 +1,75 @@
+function FilterView() {
+	var view = this,
+		propertyNamesNode = document.querySelector(".property-names"),
+		signsNode = document.querySelector(".signs"),
+		btnApplyNode = document.querySelector(".btn-apply");
+	
+	btnApplyNode.onclick = function() {
+		var objects = getObjectsFromTable();
+	};
+	
+	function getObjectsFromTable() {
+		var tableNode = document.querySelector(".table").children[0],
+			rowNodes = tableNode.children,
+			headerRowNode = rowNodes[0],
+			headerRowCellNodes = headerRowNode.children,
+			properties = getInnerHTML(headerRowCellNodes),
+			rowCellNodes,
+			i;
+		
+		for (i = 1; i < rowNodes.length; i++) {
+			rowCellNodes = rowNodes[i].children;
+		}
+	}
+	
+	window.onload = function() {
+		var tableHeaderNodes = document.querySelectorAll(".table-header-cell"),
+			signs = view.getSigns(),
+			signsOptionNodes = createOptionNodes(signs),
+			properties =getInnerHTML(tableHeaderNodes),
+			propertyOptionNodes = createOptionNodes(properties);
+		
+		addNodes(propertyNamesNode, propertyOptionNodes);
+		addNodes(signsNode, signsOptionNodes);
+	};
+	
+	function addNodes(parentNode, nodes) {
+		nodes.forEach(function(node) {
+			parentNode.appendChild(node);
+		});
+	}
+	
+	function getInnerHTML(nodes) {
+		var innerHTMLs = [],
+			i;
+		
+		for (i = 0; i < nodes.length; i++) {
+			if (nodes[i].innerHTML) {
+				innerHTMLs.push(nodes[i].innerHTML);
+			}
+		}
+		
+		return innerHTMLs;
+	}
+	
+	function createOptionNodes(values) {
+		var optionNode,
+			optionNodes = [];
+		
+		values.forEach(function(value) {
+			optionNode = createOptionNode(value);
+			optionNodes.push(optionNode);
+		});
+		
+		return optionNodes;
+	}
+	
+	function createOptionNode(value) {
+		var optionNode = document.createElement("option");
+		
+		optionNode.value = value;
+		optionNode.innerHTML = value;
+		
+		return optionNode;
+	}
+}

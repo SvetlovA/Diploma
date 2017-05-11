@@ -1,0 +1,25 @@
+function Filter() {
+	this.expression = "true";
+}
+
+Filter.prototype.apply = function(items) {
+	return items.filter(function(item) {
+		return eval(this.expression);
+	});
+};
+
+Filter.prototype.equal = function (propertyName, value) {
+	this.expression += " && item['" + propertyName + "'] === " + value;
+};
+
+Filter.prototype.getSigns = function () {
+	var signs = [];
+	
+	for (var key in this) {
+		signs.push(key);
+	}
+	
+	return signs.filter(function(parameter) {
+		return parametr !== "expression" && parameter !== "apply" && parameter !== "getSigns";
+	});
+};

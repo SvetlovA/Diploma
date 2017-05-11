@@ -1,0 +1,19 @@
+function Filter() {
+	this.expression = "true";
+}
+
+Filter.prototype.apply = function(items) {
+	var filteredItems = [];
+	
+	items.forEach(function (item) {
+		if (eval(this.expression)) {
+			filteredItems.push(item);
+		}
+	});
+	
+	return filteredItems;
+};
+
+Filter.prototype.equal = function (propertyName, value) {
+	this.expression += "item['" + propertyName + "'] === " + value;
+};

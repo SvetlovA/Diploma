@@ -1,0 +1,127 @@
+function FilterView() {
+	var view = this,
+		propertyNamesNode = document.querySelector(".property-names"),
+		signsNode = document.querySelector(".signs"),
+		btnApplyNode = document.querySelector(".btn-apply");
+	
+	btnApplyNode.onclick = function() {
+		applyFilter();
+	};
+	
+	function applyFilter() {
+		var tableNode = document.querySelector(".table").children[0],
+			rowNodes = tableNode.children,
+			headerRowNode = rowNodes[0],
+			objects = getObjectsFromRows(rowNodes, headerRowNode),
+			valueNode = document.querySelector(".value");
+	
+		view[signsNode.value](propertyNamesNode.value, valueNode.value);
+		view.apply(objects);
+	}
+	
+	function filterRowNodes(rowNodes, filteredObjects) {
+		var i;
+		
+		for (i = 1; i < rowNodes.length; i++) {
+			if (!filteredObjects.find(function(object) {
+				var key,
+					cellNode,
+					isEqual = true;
+				
+				for (key in object) {
+					cellNode = getChildByClass(rowNodes[i], key);
+					isEqual &= cellNode.innerText === object[key];
+				}
+				
+				return isEqual;
+			})) {
+				
+			}
+		}
+	}
+	
+	function getObjectsFromRows(rowNodes, headerRowNode) {
+		var headerRowCellNodes = headerRowNode.children,
+			properties = getInnerText(headerRowCellNodes),
+			object,
+			objects = [],
+			i;
+		
+		for (i = 1; i < rowNodes.length; i++) {
+			object = createObject(properties, rowNodes[i]);
+			objects.push(object);
+		}
+		
+		return objects;
+	}
+	
+	function createObject(properties, row) {
+		var object = {};
+		
+		properties.forEach(function(property) {
+			valueNode = getElementByClassName(row, property);
+			object[property] = valueNode.innerText;
+		});
+		
+		return object;
+	}
+	
+	function getChildByClass(node, className) {
+		return node.getElementsByClassName(className)[0];
+	}
+	
+	window.onload = function() {
+		fillInitialData();
+	};
+	
+	function fillInitialData() {
+		var tableHeaderNodes = document.querySelectorAll(".table-header-cell"),
+		signs = view.getSigns(),
+		signsOptionNodes = createOptionNodes(signs),
+		properties =getInnerText(tableHeaderNodes),
+		propertyOptionNodes = createOptionNodes(properties);
+	
+		addNodes(propertyNamesNode, propertyOptionNodes);
+		addNodes(signsNode, signsOptionNodes);
+	}
+	
+	function addNodes(parentNode, nodes) {
+		nodes.forEach(function(node) {
+			parentNode.appendChild(node);
+		});
+	}
+	
+	function getInnerText(nodes) {
+		var innerTexts = [],
+			i;
+		
+		for (i = 0; i < nodes.length; i++) {
+			if (nodes[i].innerText) {
+				innerTexts.push(nodes[i].innerText.toLowerCase());
+			}
+		}
+		
+		return innerTexts;
+	}
+	
+	function createOptionNodes(values) {
+		var optionNode,
+			optionNodes = [];
+		
+		values.forEach(function(value) {
+			optionNode = createOptionNode(value);
+			optionNodes.push(optionNode);
+		});
+		
+		return optionNodes;
+	}
+	
+	function createOptionNode(value) {
+		var optionNode = document.createElement("option");
+		
+		optionNode.value = value;
+		optionNode.innerHTML = value;
+		
+		return optionNode;
+	}
+}

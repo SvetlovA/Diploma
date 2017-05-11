@@ -1,0 +1,7 @@
+function Filter() {
+	this.expression = "";
+}
+
+Filter.prototype.apply = function() {
+	return eval(this.expression);
+};

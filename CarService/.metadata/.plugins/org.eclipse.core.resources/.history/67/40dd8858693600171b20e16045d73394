@@ -1,0 +1,17 @@
+function Filter() {
+	this.expression = "true";
+}
+
+Filter.prototype.apply = function(items) {
+	return items.filter(function(item) {
+		return eval(this.expression);
+	});
+};
+
+Filter.prototype.equal = function (propertyName, value) {
+	this.expression += " && item['" + propertyName + "'] === " + value;
+};
+
+Filter.prototyp.getSigns = function () {
+	return Object.getPropertyNmaes(this);
+};
