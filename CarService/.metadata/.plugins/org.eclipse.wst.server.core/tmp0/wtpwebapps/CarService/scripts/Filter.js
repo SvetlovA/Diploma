@@ -11,7 +11,15 @@ Filter.prototype.apply = function(items) {
 };
 
 Filter.prototype.equal = function (propertyName, value) {
-	this.expression += " && item['" + propertyName + "'] === " + "'" + value + "'";
+	this.expression += " && item['" + propertyName + "'] === '" + value + "'";
+};
+
+Filter.prototype.startsWith = function (propertyName, value) {
+	this.expression += " && item['" + propertyName + "'].startsWith('" + value + "')";
+};
+
+Filter.prototype.includes = function (propertyName, value) {
+	this.expression += " && item['" + propertyName + "'].includes('" + value + "')";
 };
 
 Filter.prototype.getSigns = function () {

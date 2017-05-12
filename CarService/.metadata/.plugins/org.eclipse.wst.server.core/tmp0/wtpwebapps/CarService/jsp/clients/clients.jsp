@@ -11,11 +11,13 @@
 </head>
 <body>
 	<div class="error-message">${errorMessage}</div>
-	<select class="property-names"></select>
-	<select class="signs"></select>
-	<input class="value" type="text">
-	<input class="btn-apply" type="button" value="Apply">
-	<input class="btn-cancel" type="button" value="Cancel">
+	<div class="filter">
+		<select class="property-names"></select>
+		<select class="signs"></select>
+		<input class="value" type="text">
+		<input class="btn-apply" type="button" value="Apply">
+		<input class="btn-cancel" type="button" value="Cancel">
+	</div>
 	<table class="table">
 		<tr class="table-row">
 			<th class="table-header-cell">Guid</th>

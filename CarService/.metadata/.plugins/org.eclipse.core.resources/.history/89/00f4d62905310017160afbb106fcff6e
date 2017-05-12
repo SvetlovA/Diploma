@@ -1,5 +1,0 @@
-package ru.rsreu.carservice.controller.actions.admins;
-
-public class GetAllAdminsAction {
-
-}

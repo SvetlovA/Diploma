@@ -11,6 +11,13 @@
 <body>
 <h3>Select workers to delete from order ${orderguid}</h3>
 <div class="error-message">${errorMessage}</div>
+<div class="filter">
+	<select class="property-names"></select>
+	<select class="signs"></select>
+	<input class="value" type="text">
+	<input class="btn-apply" type="button" value="Apply">
+	<input class="btn-cancel" type="button" value="Cancel">
+</div>
 <form action="admin_orders" method="post">
 	<input type="hidden" name="action" value="deleteorderworkers">
 	<input type="hidden" name="orderid" value="${orderid}">
@@ -20,7 +27,7 @@
 	<input type="hidden" name="orderworkstatus" value="${orderworkstatus}">
 	<table class="table">
 		<tr class="table-row">
-			<th class="table-header-cell">Worker Guid</th>
+			<th class="table-header-cell">Guid</th>
 			<th class="table-header-cell">Login</th>
 			<th class="table-header-cell">Surname</th>
 			<th class="table-header-cell">Name</th>
@@ -30,12 +37,12 @@
 		</tr>
 		<c:forEach items="${workers}" var="worker">
 		<tr class="table-row">
-			<td class="table-cell">${worker.getUserGuid()}</td>
-			<td class="table-cell">${worker.getLogin()}</td>
-			<td class="table-cell">${worker.getSurname()}</td>
-			<td class="table-cell">${worker.getName()}</td>
-			<td class="table-cell">${worker.getPatronymic()}</td>
-			<td class="table-cell">${worker.getExperience()}</td>
+			<td class="table-cell guid">${worker.getUserGuid()}</td>
+			<td class="table-cell login">${worker.getLogin()}</td>
+			<td class="table-cell surname">${worker.getSurname()}</td>
+			<td class="table-cell name">${worker.getName()}</td>
+			<td class="table-cell patronymic">${worker.getPatronymic()}</td>
+			<td class="table-cell experience">${worker.getExperience()}</td>
 			<td class="table-cell action">
 				<input type="checkbox" name="isselected" value="${worker.getUserGuid()}"/>
 			</td>
@@ -46,5 +53,9 @@
 	<input type="submit" value="Delete"/>
 	<a href="admin_orders?action=getallorders">Back</a>
 </form>
+<script src="scripts/Filter.js"></script>
+<script src="scripts/FilterPresenter.js"></script>
+<script src="scripts/FilterView.js"></script>
+<script src="scripts/FilterStarter.js"></script>
 </body>
 </html>

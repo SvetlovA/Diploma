@@ -1,11 +1,19 @@
 function FilterPresenter(view) {
 	var filter = new Filter();
 	
-	view.equal = function(propertyName, value) {
+	view.equal = function (propertyName, value) {
 		filter.equal(propertyName, value);
 	};
 	
-	view.apply = function(items) {
+	view.startsWith = function (propertyName, value) {
+		filter.startsWith(propertyName, value);
+	};
+	
+	view.includes = function (propertyName, value) {
+		filter.includes(propertyName, value);
+	};
+	
+	view.apply = function (items) {
 		return filter.apply(items);
 	};
 	
