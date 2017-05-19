@@ -23,7 +23,7 @@ public class DeleteCarAction implements Action {
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		carService.deleteCar(car);
 		Client client = ClientUtils.parseClient(request);
-		return new Url(ClientUtils.getUrl(Resourcer.getString("url.pattern.admincars"),
+		return new Url(ClientUtils.getUrl(Resourcer.getString("url.pattern.adminclientcars"),
 				Resourcer.getString("action.getclientcarspage"), client), RedirectType.SEND_REDIRECT);
 	}
 }

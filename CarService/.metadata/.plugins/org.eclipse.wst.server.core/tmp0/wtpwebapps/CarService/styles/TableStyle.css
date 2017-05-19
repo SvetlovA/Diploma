@@ -24,3 +24,7 @@
 .hide {
 	display: none;
 }
+
+.filter {
+	padding: 10px;
+}

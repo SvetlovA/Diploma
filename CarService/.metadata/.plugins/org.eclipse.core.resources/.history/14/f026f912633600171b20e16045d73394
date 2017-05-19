@@ -1,4 +1,0 @@
-(function() {
-	var view = new FilterView()
-	var presenter = new FilterPresenter(view);
-})();

@@ -1,0 +1,7 @@
+1495103593112	Rename type 'GetClientCars'
+1495103617100	Delete element
+1495103739090	Delete element
+1495105790620	Extract constant 'URL_SEPARATOR'
+1495105830318	Extract constant 'URL_PATTERN_INDEX'
+1495105967316	Rename local variable 'url'
+1495106854873	Rename field 'URL_SEPARATOR'

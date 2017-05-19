@@ -51,8 +51,13 @@
     <url-pattern>/admin_editwork</url-pattern>
     
     <url-pattern>/admin_cars</url-pattern>
+    <url-pattern>/client_cars</url-pattern>
     <url-pattern>/admin_addcar</url-pattern>
     <url-pattern>/admin_deletecar</url-pattern>
+    
+    <url-pattern>/admin_client_deletecar</url-pattern>
+    <url-pattern>/admin_client_addcar</url-pattern>
+    <url-pattern>/admin_client_cars</url-pattern>
   </servlet-mapping>
   <error-page>
     <exception-type>java.lang.Exception</exception-type>
@@ -98,12 +103,17 @@
     <url-pattern>/admin_editwork</url-pattern>
     
     <url-pattern>/admin_cars</url-pattern>
+    <url-pattern>/client_cars</url-pattern>
     <url-pattern>/admin_addcar</url-pattern>
     <url-pattern>/admin_deletecar</url-pattern>
     
     <url-pattern>/client_orders</url-pattern>
     <url-pattern>/client_addorder</url-pattern>
     <url-pattern>/worker_orders</url-pattern>
+    
+    <url-pattern>/admin_client_deletecar</url-pattern>
+    <url-pattern>/admin_client_addcar</url-pattern>
+    <url-pattern>/admin_client_cars</url-pattern>
   </filter-mapping>
   <listener>
     <listener-class>ru.rsreu.carservice.controller.SessionListener</listener-class>

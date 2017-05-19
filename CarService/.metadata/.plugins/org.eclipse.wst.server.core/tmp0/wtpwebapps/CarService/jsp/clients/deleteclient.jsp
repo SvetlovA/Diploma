@@ -21,7 +21,7 @@
 	<label>Client guid: ${clientguid}</label><br/>
 	<label>Client login: ${clientlogin}</label><br/>
 	<label>Client surname: ${clientsurname}</label><br/>
-	<label>Client name: ${clientsurname}</label><br/>
+	<label>Client name: ${clientname}</label><br/>
 	<label>Client patronymic: ${clientpatronymic}</label><br/>
 	<hr/>
 	<input type="submit" value="Submit"/>

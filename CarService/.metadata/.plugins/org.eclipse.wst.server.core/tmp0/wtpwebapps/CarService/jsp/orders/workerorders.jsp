@@ -30,7 +30,7 @@
 			<th class="table-header-cell action"></th>
 		</tr>
 		<c:forEach items="${orders}" var="order">
-		<tr class="Table-row">
+		<tr class="table-row">
 			<td class="table-cell guid">${order.getOrderGuid()}</td>
 			<td class="table-cell date">${order.getOrderDate()}</td>
 			<td class="table-cell car">${order.getCar()}</td>

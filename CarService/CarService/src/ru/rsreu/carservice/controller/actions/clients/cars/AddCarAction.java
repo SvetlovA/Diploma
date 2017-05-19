@@ -36,7 +36,7 @@ public class AddCarAction implements Action {
 		ServletContext context = request.getServletContext();
 		CarService carService = (CarService) context.getAttribute(Resourcer.getString("parameter.carservice"));
 		carService.addCar(car);
-		return new Url(ClientUtils.getUrl(Resourcer.getString("url.pattern.admincars"),
+		return new Url(ClientUtils.getUrl(Resourcer.getString("url.pattern.adminclientcars"),
 				Resourcer.getString("action.getclientcarspage"), client), RedirectType.SEND_REDIRECT);
 	}
 }

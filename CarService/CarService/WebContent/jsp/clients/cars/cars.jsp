@@ -33,14 +33,19 @@
 		<td class="table-cell mark">${car.getMark()}</td>
 		<td class="table-cell model">${car.getModel()}</td>
 		<td class="table-cell action">
-			<a href="admin_deletecar?action=getcardeletepage&carid=${car.getCarId()}&carguid=${car.getCarGuid()}&carnumber=${car.getNumber()}&carmark=${car.getMark()}&carmodel=${car.getModel()}&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Delete</a>
+			<a href="admin_client_deletecar?action=getcardeletepage&carid=${car.getCarId()}&carguid=${car.getCarGuid()}&carnumber=${car.getNumber()}&carmark=${car.getMark()}&carmodel=${car.getModel()}&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Delete</a>
 		</td>
 	</tr>
 	</c:forEach>
 </table>
 <hr>
-<a href="admin_addcar?action=getcaraddpage&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Add</a>
-<a href="admin_clients?action=getallclients">Back</a>
+<a href="admin_client_addcar?action=getcaraddpage&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Add</a>
+<c:if test="${permission.toString() == 'ADMIN'}">
+	<a href="admin_clients?action=getallclients">Back</a>
+</c:if>
+<c:if test="${permission.toString() == 'CLIENT'}">
+	<a href="menu?action=getclientmenu">Back menu</a>
+</c:if>
 <script src="scripts/Filter.js"></script>
 <script src="scripts/FilterPresenter.js"></script>
 <script src="scripts/FilterView.js"></script>

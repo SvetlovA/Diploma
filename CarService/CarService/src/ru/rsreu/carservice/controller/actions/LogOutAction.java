@@ -14,6 +14,6 @@ public class LogOutAction implements Action {
 	@Override
 	public Url execute(HttpServletRequest request) throws DataBaseException, Exception {
 		request.getSession().invalidate();
-		return new Url(Resourcer.getString("path.page.index"), RedirectType.FORWARD);
+		return new Url(Resourcer.getString("path.page.start"), RedirectType.SEND_REDIRECT);
 	}
 }

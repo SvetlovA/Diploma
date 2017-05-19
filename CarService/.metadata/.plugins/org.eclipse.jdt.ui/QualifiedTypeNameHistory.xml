@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Worker"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Order"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.OrderUtils"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Work"/>
 <fullyQualifiedTypeName name="sun.util.resources.LocaleData"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.SessionListener"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionEvent"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionAttributeListener"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
@@ -30,8 +28,6 @@
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.AddCarException"/>
 <fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.AddUserException"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="oracle.jdbc.driver.DatabaseError"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.entities.Password"/>
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
@@ -42,7 +38,6 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.DataExtracter"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Action"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.dal.exceptions.DataBaseException"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
@@ -57,7 +52,12 @@
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.model.bll.CarService"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Url"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.RedirectType"/>
+<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.Action"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.util.Enumeration"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="ru.rsreu.carservice.controller.actions.utils.BaseUtils"/>
 <fullyQualifiedTypeName name="resources.Resourcer"/>
-<fullyQualifiedTypeName name="ru.rsreu.carservice.controller.RedirectType"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

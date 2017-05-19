@@ -9,7 +9,7 @@
 <body>
 <h3>Add car</h3>
 <div class="error-message">${errorMessage}</div>
-<form action="admin_cars" method="post">
+<form action="admin_client_cars" method="post">
 	<input type="hidden" name="action" value="addcar"/>
 	<input type="hidden" name="clientid" value="${clientid}">
 	<input type="hidden" name="clientguid" value="${clientguid}">
@@ -25,7 +25,7 @@
 	<input id="carmodel" type="text" name="carmodel" required="required"><br/>
 	<hr/>
 	<input type="submit" value="Add">
-	<a href="admin_cars?action=getclientcarspage&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Cancel</a>
+	<a href="admin_client_cars?action=getclientcarspage&clientid=${clientid}&clientguid=${clientguid}&clientlogin=${clientlogin}&clientsurname=${clientsurname}&clientname=${clientname}&clientpatronymic=${clientpatronymic}">Cancel</a>
 </form>
 </body>
 </html>

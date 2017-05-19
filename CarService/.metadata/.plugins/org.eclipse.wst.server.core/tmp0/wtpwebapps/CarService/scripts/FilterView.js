@@ -132,4 +132,6 @@ function FilterView() {
 		
 		return optionNode;
 	}
+	
+	return this;
 }

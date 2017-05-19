@@ -11,6 +11,7 @@
 	<h3>Hello ${login}</h3>
 	<div class="item error-message">${errorMessage}</div>
 	<ul class="menu">
+		<li class="menu-item"><a href="client_cars?action=getclientcarspage">My cars</a></li>
 		<li class="menu-item"><a href="client_addorder?action=getaddorderpage">Add order</a></li>
 		<li class="menu-item"><a href="client_orders?action=getclientorders">Orders</a></li>
 	</ul>
