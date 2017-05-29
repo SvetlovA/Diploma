@@ -27,14 +27,6 @@ public class CarServiceDao implements ICarServiceDao {
 	
 	private Connection connection;
 	
-	static {
-		try {
-			Class.forName ("oracle.jdbc.OracleDriver");
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-		}
-	}
-	
 	public CarServiceDao() throws SQLException {
 		this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
 	}
